@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Where the margin went — Indian leather goods</title>
+<meta name="description" content="Fourteen years of India's Wholesale Price Index for the leather value chain: raw hides, tanned leather and finished footwear, and what the gap between them says about margin.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231f3864'/><text x='50' y='73' font-size='58' font-family='Georgia,serif' fill='%23fff' text-anchor='middle'>S</text></svg>">
+<style>
+/* ===== fonts (self-hosted, latin subset, OFL) ===================== */
+@font-face{font-family:'IBM Plex Sans';font-style:normal;font-weight:100 700;font-stretch:100%;font-display:swap;
+  src:url(../fonts/ibm-plex-sans-var.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:400;font-display:swap;
+  src:url(../fonts/ibm-plex-mono-400-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:500;font-display:swap;
+  src:url(../fonts/ibm-plex-mono-500-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Newsreader';font-style:normal;font-weight:500 700;font-display:swap;
+  src:url(../fonts/newsreader-600-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Newsreader';font-style:italic;font-weight:300 500;font-display:swap;
+  src:url(../fonts/newsreader-400-italic.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+
+/* ===== tokens ===================================================== */
+:root{
+  --bg:#f3f3f1;
+  --sheet:#fdfdfc;
+  --ink:#191b20;
+  --ink-soft:#3d424a;
+  --muted:#6d737c;
+  --line:#e1e1dd;
+  --hair:#ebebe7;
+  --accent:#1f3864;
+  --accent-line:#b7c2d6;
+  --shadow:0 1px 2px rgba(18,20,26,.05), 0 14px 38px -18px rgba(18,20,26,.22);
+
+  --serif:"Newsreader",Iowan Old Style,Georgia,"Times New Roman",serif;
+  --sans:"IBM Plex Sans",-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+
+  --gutter:8.25rem;
+  --col-gap:1.85rem;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme=light]){
+    --bg:#0e1014;
+    --sheet:#15181e;
+    --ink:#e0e3e7;
+    --ink-soft:#c2c7ce;
+    --muted:#858c97;
+    --line:#252932;
+    --hair:#1e222a;
+    --accent:#9db8e8;
+    --accent-line:#3a4a67;
+    --shadow:none;
+  }
+}
+:root[data-theme=dark]{
+  --bg:#0e1014;
+  --sheet:#15181e;
+  --ink:#e0e3e7;
+  --ink-soft:#c2c7ce;
+  --muted:#858c97;
+  --line:#252932;
+  --hair:#1e222a;
+  --accent:#9db8e8;
+  --accent-line:#3a4a67;
+  --shadow:none;
+}
+
+:root{
+  --c-input:#2a78d6; --c-output:#eb6834;
+  --grid:#e6e6e2; --axis-ink:#8a8f98;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme=light]){
+    --c-input:#3987e5; --c-output:#d95926;
+    --grid:#242830; --axis-ink:#7d838d;
+  }
+}
+:root[data-theme=dark]{
+  --c-input:#3987e5; --c-output:#d95926;
+  --grid:#242830; --axis-ink:#7d838d;
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0; background:var(--bg); color:var(--ink-soft);
+  font:400 15.5px/1.62 var(--sans); -webkit-font-smoothing:antialiased;
+  padding:clamp(0rem,4vw,3.25rem) clamp(1rem,4vw,2rem)}
+.sheet{max-width:60rem; margin:0 auto; background:var(--sheet);
+  border:1px solid var(--line); box-shadow:var(--shadow);
+  padding:clamp(2rem,5.5vw,4rem) clamp(1.25rem,5vw,3.5rem) clamp(2.5rem,5vw,3.5rem)}
+a{color:var(--accent); text-decoration:none; border-bottom:1px solid var(--accent-line)}
+a:hover{border-bottom-color:currentColor}
+a:focus-visible{outline:2px solid var(--accent); outline-offset:3px; border-radius:2px}
+strong{font-weight:600; color:var(--ink)}
+
+.back{font:400 .72rem/1 var(--mono); letter-spacing:.06em; text-transform:uppercase;
+  color:var(--muted); border:0; display:inline-block; margin-bottom:1.9rem}
+.back:hover{color:var(--accent); border:0}
+h1{font:600 clamp(1.8rem,5vw,2.6rem)/1.1 var(--serif); color:var(--ink);
+  letter-spacing:-.012em; margin:0 0 .5rem; text-wrap:balance}
+.standfirst{font:400 italic clamp(1rem,2.4vw,1.16rem)/1.5 var(--serif);
+  color:var(--muted); margin:0 0 2rem; max-width:38em}
+
+h2{font:500 .69rem/1 var(--mono); text-transform:uppercase; letter-spacing:.19em;
+  color:var(--muted); margin:2.9rem 0 1.3rem; padding-bottom:.7rem;
+  border-bottom:1px solid var(--hair)}
+p{max-width:40em}
+
+/* ---- headline figures ---- */
+.kpis{display:grid; grid-template-columns:repeat(auto-fit,minmax(12rem,1fr));
+  gap:1.6rem 2.4rem; margin:0 0 .5rem; padding:0; border:0}
+.kpi dt{font:500 .68rem/1.4 var(--mono); text-transform:uppercase; letter-spacing:.13em;
+  color:var(--muted); margin-bottom:.3rem}
+.kpi dd{margin:0}
+.kpi .fig{font:600 2.1rem/1 var(--sans); color:var(--ink);
+  font-variant-numeric:tabular-nums; letter-spacing:-.02em}
+.kpi .note{display:block; font-size:.83rem; color:var(--muted); margin-top:.3rem; max-width:22em}
+.fig.up{color:var(--c-output)}
+.fig.flat{color:var(--c-input)}
+
+/* ---- charts ---- */
+figure{margin:0 0 .4rem}
+figcaption{font:400 .83rem/1.5 var(--sans); color:var(--muted); margin:.7rem 0 0; max-width:44em}
+.chartwrap{position:relative; overflow-x:auto}
+svg{display:block; width:100%; height:auto; min-width:34rem; touch-action:pan-y}
+.grid{stroke:var(--grid); stroke-width:1}
+.ax{fill:var(--axis-ink); font:400 10.5px var(--mono); font-variant-numeric:tabular-nums}
+.ln{fill:none; stroke-width:2; stroke-linejoin:round; stroke-linecap:round}
+.dot{stroke:var(--sheet); stroke-width:2}
+.dl{font:500 11.5px var(--sans)}
+.cross{stroke:var(--axis-ink); stroke-width:1}
+.legend{display:flex; flex-wrap:wrap; gap:.4rem 1.4rem; margin:0 0 .8rem;
+  font:400 .8rem var(--sans); color:var(--ink-soft); list-style:none; padding:0}
+.legend li{display:flex; align-items:center; gap:.45rem}
+.swatch{width:14px; height:2px; border-radius:1px; flex:none}
+.tip{position:absolute; pointer-events:none; opacity:0; transform:translate(-50%,-50%);
+  background:var(--sheet); border:1px solid var(--line); border-radius:3px;
+  padding:.5rem .6rem; font:400 .78rem/1.45 var(--sans); white-space:nowrap;
+  box-shadow:0 4px 16px -6px rgba(0,0,0,.3); z-index:2}
+.tip b{font:600 .88rem var(--sans); color:var(--ink); font-variant-numeric:tabular-nums}
+.tip .row{display:flex; align-items:center; gap:.4rem; margin-top:.25rem}
+.tip .k{width:11px; height:2px; border-radius:1px; flex:none}
+.tip .m{font:500 .7rem var(--mono); color:var(--muted); letter-spacing:.05em}
+
+/* ---- table ---- */
+details{margin-top:1.2rem; border-top:1px solid var(--hair); padding-top:.9rem}
+summary{font:500 .69rem/1 var(--mono); text-transform:uppercase; letter-spacing:.13em;
+  color:var(--muted); cursor:pointer}
+summary:hover{color:var(--accent)}
+.tablewrap{overflow-x:auto; margin-top:1rem; max-height:22rem; overflow-y:auto}
+table{border-collapse:collapse; font:400 .82rem var(--sans);
+  font-variant-numeric:tabular-nums; width:100%}
+th,td{text-align:right; padding:.32rem .8rem; border-bottom:1px solid var(--hair)}
+th:first-child,td:first-child{text-align:left}
+thead th{position:sticky; top:0; background:var(--sheet); font:500 .68rem var(--mono);
+  text-transform:uppercase; letter-spacing:.09em; color:var(--muted)}
+
+/* ---- provenance ---- */
+.prov{margin-top:1rem; font:400 .78rem/1.6 var(--mono); color:var(--muted);
+  word-break:break-all}
+.prov a{border-bottom-color:var(--accent-line)}
+.colophon{margin-top:3rem; padding-top:1.3rem; border-top:1px solid var(--hair);
+  display:flex; flex-wrap:wrap; gap:.5rem 1.5rem; justify-content:space-between;
+  font:400 .725rem/1.5 var(--mono); letter-spacing:.015em; color:var(--muted)}
+
+@media (max-width:34rem){ .kpi .fig{font-size:1.8rem} }
+@media (prefers-reduced-motion:reduce){ *{transition:none!important} }
+</style>
+</head>
+<body>
+<main class="sheet">
+
+<a class="back" href="../">← Samuel Rajesh Vanambattina</a>
+
+<h1>Where the margin went</h1>
+<p class="standfirst">Fourteen years of India&rsquo;s Wholesale Price Index for one value chain
+&mdash; raw hides, tanned leather, finished footwear &mdash; and what the gap between what a
+maker pays and what a maker charges says about margin.</p>
+
+<h2>The finding</h2>
+<dl class="kpis">
+  <div class="kpi"><dt>Input prices</dt><dd>
+    <span class="fig flat">+5.2%</span>
+    <span class="note">Raw hides and skins, April 2012 to April 2026</span></dd></div>
+  <div class="kpi"><dt>Finished goods</dt><dd>
+    <span class="fig up">+29.9%</span>
+    <span class="note">Footwear and leather shoes, same period</span></dd></div>
+  <div class="kpi"><dt>Spread</dt><dd>
+    <span class="fig">123</span>
+    <span class="note">Finished prices relative to inputs, +23 points against a
+    base of 100</span></dd></div>
+</dl>
+
+<p>Input prices end the period barely five percent above where they started &mdash; but they did
+not get there quietly. Raw hides and skins swung through a range of roughly twenty index points
+along the way, with no sustained direction. Finished-goods prices, by contrast, rose about thirty
+percent and did so steadily. The gap between those two lines is the room a manufacturer or
+retailer has to work in.</p>
+
+<p>That runs against the usual assumption that producers are squeezed by rising raw material
+costs. In this chain, over this period, input volatility was the problem to manage &mdash; not
+input inflation.</p>
+
+<h2>Inputs against finished goods</h2>
+<figure>
+  <ul class="legend">
+    <li><span class="swatch" style="background:var(--c-input)"></span>Inputs &mdash; raw hides &amp; skins</li>
+    <li><span class="swatch" style="background:var(--c-output)"></span>Finished &mdash; footwear &amp; leather shoes</li>
+  </ul>
+  <div class="chartwrap" id="w1">
+    <svg viewBox="0 0 760 300" role="img" aria-label="Two lines indexed to 100 in April 2012. Input prices stay near 100 throughout. Finished goods prices rise steadily to about 130.">
+    <line class="grid" x1="44" y1="270.0" x2="652" y2="270.0"/>
+    <text class="ax" x="36" y="273.5" text-anchor="end">90</text>
+    <line class="grid" x1="44" y1="219.6" x2="652" y2="219.6"/>
+    <text class="ax" x="36" y="223.1" text-anchor="end">100</text>
+    <line class="grid" x1="44" y1="169.2" x2="652" y2="169.2"/>
+    <text class="ax" x="36" y="172.7" text-anchor="end">110</text>
+    <line class="grid" x1="44" y1="118.8" x2="652" y2="118.8"/>
+    <text class="ax" x="36" y="122.3" text-anchor="end">120</text>
+    <line class="grid" x1="44" y1="68.4" x2="652" y2="68.4"/>
+    <text class="ax" x="36" y="71.9" text-anchor="end">130</text>
+    <line class="grid" x1="44" y1="18.0" x2="652" y2="18.0"/>
+    <text class="ax" x="36" y="21.5" text-anchor="end">140</text>
+    <text class="ax" x="120.0" y="290" text-anchor="middle">2014</text>
+    <text class="ax" x="206.9" y="290" text-anchor="middle">2016</text>
+    <text class="ax" x="293.7" y="290" text-anchor="middle">2018</text>
+    <text class="ax" x="380.6" y="290" text-anchor="middle">2020</text>
+    <text class="ax" x="467.4" y="290" text-anchor="middle">2022</text>
+    <text class="ax" x="554.3" y="290" text-anchor="middle">2024</text>
+    <text class="ax" x="641.1" y="290" text-anchor="middle">2026</text>
+    <path class="ln" stroke="var(--c-input)" d="M44.0,219.6 L47.6,228.3 L51.2,224.2 L54.9,218.1 L58.5,217.3 L62.1,217.6 L65.7,217.0 L69.3,217.0 L73.0,217.3 L76.6,217.6 L80.2,216.1 L83.8,215.3 L87.4,215.9 L91.0,215.9 L94.7,216.1 L98.3,211.8 L101.9,201.7 L105.5,175.8 L109.1,174.0 L112.8,155.1 L116.4,177.9 L120.0,178.7 L123.6,179.9 L127.2,179.9 L130.9,179.9 L134.5,173.2 L138.1,172.1 L141.7,172.1 L145.3,175.2 L149.0,173.2 L152.6,168.9 L156.2,169.6 L159.8,169.6 L163.4,172.4 L167.0,172.7 L170.7,172.7 L174.3,172.5 L177.9,169.5 L181.5,172.5 L185.1,172.5 L188.8,167.5 L192.4,167.5 L196.0,167.5 L199.6,167.5 L203.2,167.5 L206.9,167.5 L210.5,167.5 L214.1,167.5 L217.7,160.8 L221.3,157.1 L225.0,157.1 L228.6,171.8 L232.2,196.3 L235.8,198.6 L239.4,201.5 L243.0,195.8 L246.7,195.5 L250.3,198.5 L253.9,199.3 L257.5,201.0 L261.1,199.4 L264.8,199.7 L268.4,200.3 L272.0,199.4 L275.6,201.0 L279.2,208.2 L282.9,212.0 L286.5,208.4 L290.1,186.4 L293.7,190.0 L297.3,165.0 L301.0,148.7 L304.6,151.4 L308.2,154.7 L311.8,148.9 L315.4,148.9 L319.0,149.0 L322.7,175.9 L326.3,204.3 L329.9,195.5 L333.5,189.7 L337.1,183.6 L340.8,187.9 L344.4,181.9 L348.0,179.2 L351.6,175.1 L355.2,169.6 L358.9,157.7 L362.5,172.5 L366.1,191.6 L369.7,202.9 L373.3,195.4 L377.0,197.2 L380.6,194.5 L384.2,192.5 L387.8,190.3 L391.4,190.0 L395.0,193.6 L398.7,184.7 L402.3,175.8 L405.9,171.6 L409.5,181.4 L413.1,212.9 L416.8,219.1 L420.4,208.6 L424.0,211.9 L427.6,213.2 L431.2,210.9 L434.9,236.4 L438.5,243.3 L442.1,253.2 L445.7,240.6 L449.3,221.9 L453.0,223.0 L456.6,237.8 L460.2,246.5 L463.8,236.9 L467.4,230.1 L471.0,225.8 L474.7,222.7 L478.3,224.8 L481.9,225.8 L485.5,224.2 L489.1,219.7 L492.8,224.0 L496.4,235.9 L500.0,231.1 L503.6,225.0 L507.2,226.2 L510.9,232.4 L514.5,237.9 L518.1,237.8 L521.7,239.8 L525.3,243.0 L529.0,243.8 L532.6,235.7 L536.2,230.5 L539.8,221.3 L543.4,217.7 L547.0,215.8 L550.7,223.4 L554.3,228.4 L557.9,232.2 L561.5,239.1 L565.1,233.6 L568.8,228.0 L572.4,225.6 L576.0,226.0 L579.6,223.5 L583.2,224.6 L586.9,222.5 L590.5,224.9 L594.1,222.5 L597.7,220.9 L601.3,219.8 L605.0,222.1 L608.6,224.7 L612.2,220.9 L615.8,226.1 L619.4,218.1 L623.0,214.9 L626.7,214.1 L630.3,214.1 L633.9,211.6 L637.5,205.7 L641.1,202.7 L644.8,197.6 L648.4,193.0 L652.0,193.3"/>
+    <circle class="dot" cx="652.0" cy="193.3" r="4.5" fill="var(--c-input)"/>
+    <text class="dl" x="663.0" y="197.3" fill="var(--c-input)">Inputs</text>
+    <path class="ln" stroke="var(--c-output)" d="M44.0,219.6 L47.6,215.4 L51.2,210.2 L54.9,211.7 L58.5,208.0 L62.1,213.7 L65.7,217.6 L69.3,215.8 L73.0,215.8 L76.6,216.3 L80.2,210.1 L83.8,211.3 L87.4,202.2 L91.0,194.8 L94.7,191.1 L98.3,187.0 L101.9,172.8 L105.5,168.2 L109.1,177.0 L112.8,176.0 L116.4,173.1 L120.0,174.2 L123.6,176.5 L127.2,174.5 L130.9,155.6 L134.5,158.6 L138.1,152.0 L141.7,154.3 L145.3,149.3 L149.0,158.4 L152.6,149.3 L156.2,152.9 L159.8,161.1 L163.4,163.3 L167.0,169.3 L170.7,172.2 L174.3,172.2 L177.9,164.4 L181.5,150.4 L185.1,144.5 L188.8,144.1 L192.4,144.9 L196.0,150.4 L199.6,150.8 L203.2,143.8 L206.9,132.4 L210.5,133.2 L214.1,132.2 L217.7,118.3 L221.3,120.2 L225.0,118.7 L228.6,112.4 L232.2,122.9 L235.8,111.4 L239.4,120.4 L243.0,119.5 L246.7,134.4 L250.3,137.3 L253.9,135.6 L257.5,138.2 L261.1,138.3 L264.8,135.4 L268.4,135.5 L272.0,123.4 L275.6,124.3 L279.2,124.9 L282.9,128.6 L286.5,125.4 L290.1,119.3 L293.7,119.3 L297.3,116.7 L301.0,117.0 L304.6,114.4 L308.2,121.1 L311.8,116.8 L315.4,113.6 L319.0,114.9 L322.7,110.4 L326.3,117.5 L329.9,116.9 L333.5,117.3 L337.1,112.4 L340.8,115.4 L344.4,113.8 L348.0,121.7 L351.6,130.9 L355.2,136.1 L358.9,137.8 L362.5,136.3 L366.1,131.3 L369.7,135.7 L373.3,129.1 L377.0,133.9 L380.6,138.0 L384.2,138.3 L387.8,143.4 L391.4,142.7 L395.0,136.2 L398.7,138.8 L402.3,135.4 L405.9,134.0 L409.5,128.9 L413.1,136.2 L416.8,131.0 L420.4,127.4 L424.0,126.0 L427.6,132.9 L431.2,132.2 L434.9,131.9 L438.5,130.7 L442.1,149.4 L445.7,151.2 L449.3,141.9 L453.0,142.9 L456.6,142.1 L460.2,142.4 L463.8,137.1 L467.4,133.6 L471.0,135.2 L474.7,135.8 L478.3,132.4 L481.9,127.2 L485.5,117.0 L489.1,113.3 L492.8,108.2 L496.4,107.6 L500.0,108.6 L503.6,109.0 L507.2,115.4 L510.9,114.3 L514.5,114.7 L518.1,108.5 L521.7,108.8 L525.3,106.6 L529.0,106.3 L532.6,99.6 L536.2,98.7 L539.8,102.2 L543.4,101.1 L547.0,101.1 L550.7,101.2 L554.3,100.6 L557.9,98.1 L561.5,100.4 L565.1,101.7 L568.8,97.6 L572.4,95.0 L576.0,94.3 L579.6,92.8 L583.2,93.5 L586.9,92.5 L590.5,93.0 L594.1,92.0 L597.7,86.3 L601.3,88.0 L605.0,86.7 L608.6,80.8 L612.2,84.2 L615.8,86.1 L619.4,81.8 L623.0,79.7 L626.7,82.1 L630.3,82.3 L633.9,81.0 L637.5,81.1 L641.1,76.0 L644.8,77.2 L648.4,74.8 L652.0,69.1"/>
+    <circle class="dot" cx="652.0" cy="69.1" r="4.5" fill="var(--c-output)"/>
+    <text class="dl" x="663.0" y="73.1" fill="var(--c-output)">Finished</text>
+    <line class="cross" x1="0" y1="18" x2="0" y2="270" style="opacity:0"/>
+    </svg>
+    <div class="tip" id="t1"></div>
+  </div>
+  <figcaption>Both stages rebased to 100 at April 2012, so they share one axis. Weighted
+  averages of the underlying WPI commodity series. Note the difference in character as well as
+  level: the input line is the volatile one.</figcaption>
+</figure>
+
+<h2>The spread itself</h2>
+<figure>
+  <div class="chartwrap" id="w2">
+    <svg viewBox="0 0 760 300" role="img" aria-label="A single line showing finished-goods prices relative to input prices, rising from 100 in 2012 to about 123, with step changes around 2016 and 2021.">
+    <line class="grid" x1="44" y1="270.0" x2="652" y2="270.0"/>
+    <text class="ax" x="36" y="273.5" text-anchor="end">95</text>
+    <line class="grid" x1="44" y1="198.0" x2="652" y2="198.0"/>
+    <text class="ax" x="36" y="201.5" text-anchor="end">105</text>
+    <line class="grid" x1="44" y1="126.0" x2="652" y2="126.0"/>
+    <text class="ax" x="36" y="129.5" text-anchor="end">115</text>
+    <line class="grid" x1="44" y1="54.0" x2="652" y2="54.0"/>
+    <text class="ax" x="36" y="57.5" text-anchor="end">125</text>
+    <text class="ax" x="120.0" y="290" text-anchor="middle">2014</text>
+    <text class="ax" x="206.9" y="290" text-anchor="middle">2016</text>
+    <text class="ax" x="293.7" y="290" text-anchor="middle">2018</text>
+    <text class="ax" x="380.6" y="290" text-anchor="middle">2020</text>
+    <text class="ax" x="467.4" y="290" text-anchor="middle">2022</text>
+    <text class="ax" x="554.3" y="290" text-anchor="middle">2024</text>
+    <text class="ax" x="641.1" y="290" text-anchor="middle">2026</text>
+    <path class="ln" stroke="var(--c-output)" d="M44.0,234.0 L47.6,215.3 L51.2,213.8 L54.9,224.9 L58.5,220.8 L62.1,228.5 L65.7,234.9 L69.3,232.3 L73.0,231.8 L76.6,232.2 L80.2,225.4 L83.8,228.5 L87.4,214.6 L91.0,204.1 L94.7,198.5 L98.3,199.2 L101.9,194.2 L105.5,224.0 L109.1,237.8 L112.8,260.5 L116.4,227.7 L120.0,228.1 L123.6,229.5 L127.2,226.9 L130.9,201.8 L134.5,214.8 L138.1,207.7 L141.7,210.7 L145.3,200.0 L149.0,214.6 L152.6,208.6 L156.2,212.3 L159.8,223.0 L163.4,222.0 L167.0,229.5 L170.7,233.4 L174.3,233.6 L177.9,227.4 L181.5,205.1 L185.1,197.4 L188.8,203.7 L192.4,204.7 L196.0,211.8 L199.6,212.3 L203.2,203.3 L206.9,188.5 L210.5,189.5 L214.1,188.3 L217.7,179.6 L221.3,187.1 L225.0,185.3 L228.6,156.5 L232.2,133.8 L235.8,114.4 L239.4,122.2 L243.0,129.9 L246.7,150.8 L250.3,150.1 L253.9,146.6 L257.5,147.5 L261.1,150.0 L264.8,145.5 L268.4,144.8 L272.0,129.6 L275.6,128.4 L279.2,117.6 L282.9,116.7 L286.5,118.1 L290.1,143.9 L293.7,138.6 L297.3,171.8 L301.0,194.3 L304.6,187.4 L308.2,191.5 L311.8,193.8 L315.4,189.7 L319.0,191.2 L322.7,148.0 L326.3,113.6 L329.9,126.8 L333.5,136.4 L337.1,139.0 L340.8,136.6 L344.4,143.4 L348.0,158.0 L351.6,175.9 L355.2,190.5 L358.9,208.7 L362.5,186.7 L366.1,152.4 L369.7,141.1 L373.3,143.7 L377.0,147.5 L380.6,157.1 L384.2,160.5 L387.8,170.6 L391.4,170.2 L395.0,156.0 L398.7,172.7 L402.3,180.9 L405.9,185.0 L409.5,164.3 L413.1,125.8 L416.8,108.4 L420.4,120.6 L424.0,113.0 L427.6,120.7 L431.2,123.5 L434.9,79.6 L438.5,65.2 L442.1,75.2 L445.7,100.7 L449.3,119.3 L453.0,118.7 L456.6,92.2 L460.2,77.0 L463.8,86.3 L467.4,93.1 L471.0,103.0 L474.7,109.0 L478.3,100.6 L481.9,91.2 L485.5,79.3 L489.1,81.9 L492.8,67.1 L496.4,44.6 L500.0,54.8 L503.6,66.4 L507.2,73.7 L510.9,60.8 L514.5,51.4 L518.1,42.3 L521.7,39.1 L525.3,29.6 L529.0,27.6 L532.6,33.3 L536.2,41.6 L539.8,63.3 L543.4,68.0 L547.0,71.4 L550.7,58.0 L554.3,48.2 L557.9,37.5 L561.5,28.0 L565.1,40.2 L568.8,44.5 L572.4,45.1 L576.0,43.3 L579.6,45.9 L583.2,44.9 L586.9,47.2 L590.5,43.6 L594.1,46.5 L597.7,41.2 L601.3,45.6 L605.0,39.5 L608.6,26.4 L612.2,38.3 L615.8,31.4 L619.4,39.9 L623.0,42.7 L626.7,47.4 L630.3,47.7 L633.9,50.3 L637.5,60.7 L641.1,58.8 L644.8,69.1 L648.4,73.6 L652.0,65.4"/>
+    <circle class="dot" cx="652.0" cy="65.4" r="4.5" fill="var(--c-output)"/>
+    <text class="dl" x="663.0" y="69.4" fill="var(--c-output)">Spread</text>
+    <line class="cross" x1="0" y1="18" x2="0" y2="270" style="opacity:0"/>
+    </svg>
+    <div class="tip" id="t2"></div>
+  </div>
+  <figcaption>Finished-goods index divided by input index, both rebased. Above 100 means
+  finished prices have outrun input costs since April 2012.</figcaption>
+</figure>
+
+<p>The rise is not smooth. The spread sat flat near 100 until 2015, stepped up sharply through
+2016&ndash;17, held, then stepped up again through 2021&ndash;23. Those are the two periods worth
+asking about &mdash; and the most recent readings have started to fall back, which is the part
+that matters for anyone buying leather today.</p>
+
+<details>
+  <summary>The numbers</summary>
+  <div class="tablewrap">
+    <table>
+      <thead><tr><th scope="col">Month</th><th scope="col">Inputs</th>
+        <th scope="col">Finished</th><th scope="col">Spread</th></tr></thead>
+      <tbody id="tb"></tbody>
+    </table>
+  </div>
+</details>
+
+<h2>Method</h2>
+<p>The Office of the Economic Adviser publishes the Wholesale Price Index monthly, with each
+commodity carrying a fixed weight in the basket. Five series make up this chain: hides and
+skins on the input side, tanned leather in the middle, and footwear and leather shoes as
+finished goods. Input and output stages are weight-averaged into one series each, then both
+are rebased to 100 at April 2012 so a single axis carries both.</p>
+<p>The spread is simply one rebased index divided by the other. It is a ratio of prices, not a
+measured margin: it says how far selling prices have moved relative to buying prices, which is
+the part of margin that prices can explain.</p>
+
+<h2>What this does not show</h2>
+<p>These are national indices. They describe an industry, not a business. They exclude labour,
+rent, energy and finance, which are real costs and move differently. A single firm negotiating
+with a single tannery may see none of this. And the 2011-12 base period is now old enough that
+the basket's weights reflect an economy that has since changed &mdash; the Office of the Economic
+Adviser has published a 2022-23 base for exactly that reason, which this page does not yet use
+because it only reaches back to 2023.</p>
+<p>Direction is the signal here. Level is approximate.</p>
+
+<div class="prov">
+  Source: Office of the Economic Adviser, Government of India &mdash;
+  <a href="https://eaindustry.nic.in/indx_download_1112/monthly_index_202606.xls">https://eaindustry.nic.in/indx_download_1112/monthly_index_202606.xls</a><br>
+  169 monthly observations, April 2012 to April 2026 &middot; sha256 3265d404b82f&hellip; &middot;
+  page built 13 September 2026
+</div>
+
+<footer class="colophon">
+  <span>Samuel Rajesh Vanambattina</span>
+  <span><a href="mailto:samuelrajesh13@gmail.com">samuelrajesh13@gmail.com</a></span>
+</footer>
+
+</main>
+
+<script>
+const DATA = [["2012-04",100.0,100.0,100.0],["2012-05",98.28,100.84,102.6],["2012-06",99.08,101.86,102.81],["2012-07",100.29,101.56,101.27],["2012-08",100.46,102.3,101.83],["2012-09",100.4,101.17,100.77],["2012-10",100.52,100.4,99.88],["2012-11",100.52,100.76,100.24],["2012-12",100.46,100.76,100.3],["2013-01",100.4,100.65,100.25],["2013-02",100.69,101.89,101.19],["2013-03",100.86,101.64,100.77],["2013-04",100.74,103.45,102.69],["2013-05",100.74,104.92,104.15],["2013-06",100.7,105.66,104.93],["2013-07",101.55,106.46,104.84],["2013-08",103.56,109.29,105.53],["2013-09",108.69,110.2,101.39],["2013-10",109.04,108.46,99.47],["2013-11",112.8,108.65,96.32],["2013-12",108.28,109.22,100.87],["2014-01",108.11,109.0,100.82],["2014-02",107.88,108.56,100.63],["2014-03",107.88,108.94,100.98],["2014-04",107.88,112.7,104.47],["2014-05",109.2,112.1,102.66],["2014-06",109.43,113.42,103.65],["2014-07",109.43,112.96,103.23],["2014-08",108.8,113.94,104.72],["2014-09",109.2,112.14,102.69],["2014-10",110.05,113.94,103.53],["2014-11",109.93,113.24,103.01],["2014-12",109.93,111.61,101.53],["2015-01",109.36,111.17,101.66],["2015-02",109.3,109.99,100.63],["2015-03",109.3,109.4,100.09],["2015-04",109.35,109.4,100.05],["2015-05",109.95,110.96,100.92],["2015-06",109.35,113.74,104.01],["2015-07",109.35,114.9,105.08],["2015-08",110.33,114.98,104.21],["2015-09",110.33,114.82,104.07],["2015-10",110.33,113.73,103.08],["2015-11",110.33,113.65,103.01],["2015-12",110.33,115.03,104.26],["2016-01",110.33,117.3,106.32],["2016-02",110.33,117.15,106.18],["2016-03",110.33,117.34,106.35],["2016-04",111.66,120.1,107.56],["2016-05",112.41,119.73,106.51],["2016-06",112.41,120.02,106.77],["2016-07",109.49,121.27,110.76],["2016-08",104.63,119.19,113.92],["2016-09",104.16,121.46,116.61],["2016-10",103.6,119.69,115.53],["2016-11",104.73,119.87,114.46],["2016-12",104.79,116.9,111.56],["2017-01",104.19,116.33,111.65],["2017-02",104.03,116.66,112.14],["2017-03",103.7,116.16,112.02],["2017-04",104.0,116.14,111.67],["2017-05",103.94,116.71,112.29],["2017-06",103.83,116.69,112.39],["2017-07",104.0,119.08,114.5],["2017-08",103.69,118.9,114.67],["2017-09",102.26,118.79,116.16],["2017-10",101.51,118.05,116.29],["2017-11",102.23,118.69,116.1],["2017-12",106.58,119.91,112.51],["2018-01",105.88,119.91,113.25],["2018-02",110.84,120.42,108.64],["2018-03",114.06,120.36,105.52],["2018-04",113.53,120.88,106.47],["2018-05",112.88,119.54,105.9],["2018-06",114.03,120.4,105.59],["2018-07",114.03,121.04,106.15],["2018-08",114.0,120.77,105.94],["2018-09",108.68,121.66,111.94],["2018-10",103.03,120.26,116.72],["2018-11",104.78,120.38,114.89],["2018-12",105.94,120.3,113.55],["2019-01",107.14,121.27,113.19],["2019-02",106.29,120.67,113.53],["2019-03",107.48,121.0,112.58],["2019-04",108.02,119.43,110.56],["2019-05",108.82,117.6,108.07],["2019-06",109.93,116.57,106.04],["2019-07",112.29,116.24,103.52],["2019-08",109.34,116.52,106.57],["2019-09",105.55,117.51,111.33],["2019-10",103.32,116.65,112.9],["2019-11",104.81,117.95,112.54],["2019-12",104.45,117.0,112.02],["2020-01",104.98,116.19,110.68],["2020-02",105.37,116.13,110.21],["2020-03",105.81,115.12,108.8],["2020-04",105.88,115.26,108.86],["2020-05",105.15,116.55,110.84],["2020-06",106.93,116.03,108.51],["2020-07",108.7,116.71,107.37],["2020-08",109.53,116.98,106.8],["2020-09",107.58,117.99,109.68],["2020-10",101.32,116.55,115.03],["2020-11",100.1,117.57,117.45],["2020-12",102.19,118.29,115.75],["2021-01",101.52,118.58,116.8],["2021-02",101.26,117.2,115.74],["2021-03",101.73,117.35,115.35],["2021-04",96.67,117.41,121.45],["2021-05",95.3,117.64,123.44],["2021-06",93.34,113.93,122.06],["2021-07",95.84,113.58,118.51],["2021-08",99.55,115.41,115.93],["2021-09",99.32,115.22,116.01],["2021-10",96.39,115.37,119.69],["2021-11",94.67,115.32,121.81],["2021-12",96.56,116.36,120.51],["2022-01",97.91,117.07,119.57],["2022-02",98.77,116.74,118.19],["2022-03",99.38,116.63,117.36],["2022-04",98.97,117.31,118.53],["2022-05",98.76,118.34,119.83],["2022-06",99.08,120.36,121.48],["2022-07",99.98,121.1,121.12],["2022-08",99.13,122.11,123.18],["2022-09",96.77,122.22,126.3],["2022-10",97.71,122.03,124.89],["2022-11",98.92,121.95,123.28],["2022-12",98.7,120.67,122.26],["2023-01",97.46,120.9,124.05],["2023-02",96.37,120.81,125.36],["2023-03",96.38,122.05,126.63],["2023-04",96.0,121.99,127.07],["2023-05",95.35,122.42,128.39],["2023-06",95.2,122.48,128.66],["2023-07",96.81,123.8,127.88],["2023-08",97.84,123.98,126.72],["2023-09",99.67,123.3,123.71],["2023-10",100.37,123.51,123.05],["2023-11",100.76,123.51,122.58],["2023-12",99.24,123.49,124.44],["2024-01",98.26,123.61,125.8],["2024-02",97.5,124.11,127.29],["2024-03",96.14,123.65,128.61],["2024-04",97.23,123.4,126.92],["2024-05",98.33,124.21,126.32],["2024-06",98.8,124.72,126.23],["2024-07",98.73,124.87,126.48],["2024-08",99.23,125.15,126.12],["2024-09",99.0,125.01,126.27],["2024-10",99.42,125.21,125.94],["2024-11",98.94,125.11,126.45],["2024-12",99.43,125.32,126.04],["2025-01",99.74,126.45,126.78],["2025-02",99.96,126.12,126.17],["2025-03",99.5,126.37,127.01],["2025-04",98.99,127.54,128.84],["2025-05",99.75,126.86,127.18],["2025-06",98.71,126.49,128.14],["2025-07",100.3,127.34,126.96],["2025-08",100.93,127.75,126.57],["2025-09",101.09,127.29,125.92],["2025-10",101.09,127.25,125.88],["2025-11",101.58,127.5,125.52],["2025-12",102.75,127.48,124.07],["2026-01",103.35,128.49,124.33],["2026-02",104.36,128.26,122.9],["2026-03",105.28,128.74,122.28],["2026-04",105.22,129.86,123.42]];
+const PAD = {l:44, r:108, t:18, b:30}, W = 760, H = 300;
+
+const tb = document.getElementById('tb');
+const frag = document.createDocumentFragment();
+for (let i = DATA.length - 1; i >= 0; i--) {
+  const tr = document.createElement('tr');
+  DATA[i].forEach((v, j) => {
+    const td = document.createElement('td');
+    td.textContent = j === 0 ? v : v.toFixed(1);
+    tr.appendChild(td);
+  });
+  frag.appendChild(tr);
+}
+tb.appendChild(frag);
+
+function wire(wrapId, tipId, cols) {
+  const wrap = document.getElementById(wrapId);
+  const svg = wrap.querySelector('svg');
+  const tip = document.getElementById(tipId);
+  const cross = svg.querySelector('.cross');
+  const iw = W - PAD.l - PAD.r;
+
+  function at(ev) {
+    const r = svg.getBoundingClientRect();
+    const px = ((ev.clientX - r.left) / r.width) * W;
+    let i = Math.round(((px - PAD.l) / iw) * (DATA.length - 1));
+    i = Math.max(0, Math.min(DATA.length - 1, i));
+    const x = PAD.l + iw * i / (DATA.length - 1);
+
+    cross.setAttribute('x1', x); cross.setAttribute('x2', x);
+    cross.style.opacity = '.45';
+
+    tip.textContent = '';
+    const m = document.createElement('div');
+    m.className = 'm'; m.textContent = DATA[i][0];
+    tip.appendChild(m);
+    cols.forEach(c => {
+      const row = document.createElement('div'); row.className = 'row';
+      const k = document.createElement('span');
+      k.className = 'k'; k.style.background = `var(${c.var})`;
+      const b = document.createElement('b'); b.textContent = DATA[i][c.idx].toFixed(1);
+      const n = document.createTextNode(' ' + c.label);
+      row.append(k, b, n); tip.appendChild(row);
+    });
+
+    const left = (x / W) * r.width;
+    tip.style.left = Math.max(70, Math.min(r.width - 70, left)) + 'px';
+    tip.style.top = '52px';
+    tip.style.opacity = '1';
+  }
+
+  svg.addEventListener('pointermove', at);
+  svg.addEventListener('pointerdown', at);
+  svg.addEventListener('pointerleave', () => {
+    tip.style.opacity = '0'; cross.style.opacity = '0';
+  });
+}
+
+wire('w1', 't1', [{idx:1, label:'Inputs', var:'--c-input'},
+                  {idx:2, label:'Finished', var:'--c-output'}]);
+wire('w2', 't2', [{idx:3, label:'Spread', var:'--c-output'}]);
+</script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+year,series,label,stage,avg_index
+2012,hides_raw,Hides (raw),input,102.8
+2012,skins_raw,Skins (raw),input,96.0
+2012,tanned_leather,Tanned leather,intermediate,113.0
+2012,footwear,Footwear,output,104.3
+2012,leather_shoes,Leather shoes,output,103.3
+2013,hides_raw,Hides (raw),input,107.0
+2013,skins_raw,Skins (raw),input,99.7
+2013,tanned_leather,Tanned leather,intermediate,118.2
+2013,footwear,Footwear,output,108.9
+2013,leather_shoes,Leather shoes,output,108.8
+2014,hides_raw,Hides (raw),input,108.5
+2014,skins_raw,Skins (raw),input,109.4
+2014,tanned_leather,Tanned leather,intermediate,129.8
+2014,footwear,Footwear,output,114.9
+2014,leather_shoes,Leather shoes,output,115.2
+2015,hides_raw,Hides (raw),input,108.5
+2015,skins_raw,Skins (raw),input,111.3
+2015,tanned_leather,Tanned leather,intermediate,127.7
+2015,footwear,Footwear,output,116.1
+2015,leather_shoes,Leather shoes,output,115.4
+2016,hides_raw,Hides (raw),input,103.7
+2016,skins_raw,Skins (raw),input,114.0
+2016,tanned_leather,Tanned leather,intermediate,121.4
+2016,footwear,Footwear,output,121.6
+2016,leather_shoes,Leather shoes,output,123.9
+2017,hides_raw,Hides (raw),input,96.1
+2017,skins_raw,Skins (raw),input,113.5
+2017,tanned_leather,Tanned leather,intermediate,113.2
+2017,footwear,Footwear,output,120.7
+2017,leather_shoes,Leather shoes,output,121.4
+2018,hides_raw,Hides (raw),input,112.2
+2018,skins_raw,Skins (raw),input,107.1
+2018,tanned_leather,Tanned leather,intermediate,111.8
+2018,footwear,Footwear,output,123.3
+2018,leather_shoes,Leather shoes,output,124.7
+2019,hides_raw,Hides (raw),input,112.6
+2019,skins_raw,Skins (raw),input,99.9
+2019,tanned_leather,Tanned leather,intermediate,106.2
+2019,footwear,Footwear,output,121.4
+2019,leather_shoes,Leather shoes,output,121.7
+2020,hides_raw,Hides (raw),input,110.1
+2020,skins_raw,Skins (raw),input,98.6
+2020,tanned_leather,Tanned leather,intermediate,102.6
+2020,footwear,Footwear,output,120.1
+2020,leather_shoes,Leather shoes,output,119.6
+2021,hides_raw,Hides (raw),input,101.8
+2021,skins_raw,Skins (raw),input,91.9
+2021,tanned_leather,Tanned leather,intermediate,101.2
+2021,footwear,Footwear,output,120.9
+2021,leather_shoes,Leather shoes,output,117.1
+2022,hides_raw,Hides (raw),input,103.6
+2022,skins_raw,Skins (raw),input,91.8
+2022,tanned_leather,Tanned leather,intermediate,106.0
+2022,footwear,Footwear,output,124.3
+2022,leather_shoes,Leather shoes,output,121.1
+2023,hides_raw,Hides (raw),input,101.6
+2023,skins_raw,Skins (raw),input,92.1
+2023,tanned_leather,Tanned leather,intermediate,107.3
+2023,footwear,Footwear,output,127.0
+2023,leather_shoes,Leather shoes,output,124.8
+2024,hides_raw,Hides (raw),input,102.5
+2024,skins_raw,Skins (raw),input,92.6
+2024,tanned_leather,Tanned leather,intermediate,105.2
+2024,footwear,Footwear,output,129.1
+2024,leather_shoes,Leather shoes,output,126.4
+2025,hides_raw,Hides (raw),input,104.9
+2025,skins_raw,Skins (raw),input,94.1
+2025,tanned_leather,Tanned leather,intermediate,110.0
+2025,footwear,Footwear,output,131.5
+2025,leather_shoes,Leather shoes,output,129.1
+2026,hides_raw,Hides (raw),input,108.7
+2026,skins_raw,Skins (raw),input,98.8
+2026,tanned_leather,Tanned leather,intermediate,111.0
+2026,footwear,Footwear,output,133.4
+2026,leather_shoes,Leather shoes,output,131.0

@@ -144,6 +144,8 @@ h1{
   white-space:nowrap;
 }
 .title{font:600 1.015rem/1.4 var(--sans); color:var(--ink); margin:0}
+.title a.work{color:var(--ink); border-bottom:1px solid var(--accent-line)}
+.title a.work:hover{color:var(--accent); border-bottom-color:currentColor}
 .org{font:400 .875rem/1.5 var(--sans); color:var(--muted); margin:.05rem 0 .6rem}
 .entry ul{margin:0; padding:0; list-style:none}
 .entry li{position:relative; padding-left:1.05rem; margin-bottom:.42rem; max-width:44em}
@@ -188,22 +190,24 @@ h1{
     --accent:#1f3864; --accent-line:#9aa7bd; --shadow:none;
     --gutter:6.6rem; --col-gap:1.3rem;
   }
-  body{font-size:9.3pt; line-height:1.36; padding:0; background:#fff}
+  body{font-size:8.9pt; line-height:1.32; padding:0; background:#fff}
   .sheet{max-width:none; border:0; box-shadow:none; padding:0}
   .no-print{display:none}
-  .masthead{padding-bottom:.8rem; margin-bottom:1.15rem}
+  .masthead{padding-bottom:.7rem; margin-bottom:.95rem}
   h1{font-size:19.5pt}
   .tagline{font-size:11pt; margin-bottom:.6rem}
-  .sect{margin-top:1.05rem; break-inside:auto}
-  .sect > h2{margin-bottom:.75rem; padding-bottom:.35rem; break-after:avoid}
+  .sect{margin-top:.85rem; break-inside:auto}
+  .sect > h2{margin-bottom:.6rem; padding-bottom:.3rem; break-after:avoid}
   .lede{max-width:none}
-  .entry{margin-bottom:.72rem}
+  .entry{margin-bottom:.58rem}
   .title{font-size:10.2pt}
   .org{margin:.02rem 0 .28rem}
-  .entry li{margin-bottom:.16rem}
+  .entry li{margin-bottom:.12rem}
   .skills{gap:.42rem}
-  .colophon{margin-top:1.15rem; padding-top:.6rem}
+  .colophon{margin-top:.7rem; padding-top:.45rem; break-before:avoid}
   a{color:var(--ink); border-bottom:0}
+  .title a.work::after{content:" \2014 samuel13-cell.github.io/retail-margins";
+    font:400 8.6pt var(--mono); color:var(--muted)}
 }
 @media (prefers-reduced-motion:reduce){
   *{animation:none !important; transition:none !important}
@@ -301,6 +305,21 @@ h1{
         <ul>
           <li>Built end-to-end ETL pipelines to rebuild a data warehouse for a major US healthcare client, minimising data redundancy.</li>
           <li>Supervised a team of three analysts, managing knowledge transfer and SLA adherence.</li>
+        </ul>
+      </div>
+    </article>
+  </section>
+
+  <section class="sect">
+    <h2>Selected work</h2>
+    <article class="entry">
+      <div class="when">2026</div>
+      <div>
+        <h3 class="title"><a class="work" href="retail-margins/">Where the margin went</a></h3>
+        <p class="org">Analysis &middot; India&rsquo;s Wholesale Price Index, 2012&ndash;2026</p>
+        <ul>
+          <li>Tracks one value chain &mdash; raw hides to tanned leather to finished footwear &mdash; to show that input prices ended the period near where they started while finished-goods prices rose about 30%.</li>
+          <li>Python and DuckDB over the monthly WPI release, rendered to a static page with no chart library; the fetch step discovers the current release rather than hard-coding it.</li>
         </ul>
       </div>
     </article>

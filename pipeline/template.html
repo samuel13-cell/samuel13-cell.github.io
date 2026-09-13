@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Where the margin went — Indian leather goods</title>
+<meta name="description" content="Fourteen years of India's Wholesale Price Index for the leather value chain: raw hides, tanned leather and finished footwear, and what the gap between them says about margin.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231f3864'/><text x='50' y='73' font-size='58' font-family='Georgia,serif' fill='%23fff' text-anchor='middle'>S</text></svg>">
+<style>
+/* ===== fonts (self-hosted, latin subset, OFL) ===================== */
+@font-face{font-family:'IBM Plex Sans';font-style:normal;font-weight:100 700;font-stretch:100%;font-display:swap;
+  src:url(../fonts/ibm-plex-sans-var.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:400;font-display:swap;
+  src:url(../fonts/ibm-plex-mono-400-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:500;font-display:swap;
+  src:url(../fonts/ibm-plex-mono-500-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Newsreader';font-style:normal;font-weight:500 700;font-display:swap;
+  src:url(../fonts/newsreader-600-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Newsreader';font-style:italic;font-weight:300 500;font-display:swap;
+  src:url(../fonts/newsreader-400-italic.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+
+/* ===== tokens ===================================================== */
+:root{
+  --bg:#f3f3f1;
+  --sheet:#fdfdfc;
+  --ink:#191b20;
+  --ink-soft:#3d424a;
+  --muted:#6d737c;
+  --line:#e1e1dd;
+  --hair:#ebebe7;
+  --accent:#1f3864;
+  --accent-line:#b7c2d6;
+  --shadow:0 1px 2px rgba(18,20,26,.05), 0 14px 38px -18px rgba(18,20,26,.22);
+
+  --serif:"Newsreader",Iowan Old Style,Georgia,"Times New Roman",serif;
+  --sans:"IBM Plex Sans",-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+
+  --gutter:8.25rem;
+  --col-gap:1.85rem;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme=light]){
+    --bg:#0e1014;
+    --sheet:#15181e;
+    --ink:#e0e3e7;
+    --ink-soft:#c2c7ce;
+    --muted:#858c97;
+    --line:#252932;
+    --hair:#1e222a;
+    --accent:#9db8e8;
+    --accent-line:#3a4a67;
+    --shadow:none;
+  }
+}
+:root[data-theme=dark]{
+  --bg:#0e1014;
+  --sheet:#15181e;
+  --ink:#e0e3e7;
+  --ink-soft:#c2c7ce;
+  --muted:#858c97;
+  --line:#252932;
+  --hair:#1e222a;
+  --accent:#9db8e8;
+  --accent-line:#3a4a67;
+  --shadow:none;
+}
+
+:root{
+  --c-input:@@input_l@@; --c-output:@@output_l@@;
+  --grid:#e6e6e2; --axis-ink:#8a8f98;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme=light]){
+    --c-input:@@input_d@@; --c-output:@@output_d@@;
+    --grid:#242830; --axis-ink:#7d838d;
+  }
+}
+:root[data-theme=dark]{
+  --c-input:@@input_d@@; --c-output:@@output_d@@;
+  --grid:#242830; --axis-ink:#7d838d;
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0; background:var(--bg); color:var(--ink-soft);
+  font:400 15.5px/1.62 var(--sans); -webkit-font-smoothing:antialiased;
+  padding:clamp(0rem,4vw,3.25rem) clamp(1rem,4vw,2rem)}
+.sheet{max-width:60rem; margin:0 auto; background:var(--sheet);
+  border:1px solid var(--line); box-shadow:var(--shadow);
+  padding:clamp(2rem,5.5vw,4rem) clamp(1.25rem,5vw,3.5rem) clamp(2.5rem,5vw,3.5rem)}
+a{color:var(--accent); text-decoration:none; border-bottom:1px solid var(--accent-line)}
+a:hover{border-bottom-color:currentColor}
+a:focus-visible{outline:2px solid var(--accent); outline-offset:3px; border-radius:2px}
+strong{font-weight:600; color:var(--ink)}
+
+.back{font:400 .72rem/1 var(--mono); letter-spacing:.06em; text-transform:uppercase;
+  color:var(--muted); border:0; display:inline-block; margin-bottom:1.9rem}
+.back:hover{color:var(--accent); border:0}
+h1{font:600 clamp(1.8rem,5vw,2.6rem)/1.1 var(--serif); color:var(--ink);
+  letter-spacing:-.012em; margin:0 0 .5rem; text-wrap:balance}
+.standfirst{font:400 italic clamp(1rem,2.4vw,1.16rem)/1.5 var(--serif);
+  color:var(--muted); margin:0 0 2rem; max-width:38em}
+
+h2{font:500 .69rem/1 var(--mono); text-transform:uppercase; letter-spacing:.19em;
+  color:var(--muted); margin:2.9rem 0 1.3rem; padding-bottom:.7rem;
+  border-bottom:1px solid var(--hair)}
+p{max-width:40em}
+
+/* ---- headline figures ---- */
+.kpis{display:grid; grid-template-columns:repeat(auto-fit,minmax(12rem,1fr));
+  gap:1.6rem 2.4rem; margin:0 0 .5rem; padding:0; border:0}
+.kpi dt{font:500 .68rem/1.4 var(--mono); text-transform:uppercase; letter-spacing:.13em;
+  color:var(--muted); margin-bottom:.3rem}
+.kpi dd{margin:0}
+.kpi .fig{font:600 2.1rem/1 var(--sans); color:var(--ink);
+  font-variant-numeric:tabular-nums; letter-spacing:-.02em}
+.kpi .note{display:block; font-size:.83rem; color:var(--muted); margin-top:.3rem; max-width:22em}
+.fig.up{color:var(--c-output)}
+.fig.flat{color:var(--c-input)}
+
+/* ---- charts ---- */
+figure{margin:0 0 .4rem}
+figcaption{font:400 .83rem/1.5 var(--sans); color:var(--muted); margin:.7rem 0 0; max-width:44em}
+.chartwrap{position:relative; overflow-x:auto}
+svg{display:block; width:100%; height:auto; min-width:34rem; touch-action:pan-y}
+.grid{stroke:var(--grid); stroke-width:1}
+.ax{fill:var(--axis-ink); font:400 10.5px var(--mono); font-variant-numeric:tabular-nums}
+.ln{fill:none; stroke-width:2; stroke-linejoin:round; stroke-linecap:round}
+.dot{stroke:var(--sheet); stroke-width:2}
+.dl{font:500 11.5px var(--sans)}
+.cross{stroke:var(--axis-ink); stroke-width:1}
+.legend{display:flex; flex-wrap:wrap; gap:.4rem 1.4rem; margin:0 0 .8rem;
+  font:400 .8rem var(--sans); color:var(--ink-soft); list-style:none; padding:0}
+.legend li{display:flex; align-items:center; gap:.45rem}
+.swatch{width:14px; height:2px; border-radius:1px; flex:none}
+.tip{position:absolute; pointer-events:none; opacity:0; transform:translate(-50%,-50%);
+  background:var(--sheet); border:1px solid var(--line); border-radius:3px;
+  padding:.5rem .6rem; font:400 .78rem/1.45 var(--sans); white-space:nowrap;
+  box-shadow:0 4px 16px -6px rgba(0,0,0,.3); z-index:2}
+.tip b{font:600 .88rem var(--sans); color:var(--ink); font-variant-numeric:tabular-nums}
+.tip .row{display:flex; align-items:center; gap:.4rem; margin-top:.25rem}
+.tip .k{width:11px; height:2px; border-radius:1px; flex:none}
+.tip .m{font:500 .7rem var(--mono); color:var(--muted); letter-spacing:.05em}
+
+/* ---- table ---- */
+details{margin-top:1.2rem; border-top:1px solid var(--hair); padding-top:.9rem}
+summary{font:500 .69rem/1 var(--mono); text-transform:uppercase; letter-spacing:.13em;
+  color:var(--muted); cursor:pointer}
+summary:hover{color:var(--accent)}
+.tablewrap{overflow-x:auto; margin-top:1rem; max-height:22rem; overflow-y:auto}
+table{border-collapse:collapse; font:400 .82rem var(--sans);
+  font-variant-numeric:tabular-nums; width:100%}
+th,td{text-align:right; padding:.32rem .8rem; border-bottom:1px solid var(--hair)}
+th:first-child,td:first-child{text-align:left}
+thead th{position:sticky; top:0; background:var(--sheet); font:500 .68rem var(--mono);
+  text-transform:uppercase; letter-spacing:.09em; color:var(--muted)}
+
+/* ---- provenance ---- */
+.prov{margin-top:1rem; font:400 .78rem/1.6 var(--mono); color:var(--muted);
+  word-break:break-all}
+.prov a{border-bottom-color:var(--accent-line)}
+.colophon{margin-top:3rem; padding-top:1.3rem; border-top:1px solid var(--hair);
+  display:flex; flex-wrap:wrap; gap:.5rem 1.5rem; justify-content:space-between;
+  font:400 .725rem/1.5 var(--mono); letter-spacing:.015em; color:var(--muted)}
+
+@media (max-width:34rem){ .kpi .fig{font-size:1.8rem} }
+@media (prefers-reduced-motion:reduce){ *{transition:none!important} }
+</style>
+</head>
+<body>
+<main class="sheet">
+
+<a class="back" href="../">← Samuel Rajesh Vanambattina</a>
+
+<h1>Where the margin went</h1>
+<p class="standfirst">Fourteen years of India&rsquo;s Wholesale Price Index for one value chain
+&mdash; raw hides, tanned leather, finished footwear &mdash; and what the gap between what a
+maker pays and what a maker charges says about margin.</p>
+
+<h2>The finding</h2>
+<dl class="kpis">
+  <div class="kpi"><dt>Input prices</dt><dd>
+    <span class="fig flat">@@input_pct@@%</span>
+    <span class="note">Raw hides and skins, @@first@@ to @@last@@</span></dd></div>
+  <div class="kpi"><dt>Finished goods</dt><dd>
+    <span class="fig up">@@output_pct@@%</span>
+    <span class="note">Footwear and leather shoes, same period</span></dd></div>
+  <div class="kpi"><dt>Spread</dt><dd>
+    <span class="fig">@@spread_end@@</span>
+    <span class="note">Finished prices relative to inputs, @@spread_pts@@ points against a
+    base of 100</span></dd></div>
+</dl>
+
+<p>Input prices end the period barely five percent above where they started &mdash; but they did
+not get there quietly. Raw hides and skins swung through a range of roughly twenty index points
+along the way, with no sustained direction. Finished-goods prices, by contrast, rose about thirty
+percent and did so steadily. The gap between those two lines is the room a manufacturer or
+retailer has to work in.</p>
+
+<p>That runs against the usual assumption that producers are squeezed by rising raw material
+costs. In this chain, over this period, input volatility was the problem to manage &mdash; not
+input inflation.</p>
+
+<h2>Inputs against finished goods</h2>
+<figure>
+  <ul class="legend">
+    <li><span class="swatch" style="background:var(--c-input)"></span>Inputs &mdash; raw hides &amp; skins</li>
+    <li><span class="swatch" style="background:var(--c-output)"></span>Finished &mdash; footwear &amp; leather shoes</li>
+  </ul>
+  <div class="chartwrap" id="w1">
+    <svg viewBox="0 0 760 300" role="img" aria-label="Two lines indexed to 100 in April 2012. Input prices stay near 100 throughout. Finished goods prices rise steadily to about 130.">
+    @@chain@@
+    </svg>
+    <div class="tip" id="t1"></div>
+  </div>
+  <figcaption>Both stages rebased to 100 at @@first@@, so they share one axis. Weighted
+  averages of the underlying WPI commodity series. Note the difference in character as well as
+  level: the input line is the volatile one.</figcaption>
+</figure>
+
+<h2>The spread itself</h2>
+<figure>
+  <div class="chartwrap" id="w2">
+    <svg viewBox="0 0 760 300" role="img" aria-label="A single line showing finished-goods prices relative to input prices, rising from 100 in 2012 to about 123, with step changes around 2016 and 2021.">
+    @@spread_chart@@
+    </svg>
+    <div class="tip" id="t2"></div>
+  </div>
+  <figcaption>Finished-goods index divided by input index, both rebased. Above 100 means
+  finished prices have outrun input costs since @@first@@.</figcaption>
+</figure>
+
+<p>The rise is not smooth. The spread sat flat near 100 until 2015, stepped up sharply through
+2016&ndash;17, held, then stepped up again through 2021&ndash;23. Those are the two periods worth
+asking about &mdash; and the most recent readings have started to fall back, which is the part
+that matters for anyone buying leather today.</p>
+
+<details>
+  <summary>The numbers</summary>
+  <div class="tablewrap">
+    <table>
+      <thead><tr><th scope="col">Month</th><th scope="col">Inputs</th>
+        <th scope="col">Finished</th><th scope="col">Spread</th></tr></thead>
+      <tbody id="tb"></tbody>
+    </table>
+  </div>
+</details>
+
+<h2>Method</h2>
+<p>The Office of the Economic Adviser publishes the Wholesale Price Index monthly, with each
+commodity carrying a fixed weight in the basket. Five series make up this chain: hides and
+skins on the input side, tanned leather in the middle, and footwear and leather shoes as
+finished goods. Input and output stages are weight-averaged into one series each, then both
+are rebased to 100 at @@first@@ so a single axis carries both.</p>
+<p>The spread is simply one rebased index divided by the other. It is a ratio of prices, not a
+measured margin: it says how far selling prices have moved relative to buying prices, which is
+the part of margin that prices can explain.</p>
+
+<h2>What this does not show</h2>
+<p>These are national indices. They describe an industry, not a business. They exclude labour,
+rent, energy and finance, which are real costs and move differently. A single firm negotiating
+with a single tannery may see none of this. And the 2011-12 base period is now old enough that
+the basket's weights reflect an economy that has since changed &mdash; the Office of the Economic
+Adviser has published a 2022-23 base for exactly that reason, which this page does not yet use
+because it only reaches back to 2023.</p>
+<p>Direction is the signal here. Level is approximate.</p>
+
+<div class="prov">
+  Source: Office of the Economic Adviser, Government of India &mdash;
+  <a href="@@src_url@@">@@src_url@@</a><br>
+  @@months@@ monthly observations, @@first@@ to @@last@@ &middot; sha256 @@sha@@&hellip; &middot;
+  page built @@built@@
+</div>
+
+<footer class="colophon">
+  <span>Samuel Rajesh Vanambattina</span>
+  <span><a href="mailto:samuelrajesh13@gmail.com">samuelrajesh13@gmail.com</a></span>
+</footer>
+
+</main>
+
+<script>
+const DATA = @@series_js@@;
+const PAD = {l:44, r:108, t:18, b:30}, W = 760, H = 300;
+
+const tb = document.getElementById('tb');
+const frag = document.createDocumentFragment();
+for (let i = DATA.length - 1; i >= 0; i--) {
+  const tr = document.createElement('tr');
+  DATA[i].forEach((v, j) => {
+    const td = document.createElement('td');
+    td.textContent = j === 0 ? v : v.toFixed(1);
+    tr.appendChild(td);
+  });
+  frag.appendChild(tr);
+}
+tb.appendChild(frag);
+
+function wire(wrapId, tipId, cols) {
+  const wrap = document.getElementById(wrapId);
+  const svg = wrap.querySelector('svg');
+  const tip = document.getElementById(tipId);
+  const cross = svg.querySelector('.cross');
+  const iw = W - PAD.l - PAD.r;
+
+  function at(ev) {
+    const r = svg.getBoundingClientRect();
+    const px = ((ev.clientX - r.left) / r.width) * W;
+    let i = Math.round(((px - PAD.l) / iw) * (DATA.length - 1));
+    i = Math.max(0, Math.min(DATA.length - 1, i));
+    const x = PAD.l + iw * i / (DATA.length - 1);
+
+    cross.setAttribute('x1', x); cross.setAttribute('x2', x);
+    cross.style.opacity = '.45';
+
+    tip.textContent = '';
+    const m = document.createElement('div');
+    m.className = 'm'; m.textContent = DATA[i][0];
+    tip.appendChild(m);
+    cols.forEach(c => {
+      const row = document.createElement('div'); row.className = 'row';
+      const k = document.createElement('span');
+      k.className = 'k'; k.style.background = `var(${c.var})`;
+      const b = document.createElement('b'); b.textContent = DATA[i][c.idx].toFixed(1);
+      const n = document.createTextNode(' ' + c.label);
+      row.append(k, b, n); tip.appendChild(row);
+    });
+
+    const left = (x / W) * r.width;
+    tip.style.left = Math.max(70, Math.min(r.width - 70, left)) + 'px';
+    tip.style.top = '52px';
+    tip.style.opacity = '1';
+  }
+
+  svg.addEventListener('pointermove', at);
+  svg.addEventListener('pointerdown', at);
+  svg.addEventListener('pointerleave', () => {
+    tip.style.opacity = '0'; cross.style.opacity = '0';
+  });
+}
+
+wire('w1', 't1', [{idx:1, label:'Inputs', var:'--c-input'},
+                  {idx:2, label:'Finished', var:'--c-output'}]);
+wire('w2', 't2', [{idx:3, label:'Spread', var:'--c-output'}]);
+</script>
+</body>
+</html>

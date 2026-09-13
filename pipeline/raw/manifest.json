@@ -1,0 +1,17 @@
+{
+  "retrieved_utc": "2026-09-13T01:05:09+00:00",
+  "files": {
+    "wpi_1112": {
+      "url": "https://eaindustry.nic.in/indx_download_1112/monthly_index_202606.xls",
+      "saved_as": "wpi_1112.xls",
+      "bytes": 1339904,
+      "sha256": "3265d404b82f5911660797d270a4f813e33b3aa48184dae234478b044bc91d59"
+    },
+    "wpi_2223": {
+      "url": "https://eaindustry.nic.in/indx_download_2223/wpi_monthly_index_202608.xlsx",
+      "saved_as": "wpi_2223.xlsx",
+      "bytes": 314265,
+      "sha256": "377d3a386d6039b8dd4e0b2322356727eff7b7692f662012d460627773a4314d"
+    }
+  }
+}
