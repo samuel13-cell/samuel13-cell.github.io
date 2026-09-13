@@ -1,0 +1,99 @@
+{
+  "country": "India",
+  "local_max": 5,
+  "slots": 5420,
+  "titles": 1383,
+  "weeks": 271,
+  "first_week": "2021-07-04",
+  "last_week": "2026-09-06",
+  "bands": {
+    "labels": [
+      "India only",
+      "2 to 5",
+      "6 to 20",
+      "21 to 50",
+      "51 or more"
+    ],
+    "pct": [
+      1.9,
+      5.0,
+      34.6,
+      13.7,
+      44.7
+    ],
+    "slots": [
+      102,
+      272,
+      1878,
+      744,
+      2424
+    ]
+  },
+  "yearly": {
+    "years": [
+      2021,
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "pct_local": [
+      9.6,
+      8.6,
+      10.0,
+      5.2,
+      4.5,
+      3.9
+    ]
+  },
+  "ranking": {
+    "countries": [
+      "Japan",
+      "South Korea",
+      "Thailand",
+      "Indonesia",
+      "Taiwan",
+      "Malaysia",
+      "Philippines",
+      "Vietnam",
+      "Turkey",
+      "Nigeria",
+      "Poland",
+      "Italy"
+    ],
+    "pct_local": [
+      41.8,
+      39.3,
+      24.9,
+      24.8,
+      24.4,
+      19.3,
+      17.0,
+      16.0,
+      14.2,
+      13.1,
+      12.1,
+      12.0
+    ]
+  },
+  "india_rank": 24,
+  "india_pct": 6.9,
+  "of_countries": 93,
+  "split": {
+    "Films": {
+      "pct_local": 11.5,
+      "avg_reach": 34.6
+    },
+    "TV": {
+      "pct_local": 2.3,
+      "avg_reach": 59.3
+    }
+  },
+  "manifest": {
+    "retrieved_utc": "2026-09-13T04:48:48+00:00",
+    "url": "https://www.netflix.com/tudum/top10/data/all-weeks-countries.tsv",
+    "bytes": 32093594,
+    "sha256": "2c396d446f6f4aff4d300999bdd5e439b2a2bd73465899e5ea6c65b053d8b535"
+  }
+}

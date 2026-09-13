@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>The Impact Player effect — IPL, 2008–2026</title>
+<title>The Impact Player effect: IPL, 2008&ndash;2026</title>
 <meta name="description" content="Every ball of 1,243 IPL matches. The Impact Player rule arrived in 2023; scoring jumped. This looks at which phase of the innings actually changed, and what that implies.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231f3864'/><text x='50' y='73' font-size='58' font-family='Georgia,serif' fill='%23fff' text-anchor='middle'>S</text></svg>">
 <link rel="stylesheet" href="../assets/site.css">
@@ -67,7 +67,7 @@ thead th{position:sticky; top:0; background:var(--sheet); font:500 .68rem var(--
 
 <h1>The Impact Player effect</h1>
 <p class="standfirst">In 2023 the IPL let each side swap in a substitute mid-match. Scoring
-jumped immediately. The interesting question is not whether it rose &mdash; it is which part of
+jumped immediately. The interesting question is not whether it rose. It is which part of
 the innings moved, because that points at why.</p>
 
 <h2>The finding</h2>
@@ -77,14 +77,14 @@ the innings moved, because that points at why.</p>
     <span class="note">Runs per over, overs 1&ndash;6, before the rule against after</span></dd></div>
   <div class="kpi"><dt>Death overs</dt><dd>
     <span class="fig up">@@death_delta@@</span>
-    <span class="note">Overs 16&ndash;20 &mdash; already the fastest phase, and it moved least</span></dd></div>
+    <span class="note">Overs 16&ndash;20, already the fastest phase, and it moved least</span></dd></div>
   <div class="kpi"><dt>Totals over 200</dt><dd>
     <span class="fig">@@pct200_last@@%</span>
     <span class="note">Share of first innings passing 200 in @@last@@, against @@pct200_2022@@% in 2022</span></dd></div>
 </dl>
 
-<p>If batters had simply got stronger &mdash; better bats, shorter boundaries, the general drift
-of T20 &mdash; the death overs should have risen most. That is where sides already swing hardest,
+<p>If batters had simply got stronger, through better bats, shorter boundaries and the general
+drift of T20, then the death overs should have risen most. That is where sides already swing hardest,
 so extra power shows up there first. Instead the <strong>powerplay</strong> rose most, by
 @@pp_delta@@ runs an over against @@death_delta@@ at the death.</p>
 
@@ -95,9 +95,9 @@ which is exactly what having an extra batter in reserve buys you.</p>
 <h2>Scoring rate by phase</h2>
 <figure>
   <ul class="legend">
-    <li><span class="swatch" style="background:var(--c-input)"></span>Powerplay &mdash; overs 1&ndash;6</li>
-    <li><span class="swatch" style="background:var(--c-middle)"></span>Middle &mdash; overs 7&ndash;15</li>
-    <li><span class="swatch" style="background:var(--c-output)"></span>Death &mdash; overs 16&ndash;20</li>
+    <li><span class="swatch" style="background:var(--c-input)"></span>Powerplay, overs 1&ndash;6</li>
+    <li><span class="swatch" style="background:var(--c-middle)"></span>Middle, overs 7&ndash;15</li>
+    <li><span class="swatch" style="background:var(--c-output)"></span>Death, overs 16&ndash;20</li>
   </ul>
   <div class="chartwrap" id="w1">
     <svg viewBox="0 0 760 300" role="img" aria-label="Runs per over by phase, 2008 to 2026. The death overs are the fastest phase throughout. The powerplay is the slowest until 2023, then rises sharply to nearly meet the death overs by 2026.">
@@ -140,8 +140,8 @@ follow the competition's own structure: the six-over powerplay, the middle overs
 five. Runs per over counts every run conceded, byes and wides included, since those are runs the
 fielding side gave away.</p>
 <p>&ldquo;Before&rdquo; is every season up to 2022 and &ldquo;after&rdquo; is
-@@rule_season@@ onward &mdash; the rule applied from the first match of @@rule_season@@, so the
-split needs no judgement call.</p>
+@@rule_season@@ onward. The rule applied from the first match of @@rule_season@@, so the split
+needs no judgement call.</p>
 
 <h2>What this does not show</h2>
 <p>This is an association in observational data, not a controlled experiment. The rule was not
@@ -150,11 +150,11 @@ arrive, grounds and conditions vary by season. A general rise in T20 batting sta
 and is part of this.</p>
 <p>What the phase breakdown does is narrow the field. A pure power story predicts the death overs
 move most; they moved least. That is evidence for a change in risk-taking rather than in hitting
-ability &mdash; but it remains evidence, not proof, and one competition over four seasons is a
+ability. It remains evidence, not proof, and one competition over four seasons is a
 small sample to hang a causal claim on.</p>
 
 <div class="prov">
-  Source: Cricsheet ball-by-ball data &mdash; <a href="@@src_url@@">@@src_url@@</a><br>
+  Source: Cricsheet ball-by-ball data, <a href="@@src_url@@">@@src_url@@</a><br>
   @@balls@@ deliveries across @@matches@@ matches, @@first@@&ndash;@@last@@ &middot;
   sha256 @@sha@@&hellip; &middot; page built @@built@@
 </div>
@@ -168,7 +168,7 @@ small sample to hang a causal claim on.</p>
 
 <script>
 const ROWS = @@rows_js@@;
-const PAD = {l:44, r:108, t:18, b:30}, W = 760;
+const PAD = {l:0, r:104, t:24, b:30}, W = 760;
 
 const tb = document.getElementById('tb');
 const frag = document.createDocumentFragment();
@@ -221,7 +221,7 @@ const PHASE = [
     });
 
     const left = (x / W) * r.width;
-    tip.style.left = Math.max(78, Math.min(r.width - 78, left)) + 'px';
+    tip.style.left = Math.max(84, Math.min(r.width - 84, left)) + 'px';
     tip.style.top = '58px';
     tip.style.opacity = '1';
   }

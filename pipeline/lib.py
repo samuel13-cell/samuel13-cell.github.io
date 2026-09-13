@@ -4,7 +4,9 @@ No chart library: every page ships plain SVG plus a small hover layer, so
 the pages stay dependency-free and render identically in print.
 """
 W, H = 760, 300
-PAD = {'t': 18, 'r': 108, 'b': 30, 'l': 44}
+# l=0 so the plot's left edge lines up with the text column; the y labels
+# sit inside the plot, just above their gridline.
+PAD = {'t': 24, 'r': 104, 'b': 30, 'l': 0}
 
 MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July',
           'August', 'September', 'October', 'November', 'December']
@@ -33,9 +35,22 @@ def _grid(ys, lo, hi, step, pad=PAD):
         y = ys(v)
         out.append(f'<line class="grid" x1="{pad["l"]}" y1="{y:.1f}" '
                    f'x2="{W - pad["r"]}" y2="{y:.1f}"/>')
-        out.append(f'<text class="ax" x="{pad["l"] - 8}" y="{y + 3.5:.1f}" '
-                   f'text-anchor="end">{v:g}</text>')
+        out.append(f'<text class="ax" x="{pad["l"]}" y="{y - 5:.1f}" '
+                   f'text-anchor="start">{v:g}</text>')
         v += step
+    return out
+
+
+def _x_ticks(labels, xs, every, pad=PAD):
+    """Edge ticks anchor inward so they never overhang the plot."""
+    out = []
+    last = len(labels) - 1
+    for i, lab in enumerate(labels):
+        if not (i % every == 0 or i == last):
+            continue
+        anchor = 'start' if i == 0 else 'end' if i == last else 'middle'
+        out.append(f'<text class="ax" x="{xs(i):.1f}" y="{H - 10}" '
+                   f'text-anchor="{anchor}">{lab}</text>')
     return out
 
 
@@ -44,10 +59,7 @@ def line_chart(labels, series, lo, hi, step=10, every=2, annotate=None):
     xs, ys = scales(len(labels), lo, hi)
     parts = _grid(ys, lo, hi, step)
 
-    for i, lab in enumerate(labels):
-        if i % every == 0 or i == len(labels) - 1:
-            parts.append(f'<text class="ax" x="{xs(i):.1f}" y="{H - 10}" '
-                         f'text-anchor="middle">{lab}</text>')
+    parts += _x_ticks(labels, xs, every)
 
     if annotate:
         ai, text = annotate
@@ -71,7 +83,7 @@ def line_chart(labels, series, lo, hi, step=10, every=2, annotate=None):
 
 def bar_chart(labels, values, lo, hi, step=10, var='--c-input', every=2, mark=None):
     """Single-series columns. mark: index from which bars take the accent hue."""
-    pad = dict(PAD, r=28)
+    pad = dict(PAD, r=24)
     xs, ys = scales(len(labels), lo, hi, pad)
     parts = _grid(ys, lo, hi, step, pad)
 
@@ -79,7 +91,7 @@ def bar_chart(labels, values, lo, hi, step=10, var='--c-input', every=2, mark=No
     bw = min(24, slot - 6)
     base = ys(lo)
 
-    for i, (lab, v) in enumerate(zip(labels, values)):
+    for i, v in enumerate(values):
         x = xs(i) - bw / 2
         top = ys(v)
         hgt = max(0.5, base - top)
@@ -91,8 +103,6 @@ def bar_chart(labels, values, lo, hi, step=10, var='--c-input', every=2, mark=No
             f'V{top + r:.1f} Q{x:.1f},{top:.1f} {x + r:.1f},{top:.1f} '
             f'H{x + bw - r:.1f} Q{x + bw:.1f},{top:.1f} {x + bw:.1f},{top + r:.1f} '
             f'V{base:.1f} Z"/>')
-        if i % every == 0 or i == len(labels) - 1:
-            parts.append(f'<text class="ax" x="{xs(i):.1f}" y="{H - 10}" '
-                         f'text-anchor="middle">{lab}</text>')
 
+    parts += _x_ticks(labels, xs, every, pad)
     return '\n    '.join(parts)

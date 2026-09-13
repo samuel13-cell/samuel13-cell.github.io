@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Where the margin went — Indian leather goods</title>
+<title>Where the margin went: Indian leather goods</title>
 <meta name="description" content="Fourteen years of India's Wholesale Price Index for the leather value chain: raw hides, tanned leather and finished footwear, and what the gap between them says about margin.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231f3864'/><text x='50' y='73' font-size='58' font-family='Georgia,serif' fill='%23fff' text-anchor='middle'>S</text></svg>">
 <link rel="stylesheet" href="../assets/site.css">
@@ -61,9 +61,9 @@ thead th{position:sticky; top:0; background:var(--sheet); font:500 .68rem var(--
 <!--NAV--><!--/NAV-->
 
 <h1>Where the margin went</h1>
-<p class="standfirst">Fourteen years of India&rsquo;s Wholesale Price Index for one value chain
-&mdash; raw hides, tanned leather, finished footwear &mdash; and what the gap between what a
-maker pays and what a maker charges says about margin.</p>
+<p class="standfirst">Fourteen years of India&rsquo;s Wholesale Price Index for one value chain: raw hides,
+tanned leather, finished footwear, and what the gap between what a maker pays and what a maker
+charges says about margin.</p>
 
 <h2>The finding</h2>
 <dl class="kpis">
@@ -79,21 +79,21 @@ maker pays and what a maker charges says about margin.</p>
     base of 100</span></dd></div>
 </dl>
 
-<p>Input prices end the period barely five percent above where they started &mdash; but they did
-not get there quietly. Raw hides and skins swung through a range of roughly twenty index points
+<p>Input prices end the period barely five percent above where they started, but they did not
+get there quietly. Raw hides and skins swung through a range of roughly twenty index points
 along the way, with no sustained direction. Finished-goods prices, by contrast, rose about thirty
 percent and did so steadily. The gap between those two lines is the room a manufacturer or
 retailer has to work in.</p>
 
 <p>That runs against the usual assumption that producers are squeezed by rising raw material
-costs. In this chain, over this period, input volatility was the problem to manage &mdash; not
-input inflation.</p>
+costs. In this chain, over this period, input volatility was the problem to manage, not input
+inflation.</p>
 
 <h2>Inputs against finished goods</h2>
 <figure>
   <ul class="legend">
-    <li><span class="swatch" style="background:var(--c-input)"></span>Inputs &mdash; raw hides &amp; skins</li>
-    <li><span class="swatch" style="background:var(--c-output)"></span>Finished &mdash; footwear &amp; leather shoes</li>
+    <li><span class="swatch" style="background:var(--c-input)"></span>Inputs: raw hides &amp; skins</li>
+    <li><span class="swatch" style="background:var(--c-output)"></span>Finished: footwear &amp; leather shoes</li>
   </ul>
   <div class="chartwrap" id="w1">
     <svg viewBox="0 0 760 300" role="img" aria-label="Two lines indexed to 100 in April 2012. Input prices stay near 100 throughout. Finished goods prices rise steadily to about 130.">
@@ -120,7 +120,7 @@ input inflation.</p>
 
 <p>The rise is not smooth. The spread sat flat near 100 until 2015, stepped up sharply through
 2016&ndash;17, held, then stepped up again through 2021&ndash;23. Those are the two periods worth
-asking about &mdash; and the most recent readings have started to fall back, which is the part
+asking about, and the most recent readings have started to fall back, which is the part
 that matters for anyone buying leather today.</p>
 
 <details>
@@ -148,13 +148,13 @@ the part of margin that prices can explain.</p>
 <p>These are national indices. They describe an industry, not a business. They exclude labour,
 rent, energy and finance, which are real costs and move differently. A single firm negotiating
 with a single tannery may see none of this. And the 2011-12 base period is now old enough that
-the basket's weights reflect an economy that has since changed &mdash; the Office of the Economic
+the basket's weights reflect an economy that has since changed. The Office of the Economic
 Adviser has published a 2022-23 base for exactly that reason, which this page does not yet use
 because it only reaches back to 2023.</p>
 <p>Direction is the signal here. Level is approximate.</p>
 
 <div class="prov">
-  Source: Office of the Economic Adviser, Government of India &mdash;
+  Source: Office of the Economic Adviser, Government of India,
   <a href="@@src_url@@">@@src_url@@</a><br>
   @@months@@ monthly observations, @@first@@ to @@last@@ &middot; sha256 @@sha@@&hellip; &middot;
   page built @@built@@
@@ -169,7 +169,7 @@ because it only reaches back to 2023.</p>
 
 <script>
 const DATA = @@series_js@@;
-const PAD = {l:44, r:108, t:18, b:30}, W = 760, H = 300;
+const PAD = {l:0, r:104, t:24, b:30}, W = 760, H = 300;
 
 const tb = document.getElementById('tb');
 const frag = document.createDocumentFragment();
@@ -215,7 +215,7 @@ function wire(wrapId, tipId, cols) {
     });
 
     const left = (x / W) * r.width;
-    tip.style.left = Math.max(70, Math.min(r.width - 70, left)) + 'px';
+    tip.style.left = Math.max(84, Math.min(r.width - 84, left)) + 'px';
     tip.style.top = '52px';
     tip.style.opacity = '1';
   }

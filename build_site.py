@@ -18,6 +18,7 @@ PAGES = [
     ('index.html',                  'home',           'Resume',            '',                  ''),
     ('retail-margins/index.html',   'retail-margins', 'Leather margins',   'retail-margins/',   '../'),
     ('ipl-impact/index.html',       'ipl-impact',     'IPL impact player', 'ipl-impact/',       '../'),
+    ('ott-india/index.html',        'ott-india',      'Netflix India',     'ott-india/',        '../'),
 ]
 
 

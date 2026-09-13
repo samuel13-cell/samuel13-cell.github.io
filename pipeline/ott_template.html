@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>India watches the world</title>
+<meta name="description" content="Five years of Netflix's official weekly Top 10 for India, measured against 92 other markets. How much of what India watches is made for India?">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231f3864'/><text x='50' y='73' font-size='58' font-family='Georgia,serif' fill='%23fff' text-anchor='middle'>S</text></svg>">
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+:root{--sheet-w:60rem}
+figure{margin:0 0 .4rem}
+figcaption{font:400 .83rem/1.5 var(--sans); color:var(--muted); margin:.7rem 0 0; max-width:44em}
+.chartwrap{position:relative; overflow-x:auto}
+svg{display:block; width:100%; height:auto; min-width:34rem; touch-action:pan-y}
+.grid{stroke:var(--grid); stroke-width:1}
+.ax{fill:var(--axis-ink); font:400 10.5px var(--mono); font-variant-numeric:tabular-nums}
+.ln{fill:none; stroke-width:2; stroke-linejoin:round; stroke-linecap:round}
+.dot{stroke:var(--sheet); stroke-width:2}
+.dl{font:500 11.5px var(--sans)}
+.cross{stroke:var(--axis-ink); stroke-width:1}
+.kpis{display:grid; grid-template-columns:repeat(auto-fit,minmax(12rem,1fr));
+  gap:1.6rem 2.4rem; margin:0 0 .5rem; padding:0; border:0}
+.kpi dt{font:500 .68rem/1.4 var(--mono); text-transform:uppercase; letter-spacing:.13em;
+  color:var(--muted); margin-bottom:.3rem}
+.kpi dd{margin:0}
+.kpi .fig{font:600 2.1rem/1 var(--sans); color:var(--ink);
+  font-variant-numeric:tabular-nums; letter-spacing:-.02em}
+.kpi .note{display:block; font-size:.83rem; color:var(--muted); margin-top:.3rem; max-width:22em}
+.fig.up{color:var(--c-output)} .fig.flat{color:var(--c-input)}
+.legend{display:flex; flex-wrap:wrap; gap:.4rem 1.4rem; margin:0 0 .8rem;
+  font:400 .8rem var(--sans); color:var(--ink-soft); list-style:none; padding:0}
+.legend li{display:flex; align-items:center; gap:.45rem}
+.swatch{width:14px; height:2px; border-radius:1px; flex:none}
+.tip{position:absolute; pointer-events:none; opacity:0; transform:translate(-50%,-50%);
+  background:var(--sheet); border:1px solid var(--line); border-radius:3px;
+  padding:.5rem .6rem; font:400 .78rem/1.45 var(--sans); white-space:nowrap;
+  box-shadow:0 4px 16px -6px rgba(40,34,22,.28); z-index:2}
+.tip b{font:600 .88rem var(--sans); color:var(--ink); font-variant-numeric:tabular-nums}
+.tip .row{display:flex; align-items:center; gap:.4rem; margin-top:.25rem}
+.tip .k{width:11px; height:2px; border-radius:1px; flex:none}
+.tip .m{font:500 .7rem var(--mono); color:var(--muted); letter-spacing:.05em}
+details{margin-top:1.2rem; border-top:1px solid var(--hair); padding-top:.9rem}
+summary{font:500 .69rem/1 var(--mono); text-transform:uppercase; letter-spacing:.13em;
+  color:var(--muted); cursor:pointer}
+summary:hover{color:var(--accent)}
+.tablewrap{overflow-x:auto; margin-top:1rem; max-height:22rem; overflow-y:auto}
+table{border-collapse:collapse; font:400 .82rem var(--sans);
+  font-variant-numeric:tabular-nums; width:100%}
+th,td{text-align:right; padding:.32rem .8rem; border-bottom:1px solid var(--hair)}
+th:first-child,td:first-child{text-align:left}
+thead th{position:sticky; top:0; background:var(--sheet); font:500 .68rem var(--mono);
+  text-transform:uppercase; letter-spacing:.09em; color:var(--muted)}
+.prov{margin-top:1rem; font:400 .78rem/1.6 var(--mono); color:var(--muted); word-break:break-all}
+@media (max-width:34rem){ .kpi .fig{font-size:1.8rem} }
+.rule{stroke:var(--muted); stroke-width:1; opacity:.5}
+.anno{fill:var(--muted); font:500 10px var(--mono); letter-spacing:.05em}
+.bar{stroke:var(--sheet); stroke-width:1}
+.fig.up{color:var(--c-output)} .fig.flat{color:var(--c-input)}
+.fig.mid{color:var(--c-middle)}
+.hbar{display:grid; grid-template-columns:9.5rem 1fr auto; gap:.45rem .9rem;
+  align-items:center; font-size:.86rem; margin-bottom:.42rem}
+.hbar .nm{color:var(--ink-soft); white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+.hbar .track{display:block; height:9px; background:var(--hair); border-radius:2px; overflow:hidden}
+.hbar .fill{display:block; height:100%; border-radius:2px; background:var(--c-input)}
+.hbar.me .nm{font-weight:600; color:var(--ink)}
+.hbar.me .fill{background:var(--c-output)}
+.hbar .v{font:500 .8rem var(--mono); color:var(--muted); font-variant-numeric:tabular-nums}
+.hbar.me .v{color:var(--ink)}
+@media (max-width:34rem){ .hbar{grid-template-columns:7rem 1fr auto} }
+</style></head>
+<body>
+<main class="sheet">
+
+<!--NAV--><!--/NAV-->
+
+<h1>India watches the world</h1>
+<p class="standfirst">Netflix publishes its own weekly Top 10 for every market it operates in.
+Five years of it, for India and 92 other countries, answers a question the industry argues about:
+how much of what India watches is actually made for India?</p>
+
+<h2>The finding</h2>
+<dl class="kpis">
+  <div class="kpi"><dt>Locally anchored</dt><dd>
+    <span class="fig flat">@@india_pct@@%</span>
+    <span class="note">Share of India's Top 10 slots taken by titles that chart in five
+    countries or fewer</span></dd></div>
+  <div class="kpi"><dt>Rank</dt><dd>
+    <span class="fig">@@rank@@<span style="font-size:1rem;color:var(--muted)"> of @@of@@</span></span>
+    <span class="note">Markets ordered by that share. Japan leads at @@top_pct@@%</span></dd></div>
+  <div class="kpi"><dt>Films against TV</dt><dd>
+    <span class="fig up">@@film_local@@%</span>
+    <span class="note">Of Indian film slots are local, against @@tv_local@@% of TV slots</span></dd></div>
+</dl>
+
+<p>Nearly half of India's Top 10 slots go to titles that chart in more than fifty countries.
+These are global releases that India happens to watch at the same time as everyone else. Titles
+that chart only in India account for @@india_only_pct@@% of slots.</p>
+
+<p>That is not how every market behaves. Japan and South Korea fill roughly four slots in ten
+with titles almost nobody outside their region watches. India, on this measure, sits closer to
+Brazil or Spain than to its Asian neighbours.</p>
+
+<h2>How locally anchored each market is</h2>
+<figure>
+  <div>
+    @@ranking_bars@@
+  </div>
+  <figcaption>Share of each market's Top 10 slots taken by titles charting in five countries or
+  fewer, for the @@of@@ markets with full coverage. India is highlighted.</figcaption>
+</figure>
+
+<h2>The local share is shrinking</h2>
+<figure>
+  <div class="chartwrap" id="w1">
+    <svg viewBox="0 0 760 300" role="img" aria-label="Share of India's Netflix Top 10 slots held by locally anchored titles, by year. It runs near ten percent from 2021 to 2023, then falls to under four percent by 2026.">
+    @@yearly_chart@@
+    </svg>
+    <div class="tip" id="t1"></div>
+  </div>
+  <figcaption>Percentage of India's weekly Top 10 slots held by titles charting in five countries
+  or fewer. @@first_year@@ and @@last_year@@ are partial years.</figcaption>
+</figure>
+
+<p>The trend runs against the industry's stated direction. Streaming services have spent these
+years commissioning more local originals, not fewer. On this measure the Indian Top 10 has become
+steadily more global anyway, roughly halving its local share since @@peak_year@@.</p>
+
+<p>Films are the exception worth noting. Indian film slots are @@film_local@@% locally anchored
+against @@tv_local@@% for TV, and the average Indian film in the Top 10 reaches
+@@film_reach@@ countries against @@tv_reach@@ for TV. Whatever local commissioning is achieving,
+it is holding ground in film and losing it in series.</p>
+
+<details>
+  <summary>How India's slots break down by reach</summary>
+  <div class="tablewrap">
+    <table>
+      <thead><tr><th scope="col">Title charts in</th><th scope="col">Slots</th>
+        <th scope="col">Share</th></tr></thead>
+      <tbody id="tb"></tbody>
+    </table>
+  </div>
+</details>
+
+<h2>Method</h2>
+<p>Netflix publishes a Top 10 for each country each week. This uses every Indian row from
+@@first_week@@ to @@last_week@@: @@slots@@ slots covering @@titles@@ distinct titles, alongside
+the same data for 92 other markets, aggregated in DuckDB.</p>
+<p>The data carries no language or country-of-origin field. Rather than guess one from title
+text, a title's reach is counted directly: the number of distinct countries in which it ever
+enters a Top 10. Five or fewer is treated as locally anchored. The threshold is a choice, but the
+pattern is not sensitive to it: India sits far below Japan and Korea whether the line is drawn at
+three countries or ten.</p>
+
+<h2>What this does not show</h2>
+<p>A Top 10 is a ranking, not a viewing figure. It says a title was among the ten most watched
+that week, not how many people watched it, so a market where one title dominates and one where
+ten titles are close look identical here.</p>
+<p>It also covers one service. Netflix is a minority of Indian streaming, well behind
+JioHotstar and Amazon Prime Video, and its subscriber base skews urban, English-comfortable and
+affluent. The honest reading is that this describes what Netflix India's audience watches, which
+is not the same as what India watches.</p>
+
+<div class="prov">
+  Source: Netflix Top 10, official weekly country data, <a href="@@src_url@@">@@src_url@@</a><br>
+  @@slots@@ Indian slots across @@weeks@@ weeks &middot; sha256 @@sha@@&hellip; &middot;
+  page built @@built@@
+</div>
+
+<footer class="colophon">
+  <span>Samuel Rajesh Vanambattina</span>
+  <span><a href="mailto:samuelrajesh13@gmail.com">samuelrajesh13@gmail.com</a></span>
+</footer>
+
+</main>
+
+<script>
+const BANDS = @@bands_js@@;
+const YEARLY = @@yearly_js@@;
+const PAD = {l:0, r:104, t:24, b:30}, W = 760;
+
+const tb = document.getElementById('tb');
+const frag = document.createDocumentFragment();
+BANDS.forEach(row => {
+  const tr = document.createElement('tr');
+  row.forEach(v => { const td = document.createElement('td'); td.textContent = v; tr.appendChild(td); });
+  frag.appendChild(tr);
+});
+tb.appendChild(frag);
+
+(function wire() {
+  const svg = document.querySelector('#w1 svg');
+  const tip = document.getElementById('t1');
+  const cross = svg.querySelector('.cross');
+  const iw = W - PAD.l - PAD.r;
+
+  function at(ev) {
+    const r = svg.getBoundingClientRect();
+    const px = ((ev.clientX - r.left) / r.width) * W;
+    let i = Math.round(((px - PAD.l) / iw) * (YEARLY.length - 1));
+    i = Math.max(0, Math.min(YEARLY.length - 1, i));
+    const x = PAD.l + iw * i / (YEARLY.length - 1);
+
+    cross.setAttribute('x1', x); cross.setAttribute('x2', x);
+    cross.style.opacity = '.45';
+
+    tip.textContent = '';
+    const m = document.createElement('div');
+    m.className = 'm'; m.textContent = YEARLY[i][0];
+    tip.appendChild(m);
+    const row = document.createElement('div'); row.className = 'row';
+    const k = document.createElement('span');
+    k.className = 'k'; k.style.background = 'var(--c-input)';
+    const b = document.createElement('b'); b.textContent = YEARLY[i][1] + '%';
+    row.append(k, b, document.createTextNode(' locally anchored'));
+    tip.appendChild(row);
+
+    const left = (x / W) * r.width;
+    tip.style.left = Math.max(84, Math.min(r.width - 84, left)) + 'px';
+    tip.style.top = '58px';
+    tip.style.opacity = '1';
+  }
+
+  svg.addEventListener('pointermove', at);
+  svg.addEventListener('pointerdown', at);
+  svg.addEventListener('pointerleave', () => {
+    tip.style.opacity = '0'; cross.style.opacity = '0';
+  });
+})();
+</script>
+</body>
+</html>
