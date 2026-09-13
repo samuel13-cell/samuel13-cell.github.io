@@ -1,44 +1,58 @@
-# retail-margins pipeline
+# pipeline
 
-Builds `/retail-margins` on the site: input cost vs retail price for Indian
-leather goods, and what the gap between them does to margin.
+Fetch, transform and render for the five project pages. Each project follows
+the same three stages:
 
-## Question
+```
+*_fetch.py      download to raw/, record url + bytes + sha256 in a manifest
+*_transform.py  DuckDB over the raw file -> data/*.json
+*_render.py     fill *_template.html -> ../<slug>/index.html
+```
 
-When hides and leather get more expensive, do retail footwear prices follow?
-The gap between the two is a proxy for margin at the retail end of the chain.
+| Project | Fetch | Transform | Render | Output |
+|---|---|---|---|---|
+| Leather margins | `fetch.py` | `transform.py` | `render.py` | `../retail-margins/` |
+| IPL | `ipl_fetch.py` | `ipl_transform.py` | `ipl_render.py` | `../ipl-impact/` |
+| Netflix | `ott_fetch.py` | `ott_transform.py` | `ott_render.py` | `../ott-india/` |
+| EV | `owid_fetch.py` | `ev_transform.py` | `ev_render.py` | `../ev-india/` |
+| Grid | `owid_fetch.py` | `grid_transform.py` | `grid_render.py` | `../grid-india/` |
+
+`owid_fetch.py` downloads both Our World in Data CSVs, so it serves the last
+two projects at once.
+
+Shared modules:
+
+- `lib.py` builds the inline-SVG charts: scales, gridlines, ticks, line and bar
+  marks. One copy, used by every renderer.
+- `buildnotes.py` renders the technical appendix each page ends with.
+- `notes.py` holds that appendix's prose, per project.
+
+## Why the raw files are kept
+
+`raw/` holds each download byte for byte alongside its sha256. A parse change
+re-runs without hitting the source again, and any figure on a published page
+traces back to a specific file. The directory is gitignored; the fetch scripts
+rebuild it.
 
 ## Sources
 
-| Series | Publisher | Role |
+| Project | Publisher | Notes |
 |---|---|---|
-| WPI — hides, skins and leather (base 2011-12) | Office of the Economic Adviser, `eaindustry.nic.in` | what suppliers charge |
-| CPI — footwear | Ministry of Statistics, `www.mospi.gov.in` | what customers pay |
-| India CPI, all items | World Bank API | cross-check, deflator |
+| Leather margins | Office of the Economic Adviser | Filenames carry a YYYYMM stamp, so `fetch.py` discovers the current release from the download page rather than pinning a URL |
+| IPL | Cricsheet | Every delivery of every match |
+| Netflix | Netflix Top 10 | The platform's own weekly country data, not an estimate |
+| EV and grid | Our World in Data | Compiled from the IEA, Ember and the Energy Institute |
 
-All three are published without an API key.
+None require an API key. India's own portal, data.gov.in, was tried first and
+abandoned: it disallows crawling in `robots.txt` and its API offers no search.
+See `../HANDOFF.md`.
 
-## Shape
+## Running it
 
 ```
-fetch.py      download source workbooks to raw/, unmodified, with a manifest
-transform.py  raw/ -> DuckDB -> tidy monthly series in data/
-render.py     data/ -> ../retail-margins/index.html
+pip install -r requirements.txt
+python <project>_fetch.py
+python <project>_transform.py
+python <project>_render.py
+python ../build_site.py
 ```
-
-Raw files are kept byte-for-byte so a parse change can be re-run without
-re-downloading, and so the numbers on the page can always be traced back to a
-specific published file.
-
-## Method
-
-Both indices are rebased to 100 at a common month. The margin proxy is
-`CPI_footwear / WPI_leather`, indexed to the same base: above 100 means retail
-prices have outrun input costs since the base period, below 100 means they
-have not.
-
-## Limitations
-
-These are national indices. They describe the industry, not any single
-business, and they cannot capture what one retailer negotiates with one
-supplier. Treat the direction as signal and the level as approximate.
