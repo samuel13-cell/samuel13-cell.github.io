@@ -31,6 +31,7 @@
   --sans:"IBM Plex Sans",-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;
   --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
 
+  --measure:38rem;   /* one reading width for every prose block */
   --gutter:8.25rem;
   --col-gap:1.85rem;
 }
@@ -54,7 +55,7 @@ a{color:var(--accent); text-decoration:none; border-bottom:1px solid var(--accen
 a:hover{border-bottom-color:currentColor}
 a:focus-visible{outline:2px solid var(--accent); outline-offset:3px; border-radius:2px}
 strong{font-weight:600; color:var(--ink)}
-p{max-width:40em}
+p{max-width:var(--measure)}
 
 /* ===== site nav =================================================== */
 .nav{
@@ -84,7 +85,7 @@ h1{
 }
 .tagline,.standfirst{
   font:400 clamp(.98rem,2.2vw,1.08rem)/1.55 var(--sans);
-  color:var(--muted); margin:0 0 1.5rem; max-width:40em;
+  color:var(--muted); margin:0 0 1.5rem; max-width:var(--measure);
 }
 h2{
   font:500 .69rem/1 var(--mono); text-transform:uppercase; letter-spacing:.19em;
@@ -101,7 +102,7 @@ h2{
 /* ===== entries (shared spine: metadata left, content right) ======= */
 .sect{margin-top:2.7rem}
 .sect:first-of-type{margin-top:0}
-.lede{margin:0 0 0 calc(var(--gutter) + var(--col-gap)); font-size:1.01rem; max-width:44em}
+.lede{margin:0 0 0 calc(var(--gutter) + var(--col-gap)); font-size:1.01rem; max-width:var(--measure)}
 .entry{
   display:grid; grid-template-columns:var(--gutter) 1fr; gap:0 var(--col-gap);
   margin-bottom:1.85rem; break-inside:avoid;
@@ -116,7 +117,7 @@ h2{
 .title a:hover{color:var(--accent); border-bottom-color:currentColor}
 .org{font:400 .875rem/1.5 var(--sans); color:var(--muted); margin:.05rem 0 .6rem}
 .entry ul{margin:0; padding:0; list-style:none}
-.entry li{position:relative; padding-left:1.05rem; margin-bottom:.42rem; max-width:44em}
+.entry li{position:relative; padding-left:1.05rem; margin-bottom:.42rem; max-width:var(--measure)}
 .entry li:last-child{margin-bottom:0}
 .entry li::before{content:"–"; position:absolute; left:0; top:0;
   color:var(--accent-line); font-family:var(--mono)}
@@ -126,7 +127,7 @@ h2{
 .skill{display:grid; grid-template-columns:var(--gutter) 1fr; gap:0 var(--col-gap)}
 .skill dt{font:500 .69rem/1.6 var(--mono); text-transform:uppercase;
   letter-spacing:.13em; color:var(--muted); padding-top:.16rem}
-.skill dd{margin:0; font-size:.95rem; max-width:44em}
+.skill dd{margin:0; font-size:.95rem; max-width:var(--measure)}
 
 /* ===== footer ===================================================== */
 .colophon{

@@ -10,9 +10,9 @@
 <style>
 :root{--sheet-w:60rem}
 figure{margin:0 0 .4rem}
-figcaption{font:400 .83rem/1.5 var(--sans); color:var(--muted); margin:.7rem 0 0; max-width:44em}
+figcaption{font:400 .83rem/1.5 var(--sans); color:var(--muted); margin:.7rem 0 0; max-width:var(--measure)}
 .chartwrap{position:relative; overflow-x:auto}
-svg{display:block; width:100%; height:auto; min-width:34rem; touch-action:pan-y}
+svg{display:block; width:100%; height:auto; min-width:34rem; touch-action:pan-y; overflow:visible}
 .grid{stroke:var(--grid); stroke-width:1}
 .ax{fill:var(--axis-ink); font:400 10.5px var(--mono); font-variant-numeric:tabular-nums}
 .ln{fill:none; stroke-width:2; stroke-linejoin:round; stroke-linecap:round}
@@ -26,7 +26,7 @@ svg{display:block; width:100%; height:auto; min-width:34rem; touch-action:pan-y}
 .kpi dd{margin:0}
 .kpi .fig{font:600 2.1rem/1 var(--sans); color:var(--ink);
   font-variant-numeric:tabular-nums; letter-spacing:-.02em}
-.kpi .note{display:block; font-size:.83rem; color:var(--muted); margin-top:.3rem; max-width:22em}
+.kpi .note{display:block; font-size:.83rem; color:var(--muted); margin-top:.3rem; max-width:24ch}
 .fig.up{color:var(--c-output)} .fig.flat{color:var(--c-input)}
 .legend{display:flex; flex-wrap:wrap; gap:.4rem 1.4rem; margin:0 0 .8rem;
   font:400 .8rem var(--sans); color:var(--ink-soft); list-style:none; padding:0}
@@ -136,30 +136,29 @@ Brazil or Spain than to its Asian neighbours.</p>
 <figure>
   <div class="chartwrap" id="w1">
     <svg viewBox="0 0 760 300" role="img" aria-label="Share of India's Netflix Top 10 slots held by locally anchored titles, by year. It runs near ten percent from 2021 to 2023, then falls to under four percent by 2026.">
-    <line class="grid" x1="0" y1="270.0" x2="656" y2="270.0"/>
+    <line class="grid" x1="0" y1="270.0" x2="760" y2="270.0"/>
     <text class="ax" x="0" y="265.0" text-anchor="start">0</text>
-    <line class="grid" x1="0" y1="229.0" x2="656" y2="229.0"/>
-    <text class="ax" x="0" y="224.0" text-anchor="start">2</text>
-    <line class="grid" x1="0" y1="188.0" x2="656" y2="188.0"/>
-    <text class="ax" x="0" y="183.0" text-anchor="start">4</text>
-    <line class="grid" x1="0" y1="147.0" x2="656" y2="147.0"/>
-    <text class="ax" x="0" y="142.0" text-anchor="start">6</text>
-    <line class="grid" x1="0" y1="106.0" x2="656" y2="106.0"/>
-    <text class="ax" x="0" y="101.0" text-anchor="start">8</text>
-    <line class="grid" x1="0" y1="65.0" x2="656" y2="65.0"/>
-    <text class="ax" x="0" y="60.0" text-anchor="start">10</text>
-    <line class="grid" x1="0" y1="24.0" x2="656" y2="24.0"/>
-    <text class="ax" x="0" y="19.0" text-anchor="start">12</text>
+    <line class="grid" x1="0" y1="229.3" x2="760" y2="229.3"/>
+    <text class="ax" x="0" y="224.3" text-anchor="start">2</text>
+    <line class="grid" x1="0" y1="188.7" x2="760" y2="188.7"/>
+    <text class="ax" x="0" y="183.7" text-anchor="start">4</text>
+    <line class="grid" x1="0" y1="148.0" x2="760" y2="148.0"/>
+    <text class="ax" x="0" y="143.0" text-anchor="start">6</text>
+    <line class="grid" x1="0" y1="107.3" x2="760" y2="107.3"/>
+    <text class="ax" x="0" y="102.3" text-anchor="start">8</text>
+    <line class="grid" x1="0" y1="66.7" x2="760" y2="66.7"/>
+    <text class="ax" x="0" y="61.7" text-anchor="start">10</text>
+    <line class="grid" x1="0" y1="26.0" x2="760" y2="26.0"/>
+    <text class="ax" x="0" y="21.0" text-anchor="start">12</text>
     <text class="ax" x="0.0" y="290" text-anchor="start">2021</text>
-    <text class="ax" x="131.2" y="290" text-anchor="middle">2022</text>
-    <text class="ax" x="262.4" y="290" text-anchor="middle">2023</text>
-    <text class="ax" x="393.6" y="290" text-anchor="middle">2024</text>
-    <text class="ax" x="524.8" y="290" text-anchor="middle">2025</text>
-    <text class="ax" x="656.0" y="290" text-anchor="end">2026</text>
-    <path class="ln" stroke="var(--c-input)" d="M0.0,73.2 L131.2,93.7 L262.4,65.0 L393.6,163.4 L524.8,177.8 L656.0,190.1"/>
-    <circle class="dot" cx="656.0" cy="190.1" r="4.5" fill="var(--c-input)"/>
-    <text class="dl" x="667.0" y="194.1" fill="var(--c-input)">Local share</text>
-    <line class="cross" x1="0" y1="24" x2="0" y2="270" style="opacity:0"/>
+    <text class="ax" x="152.0" y="290" text-anchor="middle">2022</text>
+    <text class="ax" x="304.0" y="290" text-anchor="middle">2023</text>
+    <text class="ax" x="456.0" y="290" text-anchor="middle">2024</text>
+    <text class="ax" x="608.0" y="290" text-anchor="middle">2025</text>
+    <text class="ax" x="760.0" y="290" text-anchor="end">2026</text>
+    <path class="ln" stroke="var(--c-input)" d="M0.0,74.8 L152.0,95.1 L304.0,66.7 L456.0,164.3 L608.0,178.5 L760.0,190.7"/>
+    <circle class="dot" cx="760.0" cy="190.7" r="4.5" fill="var(--c-input)"/>
+    <line class="cross" x1="0" y1="26" x2="0" y2="270" style="opacity:0"/>
     </svg>
     <div class="tip" id="t1"></div>
   </div>
@@ -222,7 +221,7 @@ is not the same as what India watches.</p>
 <script>
 const BANDS = [["India only", "102", "1.9%"], ["2 to 5 countries", "272", "5.0%"], ["6 to 20 countries", "1,878", "34.6%"], ["21 to 50 countries", "744", "13.7%"], ["51 or more countries", "2,424", "44.7%"]];
 const YEARLY = [["2021", 9.6], ["2022", 8.6], ["2023", 10.0], ["2024", 5.2], ["2025", 4.5], ["2026", 3.9]];
-const PAD = {l:0, r:104, t:24, b:30}, W = 760;
+const PAD = {l:0, r:0, t:26, b:30}, W = 760;
 
 const tb = document.getElementById('tb');
 const frag = document.createDocumentFragment();

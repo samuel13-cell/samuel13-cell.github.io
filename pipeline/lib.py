@@ -4,9 +4,10 @@ No chart library: every page ships plain SVG plus a small hover layer, so
 the pages stay dependency-free and render identically in print.
 """
 W, H = 760, 300
-# l=0 so the plot's left edge lines up with the text column; the y labels
-# sit inside the plot, just above their gridline.
-PAD = {'t': 24, 'r': 104, 'b': 30, 'l': 0}
+# The plot spans the full content column so its gridlines share both edges
+# with the section rules above them. Axis labels and series labels all sit
+# inside the plot rather than in gutters, which is what keeps them aligned.
+PAD = {'t': 26, 'r': 0, 'b': 30, 'l': 0}
 
 MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July',
           'August', 'September', 'October', 'November', 'December']
@@ -49,12 +50,17 @@ def _grid(ys, lo, hi, step, pad=PAD):
     return out
 
 
-def _x_ticks(labels, xs, every, pad=PAD):
+def _x_ticks(labels, xs, every, pad=PAD, ticks=None):
     """Edge ticks anchor inward so they never overhang the plot."""
     out = []
     last = len(labels) - 1
+    chosen = dict(ticks) if ticks else None
     for i, lab in enumerate(labels):
-        if not (i % every == 0 or i == last):
+        if chosen is not None:
+            if i not in chosen:
+                continue
+            lab = chosen[i]
+        elif not (i % every == 0 or i == last):
             continue
         anchor = 'start' if i == 0 else 'end' if i == last else 'middle'
         out.append(f'<text class="ax" x="{xs(i):.1f}" y="{H - 10}" '
@@ -62,12 +68,17 @@ def _x_ticks(labels, xs, every, pad=PAD):
     return out
 
 
-def line_chart(labels, series, lo, hi, step=10, every=2, annotate=None):
-    """series: list of (label, css-var, values). annotate: (index, text)."""
+def line_chart(labels, series, lo, hi, step=10, every=2, annotate=None, ticks=None):
+    """series: list of (label, css-var, values).
+
+    annotate: (index, text) draws a labelled vertical rule.
+    ticks: explicit [(index, label)] when every-Nth is the wrong cadence,
+    as it is for a monthly series that wants one tick per year.
+    """
     xs, ys = scales(len(labels), lo, hi)
     parts = _grid(ys, lo, hi, step)
 
-    parts += _x_ticks(labels, xs, every)
+    parts += _x_ticks(labels, xs, every, ticks=ticks)
 
     if annotate:
         ai, text = annotate
@@ -79,10 +90,15 @@ def line_chart(labels, series, lo, hi, step=10, every=2, annotate=None):
     for label, var, values in series:
         parts.append(f'<path class="ln" stroke="var({var})" d="{_path(xs, ys, values)}"/>')
         last = max(i for i, v in enumerate(values) if v is not None)
-        parts.append(f'<circle class="dot" cx="{xs(last):.1f}" cy="{ys(values[last]):.1f}" '
+        ex, ey = xs(last), ys(values[last])
+        parts.append(f'<circle class="dot" cx="{ex:.1f}" cy="{ey:.1f}" '
                      f'r="4.5" fill="var({var})"/>')
-        parts.append(f'<text class="dl" x="{xs(last) + 11:.1f}" '
-                     f'y="{ys(values[last]) + 4:.1f}" fill="var({var})">{label}</text>')
+        # A lone series is already named by the heading, so labelling it again
+        # only risks colliding with its own line.
+        if len(series) > 1:
+            # above the end point and right-aligned, so nothing overhangs
+            parts.append(f'<text class="dl" x="{ex - 8:.1f}" y="{ey - 11:.1f}" '
+                         f'text-anchor="end" fill="var({var})">{label}</text>')
 
     parts.append(f'<line class="cross" x1="0" y1="{PAD["t"]}" x2="0" '
                  f'y2="{H - PAD["b"]}" style="opacity:0"/>')
@@ -91,7 +107,7 @@ def line_chart(labels, series, lo, hi, step=10, every=2, annotate=None):
 
 def bar_chart(labels, values, lo, hi, step=10, var='--c-input', every=2, mark=None):
     """Single-series columns. mark: index from which bars take the accent hue."""
-    pad = dict(PAD, r=24)
+    pad = dict(PAD)
     xs, ys = scales(len(labels), lo, hi, pad)
     parts = _grid(ys, lo, hi, step, pad)
 

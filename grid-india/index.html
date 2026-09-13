@@ -10,9 +10,9 @@
 <style>
 :root{--sheet-w:60rem}
 figure{margin:0 0 .4rem}
-figcaption{font:400 .83rem/1.5 var(--sans); color:var(--muted); margin:.7rem 0 0; max-width:44em}
+figcaption{font:400 .83rem/1.5 var(--sans); color:var(--muted); margin:.7rem 0 0; max-width:var(--measure)}
 .chartwrap{position:relative; overflow-x:auto}
-svg{display:block; width:100%; height:auto; min-width:34rem; touch-action:pan-y}
+svg{display:block; width:100%; height:auto; min-width:34rem; touch-action:pan-y; overflow:visible}
 .grid{stroke:var(--grid); stroke-width:1}
 .ax{fill:var(--axis-ink); font:400 10.5px var(--mono); font-variant-numeric:tabular-nums}
 .ln{fill:none; stroke-width:2; stroke-linejoin:round; stroke-linecap:round}
@@ -26,7 +26,7 @@ svg{display:block; width:100%; height:auto; min-width:34rem; touch-action:pan-y}
 .kpi dd{margin:0}
 .kpi .fig{font:600 2.1rem/1 var(--sans); color:var(--ink);
   font-variant-numeric:tabular-nums; letter-spacing:-.02em}
-.kpi .note{display:block; font-size:.83rem; color:var(--muted); margin-top:.3rem; max-width:22em}
+.kpi .note{display:block; font-size:.83rem; color:var(--muted); margin-top:.3rem; max-width:24ch}
 .fig.up{color:var(--c-output)} .fig.flat{color:var(--c-input)}
 .legend{display:flex; flex-wrap:wrap; gap:.4rem 1.4rem; margin:0 0 .8rem;
   font:400 .8rem var(--sans); color:var(--ink-soft); list-style:none; padding:0}
@@ -121,29 +121,29 @@ unaccompanied by a drop in demand.</p>
   </ul>
   <div class="chartwrap" id="w1">
     <svg viewBox="0 0 760 300" role="img" aria-label="Indian electricity generation from 2000 to 2025. Coal rises steeply throughout and turns down at the end. Solar and wind stay near zero until about 2015 and then climb sharply.">
-    <line class="grid" x1="0" y1="270.0" x2="656" y2="270.0"/>
+    <line class="grid" x1="0" y1="270.0" x2="760" y2="270.0"/>
     <text class="ax" x="0" y="265.0" text-anchor="start">0</text>
-    <line class="grid" x1="0" y1="208.5" x2="656" y2="208.5"/>
-    <text class="ax" x="0" y="203.5" text-anchor="start">400</text>
-    <line class="grid" x1="0" y1="147.0" x2="656" y2="147.0"/>
-    <text class="ax" x="0" y="142.0" text-anchor="start">800</text>
-    <line class="grid" x1="0" y1="85.5" x2="656" y2="85.5"/>
-    <text class="ax" x="0" y="80.5" text-anchor="start">1200</text>
-    <line class="grid" x1="0" y1="24.0" x2="656" y2="24.0"/>
-    <text class="ax" x="0" y="19.0" text-anchor="start">1600</text>
+    <line class="grid" x1="0" y1="209.0" x2="760" y2="209.0"/>
+    <text class="ax" x="0" y="204.0" text-anchor="start">400</text>
+    <line class="grid" x1="0" y1="148.0" x2="760" y2="148.0"/>
+    <text class="ax" x="0" y="143.0" text-anchor="start">800</text>
+    <line class="grid" x1="0" y1="87.0" x2="760" y2="87.0"/>
+    <text class="ax" x="0" y="82.0" text-anchor="start">1200</text>
+    <line class="grid" x1="0" y1="26.0" x2="760" y2="26.0"/>
+    <text class="ax" x="0" y="21.0" text-anchor="start">1600</text>
     <text class="ax" x="0.0" y="290" text-anchor="start">2000</text>
-    <text class="ax" x="131.2" y="290" text-anchor="middle">2005</text>
-    <text class="ax" x="262.4" y="290" text-anchor="middle">2010</text>
-    <text class="ax" x="393.6" y="290" text-anchor="middle">2015</text>
-    <text class="ax" x="524.8" y="290" text-anchor="middle">2020</text>
-    <text class="ax" x="656.0" y="290" text-anchor="end">2025</text>
-    <path class="ln" stroke="var(--c-output)" d="M0.0,210.0 L26.2,207.2 L52.5,204.4 L78.7,202.1 L105.0,198.8 L131.2,196.4 L157.4,192.3 L183.7,188.0 L209.9,181.9 L236.2,176.0 L262.4,171.1 L288.6,162.2 L314.9,149.0 L341.1,139.6 L367.4,124.0 L393.6,115.3 L419.8,104.9 L446.1,98.5 L472.3,85.7 L498.6,85.7 L524.8,94.1 L551.0,77.0 L577.3,63.3 L603.5,47.8 L629.8,36.6 L656.0,43.3"/>
-    <circle class="dot" cx="656.0" cy="43.3" r="4.5" fill="var(--c-output)"/>
-    <text class="dl" x="667.0" y="47.3" fill="var(--c-output)">Coal</text>
-    <path class="ln" stroke="var(--c-input)" d="M0.0,269.8 L26.2,269.7 L52.5,269.7 L78.7,269.6 L105.0,269.2 L131.2,269.1 L157.4,268.6 L183.7,268.2 L209.9,267.8 L236.2,267.5 L262.4,267.0 L288.6,266.2 L314.9,265.5 L341.1,264.9 L367.4,264.1 L393.6,263.9 L419.8,261.4 L446.1,258.5 L472.3,255.0 L498.6,254.5 L524.8,252.6 L551.0,249.4 L577.3,244.5 L603.5,239.6 L629.8,235.5 L656.0,223.9"/>
-    <circle class="dot" cx="656.0" cy="223.9" r="4.5" fill="var(--c-input)"/>
-    <text class="dl" x="667.0" y="227.9" fill="var(--c-input)">Solar and wind</text>
-    <line class="cross" x1="0" y1="24" x2="0" y2="270" style="opacity:0"/>
+    <text class="ax" x="152.0" y="290" text-anchor="middle">2005</text>
+    <text class="ax" x="304.0" y="290" text-anchor="middle">2010</text>
+    <text class="ax" x="456.0" y="290" text-anchor="middle">2015</text>
+    <text class="ax" x="608.0" y="290" text-anchor="middle">2020</text>
+    <text class="ax" x="760.0" y="290" text-anchor="end">2025</text>
+    <path class="ln" stroke="var(--c-output)" d="M0.0,210.5 L30.4,207.7 L60.8,204.9 L91.2,202.7 L121.6,199.4 L152.0,197.0 L182.4,192.9 L212.8,188.7 L243.2,182.6 L273.6,176.8 L304.0,171.9 L334.4,163.1 L364.8,150.0 L395.2,140.7 L425.6,125.1 L456.0,116.5 L486.4,106.3 L516.8,99.9 L547.2,87.2 L577.6,87.2 L608.0,95.6 L638.4,78.5 L668.8,65.0 L699.2,49.6 L729.6,38.5 L760.0,45.2"/>
+    <circle class="dot" cx="760.0" cy="45.2" r="4.5" fill="var(--c-output)"/>
+    <text class="dl" x="752.0" y="34.2" text-anchor="end" fill="var(--c-output)">Coal</text>
+    <path class="ln" stroke="var(--c-input)" d="M0.0,269.8 L30.4,269.7 L60.8,269.7 L91.2,269.6 L121.6,269.2 L152.0,269.1 L182.4,268.6 L212.8,268.2 L243.2,267.8 L273.6,267.5 L304.0,267.0 L334.4,266.2 L364.8,265.5 L395.2,264.9 L425.6,264.1 L456.0,263.9 L486.4,261.5 L516.8,258.6 L547.2,255.1 L577.6,254.6 L608.0,252.7 L638.4,249.6 L668.8,244.7 L699.2,239.9 L729.6,235.7 L760.0,224.2"/>
+    <circle class="dot" cx="760.0" cy="224.2" r="4.5" fill="var(--c-input)"/>
+    <text class="dl" x="752.0" y="213.2" text-anchor="end" fill="var(--c-input)">Solar and wind</text>
+    <line class="cross" x1="0" y1="26" x2="0" y2="270" style="opacity:0"/>
     </svg>
     <div class="tip" id="t1"></div>
   </div>
@@ -155,26 +155,25 @@ unaccompanied by a drop in demand.</p>
 <figure>
   <div class="chartwrap" id="w2">
     <svg viewBox="0 0 760 300" role="img" aria-label="Coal as a percentage of Indian electricity generation, 2000 to 2025. It rises to a peak around 2016 and declines gradually to about 71 percent.">
-    <line class="grid" x1="0" y1="270.0" x2="656" y2="270.0"/>
+    <line class="grid" x1="0" y1="270.0" x2="760" y2="270.0"/>
     <text class="ax" x="0" y="265.0" text-anchor="start">60</text>
-    <line class="grid" x1="0" y1="208.5" x2="656" y2="208.5"/>
-    <text class="ax" x="0" y="203.5" text-anchor="start">65</text>
-    <line class="grid" x1="0" y1="147.0" x2="656" y2="147.0"/>
-    <text class="ax" x="0" y="142.0" text-anchor="start">70</text>
-    <line class="grid" x1="0" y1="85.5" x2="656" y2="85.5"/>
-    <text class="ax" x="0" y="80.5" text-anchor="start">75</text>
-    <line class="grid" x1="0" y1="24.0" x2="656" y2="24.0"/>
-    <text class="ax" x="0" y="19.0" text-anchor="start">80</text>
+    <line class="grid" x1="0" y1="209.0" x2="760" y2="209.0"/>
+    <text class="ax" x="0" y="204.0" text-anchor="start">65</text>
+    <line class="grid" x1="0" y1="148.0" x2="760" y2="148.0"/>
+    <text class="ax" x="0" y="143.0" text-anchor="start">70</text>
+    <line class="grid" x1="0" y1="87.0" x2="760" y2="87.0"/>
+    <text class="ax" x="0" y="82.0" text-anchor="start">75</text>
+    <line class="grid" x1="0" y1="26.0" x2="760" y2="26.0"/>
+    <text class="ax" x="0" y="21.0" text-anchor="start">80</text>
     <text class="ax" x="0.0" y="290" text-anchor="start">2000</text>
-    <text class="ax" x="131.2" y="290" text-anchor="middle">2005</text>
-    <text class="ax" x="262.4" y="290" text-anchor="middle">2010</text>
-    <text class="ax" x="393.6" y="290" text-anchor="middle">2015</text>
-    <text class="ax" x="524.8" y="290" text-anchor="middle">2020</text>
-    <text class="ax" x="656.0" y="290" text-anchor="end">2025</text>
-    <path class="ln" stroke="var(--c-output)" d="M0.0,167.9 L26.2,150.7 L52.5,147.0 L78.7,156.8 L105.0,192.5 L131.2,172.8 L157.4,172.8 L183.7,183.9 L209.9,156.8 L236.2,151.9 L262.4,163.0 L288.6,172.8 L314.9,118.7 L341.1,94.1 L367.4,79.3 L393.6,63.4 L419.8,60.9 L446.1,69.5 L472.3,69.5 L498.6,86.7 L524.8,107.6 L551.0,88.0 L577.3,91.7 L603.5,81.8 L629.8,91.7 L656.0,137.2"/>
-    <circle class="dot" cx="656.0" cy="137.2" r="4.5" fill="var(--c-output)"/>
-    <text class="dl" x="667.0" y="141.2" fill="var(--c-output)">Coal share</text>
-    <line class="cross" x1="0" y1="24" x2="0" y2="270" style="opacity:0"/>
+    <text class="ax" x="152.0" y="290" text-anchor="middle">2005</text>
+    <text class="ax" x="304.0" y="290" text-anchor="middle">2010</text>
+    <text class="ax" x="456.0" y="290" text-anchor="middle">2015</text>
+    <text class="ax" x="608.0" y="290" text-anchor="middle">2020</text>
+    <text class="ax" x="760.0" y="290" text-anchor="end">2025</text>
+    <path class="ln" stroke="var(--c-output)" d="M0.0,168.7 L30.4,151.7 L60.8,148.0 L91.2,157.8 L121.6,193.1 L152.0,173.6 L182.4,173.6 L212.8,184.6 L243.2,157.8 L273.6,152.9 L304.0,163.9 L334.4,173.6 L364.8,119.9 L395.2,95.5 L425.6,80.9 L456.0,65.0 L486.4,62.6 L516.8,71.1 L547.2,71.1 L577.6,88.2 L608.0,109.0 L638.4,89.4 L668.8,93.1 L699.2,83.3 L729.6,93.1 L760.0,138.2"/>
+    <circle class="dot" cx="760.0" cy="138.2" r="4.5" fill="var(--c-output)"/>
+    <line class="cross" x1="0" y1="26" x2="0" y2="270" style="opacity:0"/>
     </svg>
   </div>
   <figcaption>Coal as a percentage of all generation. The share has been falling since
@@ -232,7 +231,7 @@ that is visible at this resolution.</p>
 
 <script>
 const ROWS = [["2000", "390", "0", "2", "77", "16", "571", "2"], ["2001", "408", "0", "2", "72", "19", "586", "2"], ["2002", "427", "0", "2", "68", "19", "610", "2"], ["2003", "442", "0", "3", "69", "18", "638", "3"], ["2004", "463", "0", "5", "101", "21", "698", "5"], ["2005", "478", "0", "6", "97", "18", "704", "6"], ["2006", "506", "0", "9", "113", "18", "744", "9"], ["2007", "533", "0", "12", "123", "18", "796", "12"], ["2008", "573", "0", "14", "115", "15", "828", "14"], ["2009", "611", "0", "16", "106", "17", "879", "16"], ["2010", "643", "0", "20", "109", "23", "936", "20"], ["2011", "701", "1", "24", "132", "32", "1032", "25"], ["2012", "787", "2", "27", "116", "33", "1088", "30"], ["2013", "848", "3", "30", "132", "33", "1141", "33"], ["2014", "950", "5", "34", "139", "35", "1259", "38"], ["2015", "1006", "7", "33", "134", "38", "1311", "40"], ["2016", "1074", "12", "44", "129", "38", "1395", "56"], ["2017", "1115", "22", "53", "136", "37", "1462", "75"], ["2018", "1199", "38", "60", "140", "39", "1572", "98"], ["2019", "1199", "38", "63", "162", "45", "1601", "101"], ["2020", "1144", "53", "60", "164", "45", "1563", "113"], ["2021", "1256", "66", "68", "161", "44", "1679", "134"], ["2022", "1344", "96", "70", "175", "46", "1805", "166"], ["2023", "1445", "115", "82", "149", "48", "1918", "198"], ["2024", "1518", "143", "82", "156", "55", "2036", "225"], ["2025", "1474", "196", "104", "178", "54", "2082", "300"]];
-const PAD = {l:0, r:104, t:24, b:30}, W = 760;
+const PAD = {l:0, r:0, t:26, b:30}, W = 760;
 
 const tb = document.getElementById('tb');
 const frag = document.createDocumentFragment();

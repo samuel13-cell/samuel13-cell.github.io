@@ -10,9 +10,9 @@
 <style>
 :root{--sheet-w:60rem}
 figure{margin:0 0 .4rem}
-figcaption{font:400 .83rem/1.5 var(--sans); color:var(--muted); margin:.7rem 0 0; max-width:44em}
+figcaption{font:400 .83rem/1.5 var(--sans); color:var(--muted); margin:.7rem 0 0; max-width:var(--measure)}
 .chartwrap{position:relative; overflow-x:auto}
-svg{display:block; width:100%; height:auto; min-width:34rem; touch-action:pan-y}
+svg{display:block; width:100%; height:auto; min-width:34rem; touch-action:pan-y; overflow:visible}
 .grid{stroke:var(--grid); stroke-width:1}
 .ax{fill:var(--axis-ink); font:400 10.5px var(--mono); font-variant-numeric:tabular-nums}
 .ln{fill:none; stroke-width:2; stroke-linejoin:round; stroke-linecap:round}
@@ -26,7 +26,7 @@ svg{display:block; width:100%; height:auto; min-width:34rem; touch-action:pan-y}
 .kpi dd{margin:0}
 .kpi .fig{font:600 2.1rem/1 var(--sans); color:var(--ink);
   font-variant-numeric:tabular-nums; letter-spacing:-.02em}
-.kpi .note{display:block; font-size:.83rem; color:var(--muted); margin-top:.3rem; max-width:22em}
+.kpi .note{display:block; font-size:.83rem; color:var(--muted); margin-top:.3rem; max-width:24ch}
 .fig.up{color:var(--c-output)} .fig.flat{color:var(--c-input)}
 .legend{display:flex; flex-wrap:wrap; gap:.4rem 1.4rem; margin:0 0 .8rem;
   font:400 .8rem var(--sans); color:var(--ink-soft); list-style:none; padding:0}
@@ -115,39 +115,39 @@ reporting a 2025 figure.</p>
   </ul>
   <div class="chartwrap" id="w1">
     <svg viewBox="0 0 760 300" role="img" aria-label="Share of new cars that are electric, 2010 to 2025. China and the world average rise steeply from 2020. India's line stays close to the bottom of the chart throughout.">
-    <line class="grid" x1="0" y1="270.0" x2="656" y2="270.0"/>
+    <line class="grid" x1="0" y1="270.0" x2="760" y2="270.0"/>
     <text class="ax" x="0" y="265.0" text-anchor="start">0</text>
-    <line class="grid" x1="0" y1="229.0" x2="656" y2="229.0"/>
-    <text class="ax" x="0" y="224.0" text-anchor="start">10</text>
-    <line class="grid" x1="0" y1="188.0" x2="656" y2="188.0"/>
-    <text class="ax" x="0" y="183.0" text-anchor="start">20</text>
-    <line class="grid" x1="0" y1="147.0" x2="656" y2="147.0"/>
-    <text class="ax" x="0" y="142.0" text-anchor="start">30</text>
-    <line class="grid" x1="0" y1="106.0" x2="656" y2="106.0"/>
-    <text class="ax" x="0" y="101.0" text-anchor="start">40</text>
-    <line class="grid" x1="0" y1="65.0" x2="656" y2="65.0"/>
-    <text class="ax" x="0" y="60.0" text-anchor="start">50</text>
-    <line class="grid" x1="0" y1="24.0" x2="656" y2="24.0"/>
-    <text class="ax" x="0" y="19.0" text-anchor="start">60</text>
+    <line class="grid" x1="0" y1="229.3" x2="760" y2="229.3"/>
+    <text class="ax" x="0" y="224.3" text-anchor="start">10</text>
+    <line class="grid" x1="0" y1="188.7" x2="760" y2="188.7"/>
+    <text class="ax" x="0" y="183.7" text-anchor="start">20</text>
+    <line class="grid" x1="0" y1="148.0" x2="760" y2="148.0"/>
+    <text class="ax" x="0" y="143.0" text-anchor="start">30</text>
+    <line class="grid" x1="0" y1="107.3" x2="760" y2="107.3"/>
+    <text class="ax" x="0" y="102.3" text-anchor="start">40</text>
+    <line class="grid" x1="0" y1="66.7" x2="760" y2="66.7"/>
+    <text class="ax" x="0" y="61.7" text-anchor="start">50</text>
+    <line class="grid" x1="0" y1="26.0" x2="760" y2="26.0"/>
+    <text class="ax" x="0" y="21.0" text-anchor="start">60</text>
     <text class="ax" x="0.0" y="290" text-anchor="start">2010</text>
-    <text class="ax" x="131.2" y="290" text-anchor="middle">2013</text>
-    <text class="ax" x="262.4" y="290" text-anchor="middle">2016</text>
-    <text class="ax" x="393.6" y="290" text-anchor="middle">2019</text>
-    <text class="ax" x="524.8" y="290" text-anchor="middle">2022</text>
-    <text class="ax" x="656.0" y="290" text-anchor="end">2025</text>
-    <path class="ln" stroke="var(--c-ctx)" d="M0.0,270.0 L43.7,269.7 L87.5,269.3 L131.2,268.8 L174.9,268.2 L218.7,267.2 L262.4,266.1 L306.1,264.3 L349.9,260.2 L393.6,258.9 L437.3,252.0 L481.1,231.9 L524.8,208.5 L568.5,196.2 L612.3,183.9 L656.0,167.5"/>
-    <circle class="dot" cx="656.0" cy="167.5" r="4.5" fill="var(--c-ctx)"/>
-    <text class="dl" x="667.0" y="171.5" fill="var(--c-ctx)">World</text>
-    <path class="ln" stroke="var(--c-ctx)" d="M0.0,270.0 L43.7,269.9 L87.5,269.7 L131.2,269.6 L174.9,268.3 L218.7,265.5 L262.4,263.9 L306.1,260.2 L349.9,250.7 L393.6,249.5 L437.3,246.6 L481.1,204.4 L524.8,151.1 L568.5,114.2 L612.3,73.2 L656.0,52.7"/>
-    <circle class="dot" cx="656.0" cy="52.7" r="4.5" fill="var(--c-ctx)"/>
-    <text class="dl" x="667.0" y="56.7" fill="var(--c-ctx)">China</text>
-    <path class="ln" stroke="var(--c-ctx)" d="M0.0,270.0 L43.7,269.4 L87.5,268.3 L131.2,267.1 L174.9,266.8 L218.7,267.1 L262.4,265.9 L306.1,264.7 L349.9,260.6 L393.6,261.4 L437.3,260.6 L481.1,250.7 L524.8,238.4 L568.5,230.2 L612.3,229.0 L656.0,229.0"/>
-    <circle class="dot" cx="656.0" cy="229.0" r="4.5" fill="var(--c-ctx)"/>
-    <text class="dl" x="667.0" y="233.0" fill="var(--c-ctx)">US</text>
-    <path class="ln" stroke="var(--c-output)" d="M0.0,269.9 L43.7,269.8 L87.5,270.0 L131.2,269.9 L174.9,269.8 L218.7,269.9 L262.4,269.9 L306.1,269.9 L349.9,269.9 L393.6,269.9 L437.3,269.5 L481.1,268.3 L524.8,264.3 L568.5,261.4 L612.3,261.4 L656.0,253.6"/>
-    <circle class="dot" cx="656.0" cy="253.6" r="4.5" fill="var(--c-output)"/>
-    <text class="dl" x="667.0" y="257.6" fill="var(--c-output)">India</text>
-    <line class="cross" x1="0" y1="24" x2="0" y2="270" style="opacity:0"/>
+    <text class="ax" x="152.0" y="290" text-anchor="middle">2013</text>
+    <text class="ax" x="304.0" y="290" text-anchor="middle">2016</text>
+    <text class="ax" x="456.0" y="290" text-anchor="middle">2019</text>
+    <text class="ax" x="608.0" y="290" text-anchor="middle">2022</text>
+    <text class="ax" x="760.0" y="290" text-anchor="end">2025</text>
+    <path class="ln" stroke="var(--c-ctx)" d="M0.0,270.0 L50.7,269.7 L101.3,269.3 L152.0,268.8 L202.7,268.2 L253.3,267.2 L304.0,266.1 L354.7,264.3 L405.3,260.2 L456.0,259.0 L506.7,252.1 L557.3,232.2 L608.0,209.0 L658.7,196.8 L709.3,184.6 L760.0,168.3"/>
+    <circle class="dot" cx="760.0" cy="168.3" r="4.5" fill="var(--c-ctx)"/>
+    <text class="dl" x="752.0" y="157.3" text-anchor="end" fill="var(--c-ctx)">World</text>
+    <path class="ln" stroke="var(--c-ctx)" d="M0.0,270.0 L50.7,269.9 L101.3,269.7 L152.0,269.6 L202.7,268.3 L253.3,265.5 L304.0,263.9 L354.7,260.2 L405.3,250.9 L456.0,249.7 L506.7,246.8 L557.3,204.9 L608.0,152.1 L658.7,115.5 L709.3,74.8 L760.0,54.5"/>
+    <circle class="dot" cx="760.0" cy="54.5" r="4.5" fill="var(--c-ctx)"/>
+    <text class="dl" x="752.0" y="43.5" text-anchor="end" fill="var(--c-ctx)">China</text>
+    <path class="ln" stroke="var(--c-ctx)" d="M0.0,270.0 L50.7,269.4 L101.3,268.3 L152.0,267.1 L202.7,266.9 L253.3,267.2 L304.0,266.0 L354.7,264.7 L405.3,260.6 L456.0,261.5 L506.7,260.6 L557.3,250.9 L608.0,238.7 L658.7,230.6 L709.3,229.3 L760.0,229.3"/>
+    <circle class="dot" cx="760.0" cy="229.3" r="4.5" fill="var(--c-ctx)"/>
+    <text class="dl" x="752.0" y="218.3" text-anchor="end" fill="var(--c-ctx)">US</text>
+    <path class="ln" stroke="var(--c-output)" d="M0.0,269.9 L50.7,269.8 L101.3,270.0 L152.0,269.9 L202.7,269.8 L253.3,269.9 L304.0,269.9 L354.7,269.9 L405.3,269.9 L456.0,269.9 L506.7,269.5 L557.3,268.3 L608.0,264.3 L658.7,261.5 L709.3,261.5 L760.0,253.7"/>
+    <circle class="dot" cx="760.0" cy="253.7" r="4.5" fill="var(--c-output)"/>
+    <text class="dl" x="752.0" y="242.7" text-anchor="end" fill="var(--c-output)">India</text>
+    <line class="cross" x1="0" y1="26" x2="0" y2="270" style="opacity:0"/>
     </svg>
     <div class="tip" id="t1"></div>
   </div>
@@ -222,7 +222,7 @@ low share of a big one.</p>
 
 <script>
 const ROWS = [["2010", "0.02", "0.01", "0.01"], ["2011", "0.06", "0.07", "0.03"], ["2012", "0.01", "0.17", "0.07"], ["2013", "0.02", "0.29", "0.10"], ["2014", "0.04", "0.44", "0.41"], ["2015", "0.02", "0.68", "1.10"], ["2016", "0.03", "0.95", "1.50"], ["2017", "0.03", "1.40", "2.40"], ["2018", "0.03", "2.40", "4.70"], ["2019", "0.02", "2.70", "5.00"], ["2020", "0.12", "4.40", "5.70"], ["2021", "0.41", "9.30", "16.00"], ["2022", "1.40", "15.00", "29.00"], ["2023", "2.10", "18.00", "38.00"], ["2024", "2.10", "21.00", "48.00"], ["2025", "4.00", "25.00", "53.00"]];
-const PAD = {l:0, r:104, t:24, b:30}, W = 760;
+const PAD = {l:0, r:0, t:26, b:30}, W = 760;
 
 const tb = document.getElementById('tb');
 const frag = document.createDocumentFragment();
