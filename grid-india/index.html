@@ -12,7 +12,7 @@
 figure{margin:0 0 .4rem}
 figcaption{font:400 .83rem/1.5 var(--sans); color:var(--muted); margin:.7rem 0 0; max-width:var(--measure)}
 .chartwrap{position:relative; overflow-x:auto}
-svg{display:block; width:100%; height:auto; min-width:34rem; touch-action:pan-y; overflow:visible}
+svg{display:block; width:100%; height:auto; min-width:34rem; touch-action:pan-y}
 .grid{stroke:var(--grid); stroke-width:1}
 .ax{fill:var(--axis-ink); font:400 10.5px var(--mono); font-variant-numeric:tabular-nums}
 .ln{fill:none; stroke-width:2; stroke-linejoin:round; stroke-linecap:round}
@@ -32,7 +32,7 @@ svg{display:block; width:100%; height:auto; min-width:34rem; touch-action:pan-y;
   font:400 .8rem var(--sans); color:var(--ink-soft); list-style:none; padding:0}
 .legend li{display:flex; align-items:center; gap:.45rem}
 .swatch{width:14px; height:2px; border-radius:1px; flex:none}
-.tip{position:absolute; pointer-events:none; opacity:0; transform:translate(-50%,-50%);
+.tip{position:absolute; left:50%; top:58px; pointer-events:none; opacity:0; transform:translate(-50%,-50%);
   background:var(--sheet); border:1px solid var(--line); border-radius:3px;
   padding:.5rem .6rem; font:400 .78rem/1.45 var(--sans); white-space:nowrap;
   box-shadow:0 4px 16px -6px rgba(40,34,22,.28); z-index:2}
@@ -132,17 +132,17 @@ unaccompanied by a drop in demand.</p>
     <line class="grid" x1="0" y1="26.0" x2="760" y2="26.0"/>
     <text class="ax" x="0" y="21.0" text-anchor="start">1600</text>
     <text class="ax" x="0.0" y="290" text-anchor="start">2000</text>
-    <text class="ax" x="152.0" y="290" text-anchor="middle">2005</text>
-    <text class="ax" x="304.0" y="290" text-anchor="middle">2010</text>
-    <text class="ax" x="456.0" y="290" text-anchor="middle">2015</text>
-    <text class="ax" x="608.0" y="290" text-anchor="middle">2020</text>
-    <text class="ax" x="760.0" y="290" text-anchor="end">2025</text>
-    <path class="ln" stroke="var(--c-output)" d="M0.0,210.5 L30.4,207.7 L60.8,204.9 L91.2,202.7 L121.6,199.4 L152.0,197.0 L182.4,192.9 L212.8,188.7 L243.2,182.6 L273.6,176.8 L304.0,171.9 L334.4,163.1 L364.8,150.0 L395.2,140.7 L425.6,125.1 L456.0,116.5 L486.4,106.3 L516.8,99.9 L547.2,87.2 L577.6,87.2 L608.0,95.6 L638.4,78.5 L668.8,65.0 L699.2,49.6 L729.6,38.5 L760.0,45.2"/>
-    <circle class="dot" cx="760.0" cy="45.2" r="4.5" fill="var(--c-output)"/>
-    <text class="dl" x="752.0" y="34.2" text-anchor="end" fill="var(--c-output)">Coal</text>
-    <path class="ln" stroke="var(--c-input)" d="M0.0,269.8 L30.4,269.7 L60.8,269.7 L91.2,269.6 L121.6,269.2 L152.0,269.1 L182.4,268.6 L212.8,268.2 L243.2,267.8 L273.6,267.5 L304.0,267.0 L334.4,266.2 L364.8,265.5 L395.2,264.9 L425.6,264.1 L456.0,263.9 L486.4,261.5 L516.8,258.6 L547.2,255.1 L577.6,254.6 L608.0,252.7 L638.4,249.6 L668.8,244.7 L699.2,239.9 L729.6,235.7 L760.0,224.2"/>
-    <circle class="dot" cx="760.0" cy="224.2" r="4.5" fill="var(--c-input)"/>
-    <text class="dl" x="752.0" y="213.2" text-anchor="end" fill="var(--c-input)">Solar and wind</text>
+    <text class="ax" x="150.6" y="290" text-anchor="middle">2005</text>
+    <text class="ax" x="301.2" y="290" text-anchor="middle">2010</text>
+    <text class="ax" x="451.8" y="290" text-anchor="middle">2015</text>
+    <text class="ax" x="602.4" y="290" text-anchor="middle">2020</text>
+    <text class="ax" x="753.0" y="290" text-anchor="end">2025</text>
+    <path class="ln" stroke="var(--c-output)" d="M0.0,210.5 L30.1,207.7 L60.2,204.9 L90.4,202.7 L120.5,199.4 L150.6,197.0 L180.7,192.9 L210.8,188.7 L241.0,182.6 L271.1,176.8 L301.2,171.9 L331.3,163.1 L361.4,150.0 L391.6,140.7 L421.7,125.1 L451.8,116.5 L481.9,106.3 L512.0,99.9 L542.2,87.2 L572.3,87.2 L602.4,95.6 L632.5,78.5 L662.6,65.0 L692.8,49.6 L722.9,38.5 L753.0,45.2"/>
+    <circle class="dot" cx="753.0" cy="45.2" r="4.5" fill="var(--c-output)"/>
+    <text class="dl" x="745.0" y="34.2" text-anchor="end" fill="var(--c-output)">Coal</text>
+    <path class="ln" stroke="var(--c-input)" d="M0.0,269.8 L30.1,269.7 L60.2,269.7 L90.4,269.6 L120.5,269.2 L150.6,269.1 L180.7,268.6 L210.8,268.2 L241.0,267.8 L271.1,267.5 L301.2,267.0 L331.3,266.2 L361.4,265.5 L391.6,264.9 L421.7,264.1 L451.8,263.9 L481.9,261.5 L512.0,258.6 L542.2,255.1 L572.3,254.6 L602.4,252.7 L632.5,249.6 L662.6,244.7 L692.8,239.9 L722.9,235.7 L753.0,224.2"/>
+    <circle class="dot" cx="753.0" cy="224.2" r="4.5" fill="var(--c-input)"/>
+    <text class="dl" x="745.0" y="213.2" text-anchor="end" fill="var(--c-input)">Solar and wind</text>
     <line class="cross" x1="0" y1="26" x2="0" y2="270" style="opacity:0"/>
     </svg>
     <div class="tip" id="t1"></div>
@@ -166,13 +166,13 @@ unaccompanied by a drop in demand.</p>
     <line class="grid" x1="0" y1="26.0" x2="760" y2="26.0"/>
     <text class="ax" x="0" y="21.0" text-anchor="start">80</text>
     <text class="ax" x="0.0" y="290" text-anchor="start">2000</text>
-    <text class="ax" x="152.0" y="290" text-anchor="middle">2005</text>
-    <text class="ax" x="304.0" y="290" text-anchor="middle">2010</text>
-    <text class="ax" x="456.0" y="290" text-anchor="middle">2015</text>
-    <text class="ax" x="608.0" y="290" text-anchor="middle">2020</text>
-    <text class="ax" x="760.0" y="290" text-anchor="end">2025</text>
-    <path class="ln" stroke="var(--c-output)" d="M0.0,168.7 L30.4,151.7 L60.8,148.0 L91.2,157.8 L121.6,193.1 L152.0,173.6 L182.4,173.6 L212.8,184.6 L243.2,157.8 L273.6,152.9 L304.0,163.9 L334.4,173.6 L364.8,119.9 L395.2,95.5 L425.6,80.9 L456.0,65.0 L486.4,62.6 L516.8,71.1 L547.2,71.1 L577.6,88.2 L608.0,109.0 L638.4,89.4 L668.8,93.1 L699.2,83.3 L729.6,93.1 L760.0,138.2"/>
-    <circle class="dot" cx="760.0" cy="138.2" r="4.5" fill="var(--c-output)"/>
+    <text class="ax" x="150.6" y="290" text-anchor="middle">2005</text>
+    <text class="ax" x="301.2" y="290" text-anchor="middle">2010</text>
+    <text class="ax" x="451.8" y="290" text-anchor="middle">2015</text>
+    <text class="ax" x="602.4" y="290" text-anchor="middle">2020</text>
+    <text class="ax" x="753.0" y="290" text-anchor="end">2025</text>
+    <path class="ln" stroke="var(--c-output)" d="M0.0,168.7 L30.1,151.7 L60.2,148.0 L90.4,157.8 L120.5,193.1 L150.6,173.6 L180.7,173.6 L210.8,184.6 L241.0,157.8 L271.1,152.9 L301.2,163.9 L331.3,173.6 L361.4,119.9 L391.6,95.5 L421.7,80.9 L451.8,65.0 L481.9,62.6 L512.0,71.1 L542.2,71.1 L572.3,88.2 L602.4,109.0 L632.5,89.4 L662.6,93.1 L692.8,83.3 L722.9,93.1 L753.0,138.2"/>
+    <circle class="dot" cx="753.0" cy="138.2" r="4.5" fill="var(--c-output)"/>
     <line class="cross" x1="0" y1="26" x2="0" y2="270" style="opacity:0"/>
     </svg>
   </div>
@@ -216,6 +216,57 @@ changed. The claim here is narrow: this particular year broke a pattern that had
 after dark, how much storage exists, and how much coal capacity sits idle but available. None of
 that is visible at this resolution.</p>
 
+<h2>Build notes</h2>
+<p>What this page is made of, and how to rebuild it. The source lives in
+<a href="https://github.com/samuel13-cell/samuel13-cell.github.io/tree/main/pipeline/">pipeline/</a>.</p>
+
+<dl class="stack">
+    <dt>Source</dt><dd>Our World in Data, compiled from Ember and the Energy Institute. Chosen after India’s own portal proved unusable: data.gov.in disallows crawling in its robots.txt, and its API offers no search, so finding a dataset would have meant paging 287,810 records at 100 per request.</dd>
+    <dt>Fetch</dt><dd>owid_fetch.py, plain requests. The CSV is stored byte for byte with its sha256, so a parse change re-runs without a refetch and every number here traces back to a specific file.</dd>
+    <dt>Transform</dt><dd>grid_transform.py, DuckDB straight over the raw CSV. No database server and no ORM: the query is the analysis.</dd>
+    <dt>Render</dt><dd>Static HTML with inline SVG. No chart library, no build step and no JavaScript beyond the hover layer, so the page has nothing to rot.</dd>
+    <dt>Colour</dt><dd>The categorical blue, orange and violet, each validated against this page’s own surface for lightness, chroma, colour-blind separation and contrast rather than assumed to carry over. Every green candidate for a third series failed: all of them collided with the orange under protanopia.</dd>
+</dl>
+
+<h3 class="sub">Pipeline</h3>
+<ol class="steps">
+    <li>Download the generation CSV and record url, size and sha256 in a manifest.</li>
+    <li>Load it into DuckDB and filter to India from 2000, keeping the eight published sources.</li>
+    <li>Derive a combined solar-and-wind series and a total, so shares are of generation rather than of installed capacity.</li>
+    <li>Compute every year-on-year change in coal with a window function, which is what turns &ldquo;coal fell&rdquo; from an impression into a checkable claim.</li>
+    <li>Write a JSON payload plus a CSV, then render the page from the payload.</li>
+</ol>
+
+<h3 class="sub">The query the headline rests on</h3>
+<pre><code><b>SELECT</b> Year,
+       <b>ROUND</b>(coal  - <b>LAG</b>(coal)  <b>OVER</b> (<b>ORDER BY</b> Year), 2) <b>AS</b> d_coal,
+       <b>ROUND</b>(total - <b>LAG</b>(total) <b>OVER</b> (<b>ORDER BY</b> Year), 2) <b>AS</b> d_total
+<b>FROM</b> g
+<b>QUALIFY</b> d_coal &lt; 0
+<b>ORDER BY</b> Year;
+
+-- Year   d_coal   d_total
+-- 2019    -0.10    +29.33
+-- 2020   -54.98    -37.55
+-- 2025   -43.75    +45.08</code></pre>
+
+<h3 class="sub">What was checked</h3>
+<ul class="checks">
+    <li>Every prior year in which coal fell, not only the latest. An early draft of this page claimed 2025 was the first fall, which the data does not support.</li>
+    <li>The 2019 fall is 0.10 TWh against a base of 1,199, a rounding margin rather than a turn.</li>
+    <li>The 2020 fall came with total generation falling 37.55 TWh, so coal fell because everything fell.</li>
+    <li>Totals are summed from the eight published sources rather than read from a total column, so the parts and the whole cannot disagree.</li>
+</ul>
+
+<h3 class="sub">Reproducing it</h3>
+<pre><code>git clone https://github.com/samuel13-cell/samuel13-cell.github.io
+cd samuel13-cell.github.io/pipeline
+pip install -r requirements.txt
+python owid_fetch.py      # download + manifest
+python grid_transform.py  # DuckDB -&gt; data/grid_india.json
+python grid_render.py     # -&gt; ../grid-india/index.html
+python ../build_site.py   # inject the shared nav</code></pre>
+
 <div class="prov">
   Source: Our World in Data, from Ember and the Energy Institute,
   <a href="https://ourworldindata.org/grapher/electricity-prod-source-stacked.csv">https://ourworldindata.org/grapher/electricity-prod-source-stacked.csv</a><br>
@@ -231,7 +282,7 @@ that is visible at this resolution.</p>
 
 <script>
 const ROWS = [["2000", "390", "0", "2", "77", "16", "571", "2"], ["2001", "408", "0", "2", "72", "19", "586", "2"], ["2002", "427", "0", "2", "68", "19", "610", "2"], ["2003", "442", "0", "3", "69", "18", "638", "3"], ["2004", "463", "0", "5", "101", "21", "698", "5"], ["2005", "478", "0", "6", "97", "18", "704", "6"], ["2006", "506", "0", "9", "113", "18", "744", "9"], ["2007", "533", "0", "12", "123", "18", "796", "12"], ["2008", "573", "0", "14", "115", "15", "828", "14"], ["2009", "611", "0", "16", "106", "17", "879", "16"], ["2010", "643", "0", "20", "109", "23", "936", "20"], ["2011", "701", "1", "24", "132", "32", "1032", "25"], ["2012", "787", "2", "27", "116", "33", "1088", "30"], ["2013", "848", "3", "30", "132", "33", "1141", "33"], ["2014", "950", "5", "34", "139", "35", "1259", "38"], ["2015", "1006", "7", "33", "134", "38", "1311", "40"], ["2016", "1074", "12", "44", "129", "38", "1395", "56"], ["2017", "1115", "22", "53", "136", "37", "1462", "75"], ["2018", "1199", "38", "60", "140", "39", "1572", "98"], ["2019", "1199", "38", "63", "162", "45", "1601", "101"], ["2020", "1144", "53", "60", "164", "45", "1563", "113"], ["2021", "1256", "66", "68", "161", "44", "1679", "134"], ["2022", "1344", "96", "70", "175", "46", "1805", "166"], ["2023", "1445", "115", "82", "149", "48", "1918", "198"], ["2024", "1518", "143", "82", "156", "55", "2036", "225"], ["2025", "1474", "196", "104", "178", "54", "2082", "300"]];
-const PAD = {l:0, r:0, t:26, b:30}, W = 760;
+const PAD = {l:0, r:7, t:26, b:30}, W = 760;
 
 const tb = document.getElementById('tb');
 const frag = document.createDocumentFragment();

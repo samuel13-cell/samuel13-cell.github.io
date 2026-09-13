@@ -5,6 +5,7 @@ from datetime import date
 from pathlib import Path
 
 import lib
+import notes
 
 HERE = Path(__file__).parent
 OUT = HERE.parent / 'ott-india'
@@ -71,6 +72,7 @@ def main() -> None:
         'weeks': str(d['weeks']),
         'src_url': man['url'], 'sha': man['sha256'][:12],
         'built': date.today().strftime('%d %B %Y'),
+        'build_notes': notes.OTT,
     }
 
     page = (HERE / 'ott_template.html').read_text()

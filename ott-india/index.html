@@ -12,7 +12,7 @@
 figure{margin:0 0 .4rem}
 figcaption{font:400 .83rem/1.5 var(--sans); color:var(--muted); margin:.7rem 0 0; max-width:var(--measure)}
 .chartwrap{position:relative; overflow-x:auto}
-svg{display:block; width:100%; height:auto; min-width:34rem; touch-action:pan-y; overflow:visible}
+svg{display:block; width:100%; height:auto; min-width:34rem; touch-action:pan-y}
 .grid{stroke:var(--grid); stroke-width:1}
 .ax{fill:var(--axis-ink); font:400 10.5px var(--mono); font-variant-numeric:tabular-nums}
 .ln{fill:none; stroke-width:2; stroke-linejoin:round; stroke-linecap:round}
@@ -32,7 +32,7 @@ svg{display:block; width:100%; height:auto; min-width:34rem; touch-action:pan-y;
   font:400 .8rem var(--sans); color:var(--ink-soft); list-style:none; padding:0}
 .legend li{display:flex; align-items:center; gap:.45rem}
 .swatch{width:14px; height:2px; border-radius:1px; flex:none}
-.tip{position:absolute; pointer-events:none; opacity:0; transform:translate(-50%,-50%);
+.tip{position:absolute; left:50%; top:58px; pointer-events:none; opacity:0; transform:translate(-50%,-50%);
   background:var(--sheet); border:1px solid var(--line); border-radius:3px;
   padding:.5rem .6rem; font:400 .78rem/1.45 var(--sans); white-space:nowrap;
   box-shadow:0 4px 16px -6px rgba(40,34,22,.28); z-index:2}
@@ -151,13 +151,13 @@ Brazil or Spain than to its Asian neighbours.</p>
     <line class="grid" x1="0" y1="26.0" x2="760" y2="26.0"/>
     <text class="ax" x="0" y="21.0" text-anchor="start">12</text>
     <text class="ax" x="0.0" y="290" text-anchor="start">2021</text>
-    <text class="ax" x="152.0" y="290" text-anchor="middle">2022</text>
-    <text class="ax" x="304.0" y="290" text-anchor="middle">2023</text>
-    <text class="ax" x="456.0" y="290" text-anchor="middle">2024</text>
-    <text class="ax" x="608.0" y="290" text-anchor="middle">2025</text>
-    <text class="ax" x="760.0" y="290" text-anchor="end">2026</text>
-    <path class="ln" stroke="var(--c-input)" d="M0.0,74.8 L152.0,95.1 L304.0,66.7 L456.0,164.3 L608.0,178.5 L760.0,190.7"/>
-    <circle class="dot" cx="760.0" cy="190.7" r="4.5" fill="var(--c-input)"/>
+    <text class="ax" x="150.6" y="290" text-anchor="middle">2022</text>
+    <text class="ax" x="301.2" y="290" text-anchor="middle">2023</text>
+    <text class="ax" x="451.8" y="290" text-anchor="middle">2024</text>
+    <text class="ax" x="602.4" y="290" text-anchor="middle">2025</text>
+    <text class="ax" x="753.0" y="290" text-anchor="end">2026</text>
+    <path class="ln" stroke="var(--c-input)" d="M0.0,74.8 L150.6,95.1 L301.2,66.7 L451.8,164.3 L602.4,178.5 L753.0,190.7"/>
+    <circle class="dot" cx="753.0" cy="190.7" r="4.5" fill="var(--c-input)"/>
     <line class="cross" x1="0" y1="26" x2="0" y2="270" style="opacity:0"/>
     </svg>
     <div class="tip" id="t1"></div>
@@ -205,6 +205,54 @@ JioHotstar and Amazon Prime Video, and its subscriber base skews urban, English-
 affluent. The honest reading is that this describes what Netflix India's audience watches, which
 is not the same as what India watches.</p>
 
+<h2>Build notes</h2>
+<p>What this page is made of, and how to rebuild it. The source lives in
+<a href="https://github.com/samuel13-cell/samuel13-cell.github.io/tree/main/pipeline/">pipeline/</a>.</p>
+
+<dl class="stack">
+    <dt>Source</dt><dd>Netflix’s own weekly Top 10 per country, published as a 32 MB TSV. Platform data rather than a third-party estimate.</dd>
+    <dt>Fetch</dt><dd>ott_fetch.py, one request, stored whole with its sha256.</dd>
+    <dt>Transform</dt><dd>ott_transform.py, DuckDB. The reach measure is a self-join of the table against its own distinct-country count per title.</dd>
+    <dt>Render</dt><dd>Static HTML with inline SVG. No chart library, no build step and no JavaScript beyond the hover layer, so the page has nothing to rot.</dd>
+    <dt>Colour</dt><dd>One accent against a neutral: the ranking is a list of names where only India needs to stand out, so colour marks the subject rather than the category.</dd>
+</dl>
+
+<h3 class="sub">Pipeline</h3>
+<ol class="steps">
+    <li>Download the country TSV and record its sha256.</li>
+    <li>Count, for every title, how many distinct countries it ever charts in.</li>
+    <li>Join that count back onto each row, so every Indian slot carries the reach of the title occupying it.</li>
+    <li>Band the slots by reach and compute the locally anchored share per year.</li>
+    <li>Repeat per country to rank markets, excluding those with thin coverage.</li>
+</ol>
+
+<h3 class="sub">Inferring origin from behaviour rather than from a title</h3>
+<pre><code><b>CREATE VIEW</b> reach <b>AS</b>
+  <b>SELECT</b> show_title, category,
+         <b>COUNT</b>(<b>DISTINCT</b> country_name) <b>AS</b> countries
+  <b>FROM</b> t <b>GROUP BY</b> 1, 2;
+
+<b>CREATE VIEW</b> j <b>AS</b>
+  <b>SELECT</b> i.*, r.countries
+  <b>FROM</b> t i <b>JOIN</b> reach r <b>USING</b> (show_title, category);</code></pre>
+
+<h3 class="sub">What was checked</h3>
+<ul class="checks">
+    <li>The threshold was tested rather than trusted: India sits far below Japan and Korea whether locally anchored means three countries or ten.</li>
+    <li>Markets with thin coverage are excluded from the ranking, so a country with a handful of weeks cannot top it.</li>
+    <li>Titles are keyed on name and category together, so a film and a series sharing a name are not merged.</li>
+    <li>No language or country-of-origin field exists in this data, and the page says so rather than implying one was used.</li>
+</ul>
+
+<h3 class="sub">Reproducing it</h3>
+<pre><code>git clone https://github.com/samuel13-cell/samuel13-cell.github.io
+cd samuel13-cell.github.io/pipeline
+pip install -r requirements.txt
+python ott_fetch.py      # download + manifest
+python ott_transform.py  # DuckDB -&gt; data/ott_india.json
+python ott_render.py     # -&gt; ../ott-india/index.html
+python ../build_site.py</code></pre>
+
 <div class="prov">
   Source: Netflix Top 10, official weekly country data, <a href="https://www.netflix.com/tudum/top10/data/all-weeks-countries.tsv">https://www.netflix.com/tudum/top10/data/all-weeks-countries.tsv</a><br>
   5,420 Indian slots across 271 weeks &middot; sha256 2c396d446f6f&hellip; &middot;
@@ -221,7 +269,7 @@ is not the same as what India watches.</p>
 <script>
 const BANDS = [["India only", "102", "1.9%"], ["2 to 5 countries", "272", "5.0%"], ["6 to 20 countries", "1,878", "34.6%"], ["21 to 50 countries", "744", "13.7%"], ["51 or more countries", "2,424", "44.7%"]];
 const YEARLY = [["2021", 9.6], ["2022", 8.6], ["2023", 10.0], ["2024", 5.2], ["2025", 4.5], ["2026", 3.9]];
-const PAD = {l:0, r:0, t:26, b:30}, W = 760;
+const PAD = {l:0, r:7, t:26, b:30}, W = 760;
 
 const tb = document.getElementById('tb');
 const frag = document.createDocumentFragment();

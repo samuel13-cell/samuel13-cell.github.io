@@ -4,10 +4,11 @@ No chart library: every page ships plain SVG plus a small hover layer, so
 the pages stay dependency-free and render identically in print.
 """
 W, H = 760, 300
-# The plot spans the full content column so its gridlines share both edges
-# with the section rules above them. Axis labels and series labels all sit
-# inside the plot rather than in gutters, which is what keeps them aligned.
-PAD = {'t': 26, 'r': 0, 'b': 30, 'l': 0}
+# Gridlines span the full content column so they share both edges with the
+# section rules above them. The data area stops a marker-radius short of the
+# right edge so the end dot sits inside the column instead of overhanging it;
+# six units is about five pixels and is invisible against the gridline.
+PAD = {'t': 26, 'r': 7, 'b': 30, 'l': 0}
 
 MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July',
           'August', 'September', 'October', 'November', 'December']
@@ -43,7 +44,7 @@ def _grid(ys, lo, hi, step, pad=PAD):
     while v <= hi + 1e-9:
         y = ys(v)
         out.append(f'<line class="grid" x1="{pad["l"]}" y1="{y:.1f}" '
-                   f'x2="{W - pad["r"]}" y2="{y:.1f}"/>')
+                   f'x2="{W}" y2="{y:.1f}"/>')
         out.append(f'<text class="ax" x="{pad["l"]}" y="{y - 5:.1f}" '
                    f'text-anchor="start">{v:g}</text>')
         v += step
@@ -85,7 +86,15 @@ def line_chart(labels, series, lo, hi, step=10, every=2, annotate=None, ticks=No
         x = xs(ai)
         parts.append(f'<line class="rule" x1="{x:.1f}" y1="{PAD["t"]}" '
                      f'x2="{x:.1f}" y2="{H - PAD["b"]}"/>')
-        parts.append(f'<text class="anno" x="{x + 6:.1f}" y="{PAD["t"] + 11}">{text}</text>')
+        # 10px mono measures ~6.5 units per character in this viewBox; round up
+        # so a label that only just fits still flips rather than overhanging
+        width = 7.0 * len(text)
+        if x + 6 + width <= W:
+            parts.append(f'<text class="anno" x="{x + 6:.1f}" '
+                         f'y="{PAD["t"] + 11}">{text}</text>')
+        else:
+            parts.append(f'<text class="anno" x="{x - 6:.1f}" y="{PAD["t"] + 11}" '
+                         f'text-anchor="end">{text}</text>')
 
     for label, var, values in series:
         parts.append(f'<path class="ln" stroke="var({var})" d="{_path(xs, ys, values)}"/>')
@@ -116,7 +125,9 @@ def bar_chart(labels, values, lo, hi, step=10, var='--c-input', every=2, mark=No
     base = ys(lo)
 
     for i, v in enumerate(values):
-        x = xs(i) - bw / 2
+        # bars are centred on their tick, so the outermost ones are clamped to
+        # keep their full width inside the column
+        x = min(max(xs(i) - bw / 2, pad['l']), W - bw)
         top = ys(v)
         hgt = max(0.5, base - top)
         hue = '--c-output' if (mark is not None and i >= mark) else var

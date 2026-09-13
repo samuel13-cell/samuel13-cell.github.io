@@ -4,6 +4,7 @@ from datetime import date
 from pathlib import Path
 
 import lib
+import notes
 
 HERE = Path(__file__).parent
 OUT = HERE.parent / 'ipl-impact'
@@ -53,6 +54,7 @@ def main() -> None:
         'first': str(d['first_year']), 'last': str(d['last_year']),
         'src_url': man['url'], 'sha': man['sha256'][:12],
         'built': date.today().strftime('%d %B %Y'),
+        'build_notes': notes.IPL,
     }
 
     html = (HERE / 'ipl_template.html').read_text()

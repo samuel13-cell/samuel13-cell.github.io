@@ -12,7 +12,7 @@
 figure{margin:0 0 .4rem}
 figcaption{font:400 .83rem/1.5 var(--sans); color:var(--muted); margin:.7rem 0 0; max-width:var(--measure)}
 .chartwrap{position:relative; overflow-x:auto}
-svg{display:block; width:100%; height:auto; min-width:34rem; touch-action:pan-y; overflow:visible}
+svg{display:block; width:100%; height:auto; min-width:34rem; touch-action:pan-y}
 .grid{stroke:var(--grid); stroke-width:1}
 .ax{fill:var(--axis-ink); font:400 10.5px var(--mono); font-variant-numeric:tabular-nums}
 .ln{fill:none; stroke-width:2; stroke-linejoin:round; stroke-linecap:round}
@@ -32,7 +32,7 @@ svg{display:block; width:100%; height:auto; min-width:34rem; touch-action:pan-y;
   font:400 .8rem var(--sans); color:var(--ink-soft); list-style:none; padding:0}
 .legend li{display:flex; align-items:center; gap:.45rem}
 .swatch{width:14px; height:2px; border-radius:1px; flex:none}
-.tip{position:absolute; pointer-events:none; opacity:0; transform:translate(-50%,-50%);
+.tip{position:absolute; left:50%; top:58px; pointer-events:none; opacity:0; transform:translate(-50%,-50%);
   background:var(--sheet); border:1px solid var(--line); border-radius:3px;
   padding:.5rem .6rem; font:400 .78rem/1.45 var(--sans); white-space:nowrap;
   box-shadow:0 4px 16px -6px rgba(40,34,22,.28); z-index:2}
@@ -124,26 +124,26 @@ which is exactly what having an extra batter in reserve buys you.</p>
     <line class="grid" x1="0" y1="26.0" x2="760" y2="26.0"/>
     <text class="ax" x="0" y="21.0" text-anchor="start">11</text>
     <text class="ax" x="0.0" y="290" text-anchor="start">2008</text>
-    <text class="ax" x="84.4" y="290" text-anchor="middle">2010</text>
-    <text class="ax" x="168.9" y="290" text-anchor="middle">2012</text>
-    <text class="ax" x="253.3" y="290" text-anchor="middle">2014</text>
-    <text class="ax" x="337.8" y="290" text-anchor="middle">2016</text>
-    <text class="ax" x="422.2" y="290" text-anchor="middle">2018</text>
-    <text class="ax" x="506.7" y="290" text-anchor="middle">2020</text>
-    <text class="ax" x="591.1" y="290" text-anchor="middle">2022</text>
-    <text class="ax" x="675.6" y="290" text-anchor="middle">2024</text>
-    <text class="ax" x="760.0" y="290" text-anchor="end">2026</text>
-    <line class="rule" x1="633.3" y1="26" x2="633.3" y2="270"/>
-    <text class="anno" x="639.3" y="37">2023 · Impact Player</text>
-    <path class="ln" stroke="var(--c-input)" d="M0.0,205.1 L42.2,227.1 L84.4,196.3 L126.7,225.6 L168.9,222.7 L211.1,234.4 L253.3,208.5 L295.6,199.2 L337.8,200.2 L380.0,170.4 L422.2,164.1 L464.4,175.3 L506.7,199.7 L548.9,197.3 L591.1,194.8 L633.3,153.4 L675.6,119.2 L717.8,112.9 L760.0,92.4"/>
-    <circle class="dot" cx="760.0" cy="92.4" r="4.5" fill="var(--c-input)"/>
-    <text class="dl" x="752.0" y="81.4" text-anchor="end" fill="var(--c-input)">Powerplay</text>
-    <path class="ln" stroke="var(--c-middle)" d="M0.0,186.1 L42.2,237.3 L84.4,205.1 L126.7,209.5 L168.9,211.4 L211.1,217.8 L253.3,192.9 L295.6,191.4 L337.8,189.5 L380.0,188.5 L422.2,180.2 L464.4,196.3 L506.7,197.8 L548.9,203.6 L591.1,182.6 L633.3,163.6 L675.6,148.5 L717.8,138.2 L760.0,128.0"/>
-    <circle class="dot" cx="760.0" cy="128.0" r="4.5" fill="var(--c-middle)"/>
-    <text class="dl" x="752.0" y="117.0" text-anchor="end" fill="var(--c-middle)">Middle</text>
-    <path class="ln" stroke="var(--c-output)" d="M0.0,96.3 L42.2,135.3 L84.4,113.4 L126.7,136.3 L168.9,115.3 L211.1,112.9 L253.3,93.3 L295.6,81.6 L337.8,89.9 L380.0,112.9 L422.2,93.3 L464.4,91.4 L506.7,85.5 L548.9,129.9 L591.1,86.5 L633.3,84.1 L675.6,56.7 L717.8,62.1 L760.0,70.9"/>
-    <circle class="dot" cx="760.0" cy="70.9" r="4.5" fill="var(--c-output)"/>
-    <text class="dl" x="752.0" y="59.9" text-anchor="end" fill="var(--c-output)">Death</text>
+    <text class="ax" x="83.7" y="290" text-anchor="middle">2010</text>
+    <text class="ax" x="167.3" y="290" text-anchor="middle">2012</text>
+    <text class="ax" x="251.0" y="290" text-anchor="middle">2014</text>
+    <text class="ax" x="334.7" y="290" text-anchor="middle">2016</text>
+    <text class="ax" x="418.3" y="290" text-anchor="middle">2018</text>
+    <text class="ax" x="502.0" y="290" text-anchor="middle">2020</text>
+    <text class="ax" x="585.7" y="290" text-anchor="middle">2022</text>
+    <text class="ax" x="669.3" y="290" text-anchor="middle">2024</text>
+    <text class="ax" x="753.0" y="290" text-anchor="end">2026</text>
+    <line class="rule" x1="627.5" y1="26" x2="627.5" y2="270"/>
+    <text class="anno" x="621.5" y="37" text-anchor="end">2023 · Impact Player</text>
+    <path class="ln" stroke="var(--c-input)" d="M0.0,205.1 L41.8,227.1 L83.7,196.3 L125.5,225.6 L167.3,222.7 L209.2,234.4 L251.0,208.5 L292.8,199.2 L334.7,200.2 L376.5,170.4 L418.3,164.1 L460.2,175.3 L502.0,199.7 L543.8,197.3 L585.7,194.8 L627.5,153.4 L669.3,119.2 L711.2,112.9 L753.0,92.4"/>
+    <circle class="dot" cx="753.0" cy="92.4" r="4.5" fill="var(--c-input)"/>
+    <text class="dl" x="745.0" y="81.4" text-anchor="end" fill="var(--c-input)">Powerplay</text>
+    <path class="ln" stroke="var(--c-middle)" d="M0.0,186.1 L41.8,237.3 L83.7,205.1 L125.5,209.5 L167.3,211.4 L209.2,217.8 L251.0,192.9 L292.8,191.4 L334.7,189.5 L376.5,188.5 L418.3,180.2 L460.2,196.3 L502.0,197.8 L543.8,203.6 L585.7,182.6 L627.5,163.6 L669.3,148.5 L711.2,138.2 L753.0,128.0"/>
+    <circle class="dot" cx="753.0" cy="128.0" r="4.5" fill="var(--c-middle)"/>
+    <text class="dl" x="745.0" y="117.0" text-anchor="end" fill="var(--c-middle)">Middle</text>
+    <path class="ln" stroke="var(--c-output)" d="M0.0,96.3 L41.8,135.3 L83.7,113.4 L125.5,136.3 L167.3,115.3 L209.2,112.9 L251.0,93.3 L292.8,81.6 L334.7,89.9 L376.5,112.9 L418.3,93.3 L460.2,91.4 L502.0,85.5 L543.8,129.9 L585.7,86.5 L627.5,84.1 L669.3,56.7 L711.2,62.1 L753.0,70.9"/>
+    <circle class="dot" cx="753.0" cy="70.9" r="4.5" fill="var(--c-output)"/>
+    <text class="dl" x="745.0" y="59.9" text-anchor="end" fill="var(--c-output)">Death</text>
     <line class="cross" x1="0" y1="26" x2="0" y2="270" style="opacity:0"/>
     </svg>
     <div class="tip" id="t1"></div>
@@ -170,35 +170,35 @@ which is exactly what having an extra batter in reserve buys you.</p>
     <text class="ax" x="0" y="61.7" text-anchor="start">50</text>
     <line class="grid" x1="0" y1="26.0" x2="760" y2="26.0"/>
     <text class="ax" x="0" y="21.0" text-anchor="start">60</text>
-    <path class="bar" fill="var(--c-input)" d="M-12.0,270.0 V224.8 Q-12.0,220.8 -8.0,220.8 H8.0 Q12.0,220.8 12.0,224.8 V270.0 Z"/>
-    <path class="bar" fill="var(--c-input)" d="M30.2,270.0 V266.7 Q30.2,262.7 34.2,262.7 H50.2 Q54.2,262.7 54.2,266.7 V270.0 Z"/>
-    <path class="bar" fill="var(--c-input)" d="M72.4,270.0 V240.2 Q72.4,236.2 76.4,236.2 H92.4 Q96.4,236.2 96.4,240.2 V270.0 Z"/>
-    <path class="bar" fill="var(--c-input)" d="M114.7,270.0 V251.6 Q114.7,247.6 118.7,247.6 H134.7 Q138.7,247.6 138.7,251.6 V270.0 Z"/>
-    <path class="bar" fill="var(--c-input)" d="M156.9,270.0 V252.0 Q156.9,248.0 160.9,248.0 H176.9 Q180.9,248.0 180.9,252.0 V270.0 Z"/>
-    <path class="bar" fill="var(--c-input)" d="M199.1,270.0 V252.4 Q199.1,248.4 203.1,248.4 H219.1 Q223.1,248.4 223.1,252.4 V270.0 Z"/>
-    <path class="bar" fill="var(--c-input)" d="M241.3,270.0 V240.2 Q241.3,236.2 245.3,236.2 H261.3 Q265.3,236.2 265.3,240.2 V270.0 Z"/>
-    <path class="bar" fill="var(--c-input)" d="M283.6,270.0 V225.6 Q283.6,221.6 287.6,221.6 H303.6 Q307.6,221.6 307.6,225.6 V270.0 Z"/>
-    <path class="bar" fill="var(--c-input)" d="M325.8,270.0 V240.2 Q325.8,236.2 329.8,236.2 H345.8 Q349.8,236.2 349.8,240.2 V270.0 Z"/>
-    <path class="bar" fill="var(--c-input)" d="M368.0,270.0 V218.7 Q368.0,214.7 372.0,214.7 H388.0 Q392.0,214.7 392.0,218.7 V270.0 Z"/>
-    <path class="bar" fill="var(--c-input)" d="M410.2,270.0 V199.6 Q410.2,195.6 414.2,195.6 H430.2 Q434.2,195.6 434.2,199.6 V270.0 Z"/>
-    <path class="bar" fill="var(--c-input)" d="M452.4,270.0 V219.9 Q452.4,215.9 456.4,215.9 H472.4 Q476.4,215.9 476.4,219.9 V270.0 Z"/>
-    <path class="bar" fill="var(--c-input)" d="M494.7,270.0 V213.0 Q494.7,209.0 498.7,209.0 H514.7 Q518.7,209.0 518.7,213.0 V270.0 Z"/>
-    <path class="bar" fill="var(--c-input)" d="M536.9,270.0 V233.3 Q536.9,229.3 540.9,229.3 H556.9 Q560.9,229.3 560.9,233.3 V270.0 Z"/>
-    <path class="bar" fill="var(--c-input)" d="M579.1,270.0 V202.4 Q579.1,198.4 583.1,198.4 H599.1 Q603.1,198.4 603.1,202.4 V270.0 Z"/>
-    <path class="bar" fill="var(--c-output)" d="M621.3,270.0 V142.2 Q621.3,138.2 625.3,138.2 H641.3 Q645.3,138.2 645.3,142.2 V270.0 Z"/>
-    <path class="bar" fill="var(--c-output)" d="M663.6,270.0 V125.2 Q663.6,121.2 667.6,121.2 H683.6 Q687.6,121.2 687.6,125.2 V270.0 Z"/>
-    <path class="bar" fill="var(--c-output)" d="M705.8,270.0 V92.6 Q705.8,88.6 709.8,88.6 H725.8 Q729.8,88.6 729.8,92.6 V270.0 Z"/>
-    <path class="bar" fill="var(--c-output)" d="M748.0,270.0 V65.0 Q748.0,61.0 752.0,61.0 H768.0 Q772.0,61.0 772.0,65.0 V270.0 Z"/>
+    <path class="bar" fill="var(--c-input)" d="M0.0,270.0 V224.8 Q0.0,220.8 4.0,220.8 H20.0 Q24.0,220.8 24.0,224.8 V270.0 Z"/>
+    <path class="bar" fill="var(--c-input)" d="M29.8,270.0 V266.7 Q29.8,262.7 33.8,262.7 H49.8 Q53.8,262.7 53.8,266.7 V270.0 Z"/>
+    <path class="bar" fill="var(--c-input)" d="M71.7,270.0 V240.2 Q71.7,236.2 75.7,236.2 H91.7 Q95.7,236.2 95.7,240.2 V270.0 Z"/>
+    <path class="bar" fill="var(--c-input)" d="M113.5,270.0 V251.6 Q113.5,247.6 117.5,247.6 H133.5 Q137.5,247.6 137.5,251.6 V270.0 Z"/>
+    <path class="bar" fill="var(--c-input)" d="M155.3,270.0 V252.0 Q155.3,248.0 159.3,248.0 H175.3 Q179.3,248.0 179.3,252.0 V270.0 Z"/>
+    <path class="bar" fill="var(--c-input)" d="M197.2,270.0 V252.4 Q197.2,248.4 201.2,248.4 H217.2 Q221.2,248.4 221.2,252.4 V270.0 Z"/>
+    <path class="bar" fill="var(--c-input)" d="M239.0,270.0 V240.2 Q239.0,236.2 243.0,236.2 H259.0 Q263.0,236.2 263.0,240.2 V270.0 Z"/>
+    <path class="bar" fill="var(--c-input)" d="M280.8,270.0 V225.6 Q280.8,221.6 284.8,221.6 H300.8 Q304.8,221.6 304.8,225.6 V270.0 Z"/>
+    <path class="bar" fill="var(--c-input)" d="M322.7,270.0 V240.2 Q322.7,236.2 326.7,236.2 H342.7 Q346.7,236.2 346.7,240.2 V270.0 Z"/>
+    <path class="bar" fill="var(--c-input)" d="M364.5,270.0 V218.7 Q364.5,214.7 368.5,214.7 H384.5 Q388.5,214.7 388.5,218.7 V270.0 Z"/>
+    <path class="bar" fill="var(--c-input)" d="M406.3,270.0 V199.6 Q406.3,195.6 410.3,195.6 H426.3 Q430.3,195.6 430.3,199.6 V270.0 Z"/>
+    <path class="bar" fill="var(--c-input)" d="M448.2,270.0 V219.9 Q448.2,215.9 452.2,215.9 H468.2 Q472.2,215.9 472.2,219.9 V270.0 Z"/>
+    <path class="bar" fill="var(--c-input)" d="M490.0,270.0 V213.0 Q490.0,209.0 494.0,209.0 H510.0 Q514.0,209.0 514.0,213.0 V270.0 Z"/>
+    <path class="bar" fill="var(--c-input)" d="M531.8,270.0 V233.3 Q531.8,229.3 535.8,229.3 H551.8 Q555.8,229.3 555.8,233.3 V270.0 Z"/>
+    <path class="bar" fill="var(--c-input)" d="M573.7,270.0 V202.4 Q573.7,198.4 577.7,198.4 H593.7 Q597.7,198.4 597.7,202.4 V270.0 Z"/>
+    <path class="bar" fill="var(--c-output)" d="M615.5,270.0 V142.2 Q615.5,138.2 619.5,138.2 H635.5 Q639.5,138.2 639.5,142.2 V270.0 Z"/>
+    <path class="bar" fill="var(--c-output)" d="M657.3,270.0 V125.2 Q657.3,121.2 661.3,121.2 H677.3 Q681.3,121.2 681.3,125.2 V270.0 Z"/>
+    <path class="bar" fill="var(--c-output)" d="M699.2,270.0 V92.6 Q699.2,88.6 703.2,88.6 H719.2 Q723.2,88.6 723.2,92.6 V270.0 Z"/>
+    <path class="bar" fill="var(--c-output)" d="M736.0,270.0 V65.0 Q736.0,61.0 740.0,61.0 H756.0 Q760.0,61.0 760.0,65.0 V270.0 Z"/>
     <text class="ax" x="0.0" y="290" text-anchor="start">2008</text>
-    <text class="ax" x="84.4" y="290" text-anchor="middle">2010</text>
-    <text class="ax" x="168.9" y="290" text-anchor="middle">2012</text>
-    <text class="ax" x="253.3" y="290" text-anchor="middle">2014</text>
-    <text class="ax" x="337.8" y="290" text-anchor="middle">2016</text>
-    <text class="ax" x="422.2" y="290" text-anchor="middle">2018</text>
-    <text class="ax" x="506.7" y="290" text-anchor="middle">2020</text>
-    <text class="ax" x="591.1" y="290" text-anchor="middle">2022</text>
-    <text class="ax" x="675.6" y="290" text-anchor="middle">2024</text>
-    <text class="ax" x="760.0" y="290" text-anchor="end">2026</text>
+    <text class="ax" x="83.7" y="290" text-anchor="middle">2010</text>
+    <text class="ax" x="167.3" y="290" text-anchor="middle">2012</text>
+    <text class="ax" x="251.0" y="290" text-anchor="middle">2014</text>
+    <text class="ax" x="334.7" y="290" text-anchor="middle">2016</text>
+    <text class="ax" x="418.3" y="290" text-anchor="middle">2018</text>
+    <text class="ax" x="502.0" y="290" text-anchor="middle">2020</text>
+    <text class="ax" x="585.7" y="290" text-anchor="middle">2022</text>
+    <text class="ax" x="669.3" y="290" text-anchor="middle">2024</text>
+    <text class="ax" x="753.0" y="290" text-anchor="end">2026</text>
     </svg>
   </div>
   <figcaption>Share of first innings reaching 200. Seasons from 2023 are shown in the
@@ -238,6 +238,57 @@ move most; they moved least. That is evidence for a change in risk-taking rather
 ability. It remains evidence, not proof, and one competition over four seasons is a
 small sample to hang a causal claim on.</p>
 
+<h2>Build notes</h2>
+<p>What this page is made of, and how to rebuild it. The source lives in
+<a href="https://github.com/samuel13-cell/samuel13-cell.github.io/tree/main/pipeline/">pipeline/</a>.</p>
+
+<dl class="stack">
+    <dt>Source</dt><dd>Cricsheet, which publishes every delivery of every IPL match as open data. 295,732 rows across 1,243 matches.</dd>
+    <dt>Fetch</dt><dd>ipl_fetch.py downloads the archive and extracts only the consolidated file; the per-match CSVs hold the same rows.</dd>
+    <dt>Transform</dt><dd>ipl_transform.py, DuckDB. Phases are derived from the over number rather than hard-coded per season, so the split holds if the format changes.</dd>
+    <dt>Render</dt><dd>Static HTML with inline SVG. No chart library, no build step and no JavaScript beyond the hover layer, so the page has nothing to rot.</dd>
+    <dt>Colour</dt><dd>The categorical blue, orange and violet, each validated against this page’s own surface for lightness, chroma, colour-blind separation and contrast rather than assumed to carry over. Every green candidate for a third series failed: all of them collided with the orange under protanopia.</dd>
+</dl>
+
+<h3 class="sub">Pipeline</h3>
+<ol class="steps">
+    <li>Download the ball-by-ball archive and record its sha256.</li>
+    <li>Derive a phase for every delivery from its over: powerplay, middle, death.</li>
+    <li>Key seasons by the calendar year of their first match, since Cricsheet labels some as 2007/08 and one as 2020/21.</li>
+    <li>Aggregate runs, boundaries, wickets and first-innings totals per season and per phase.</li>
+    <li>Split before and after the rule year and compare phase by phase.</li>
+</ol>
+
+<h3 class="sub">Deriving the phase, and the season key</h3>
+<pre><code><b>SELECT</b> *,
+       <b>CASE WHEN</b> <b>FLOOR</b>(ball) &lt; 6  <b>THEN</b> 'powerplay'
+            <b>WHEN</b> <b>FLOOR</b>(ball) &lt; 15 <b>THEN</b> 'middle'
+            <b>ELSE</b> 'death' <b>END</b>              <b>AS</b> phase,
+       runs_off_bat + extras              <b>AS</b> runs
+<b>FROM</b> read_csv_auto('all_matches.csv');
+
+-- Cricsheet labels seasons '2007/08' and '2020/21'; the calendar
+-- year of the first match is the one unambiguous key.
+<b>SELECT</b> season, <b>CAST</b>(<b>strftime</b>(<b>MIN</b>(start_date), '%Y') <b>AS</b> <b>INT</b>) <b>AS</b> yr
+<b>FROM</b> b <b>GROUP BY</b> season;</code></pre>
+
+<h3 class="sub">What was checked</h3>
+<ul class="checks">
+    <li>The phase split is computed from the data, so an over misfiled in the source lands in the right bucket rather than a hard-coded range.</li>
+    <li>Season keys were checked against the mixed labelling before use; naive sorting of &ldquo;2007/08&rdquo; against &ldquo;2009&rdquo; would have reordered the series.</li>
+    <li>Runs per over counts extras as well as runs off the bat, because those are runs the fielding side conceded.</li>
+    <li>The alternative explanation was tested, not waved away: a pure hitting-power story predicts the death overs move most, and they moved least.</li>
+</ul>
+
+<h3 class="sub">Reproducing it</h3>
+<pre><code>git clone https://github.com/samuel13-cell/samuel13-cell.github.io
+cd samuel13-cell.github.io/pipeline
+pip install -r requirements.txt
+python ipl_fetch.py      # download + manifest
+python ipl_transform.py  # DuckDB -&gt; data/ipl_impact.json
+python ipl_render.py     # -&gt; ../ipl-impact/index.html
+python ../build_site.py</code></pre>
+
 <div class="prov">
   Source: Cricsheet ball-by-ball data, <a href="https://cricsheet.org/downloads/ipl_csv2.zip">https://cricsheet.org/downloads/ipl_csv2.zip</a><br>
   295,732 deliveries across 1,243 matches, 2008&ndash;2026 &middot;
@@ -253,7 +304,7 @@ small sample to hang a causal claim on.</p>
 
 <script>
 const ROWS = [["2008", 58, "7.33", "7.72", "9.56", "4.62", "11.9", "12.1"], ["2009", 57, "6.88", "6.67", "8.76", "3.73", "12.2", "1.8"], ["2010", 60, "7.51", "7.33", "9.21", "4.05", "12.1", "8.3"], ["2011", 73, "6.91", "7.24", "8.74", "3.76", "11.1", "5.5"], ["2012", 74, "6.97", "7.20", "9.17", "4.13", "11.6", "5.4"], ["2013", 76, "6.73", "7.07", "9.22", "3.75", "12.0", "5.3"], ["2014", 60, "7.26", "7.58", "9.62", "5.00", "11.2", "8.3"], ["2015", 59, "7.45", "7.61", "9.86", "5.07", "11.7", "11.9"], ["2016", 60, "7.43", "7.65", "9.69", "4.53", "11.1", "8.3"], ["2017", 59, "8.04", "7.67", "9.22", "5.09", "12.1", "13.6"], ["2018", 60, "8.17", "7.84", "9.62", "6.10", "12.0", "18.3"], ["2019", 60, "7.94", "7.51", "9.66", "5.49", "11.4", "13.3"], ["2020", 60, "7.44", "7.48", "9.78", "5.06", "11.3", "15.0"], ["2021", 60, "7.49", "7.36", "8.87", "4.76", "12.0", "10.0"], ["2022", 74, "7.54", "7.79", "9.76", "5.93", "12.3", "17.6"], ["2023", 74, "8.39", "8.18", "9.81", "6.29", "12.4", "32.4"], ["2024", 71, "9.09", "8.49", "10.37", "7.37", "12.4", "36.6"], ["2025", 74, "9.22", "8.70", "10.26", "7.53", "11.8", "44.6"], ["2026", 74, "9.64", "8.91", "10.08", "8.14", "11.9", "51.4"]];
-const PAD = {l:0, r:0, t:26, b:30}, W = 760;
+const PAD = {l:0, r:7, t:26, b:30}, W = 760;
 
 const tb = document.getElementById('tb');
 const frag = document.createDocumentFragment();

@@ -12,7 +12,7 @@
 figure{margin:0 0 .4rem}
 figcaption{font:400 .83rem/1.5 var(--sans); color:var(--muted); margin:.7rem 0 0; max-width:var(--measure)}
 .chartwrap{position:relative; overflow-x:auto}
-svg{display:block; width:100%; height:auto; min-width:34rem; touch-action:pan-y; overflow:visible}
+svg{display:block; width:100%; height:auto; min-width:34rem; touch-action:pan-y}
 .grid{stroke:var(--grid); stroke-width:1}
 .ax{fill:var(--axis-ink); font:400 10.5px var(--mono); font-variant-numeric:tabular-nums}
 .ln{fill:none; stroke-width:2; stroke-linejoin:round; stroke-linecap:round}
@@ -32,7 +32,7 @@ svg{display:block; width:100%; height:auto; min-width:34rem; touch-action:pan-y;
   font:400 .8rem var(--sans); color:var(--ink-soft); list-style:none; padding:0}
 .legend li{display:flex; align-items:center; gap:.45rem}
 .swatch{width:14px; height:2px; border-radius:1px; flex:none}
-.tip{position:absolute; pointer-events:none; opacity:0; transform:translate(-50%,-50%);
+.tip{position:absolute; left:50%; top:58px; pointer-events:none; opacity:0; transform:translate(-50%,-50%);
   background:var(--sheet); border:1px solid var(--line); border-radius:3px;
   padding:.5rem .6rem; font:400 .78rem/1.45 var(--sans); white-space:nowrap;
   box-shadow:0 4px 16px -6px rgba(40,34,22,.28); z-index:2}
@@ -153,6 +153,8 @@ move most; they moved least. That is evidence for a change in risk-taking rather
 ability. It remains evidence, not proof, and one competition over four seasons is a
 small sample to hang a causal claim on.</p>
 
+@@build_notes@@
+
 <div class="prov">
   Source: Cricsheet ball-by-ball data, <a href="@@src_url@@">@@src_url@@</a><br>
   @@balls@@ deliveries across @@matches@@ matches, @@first@@&ndash;@@last@@ &middot;
@@ -168,7 +170,7 @@ small sample to hang a causal claim on.</p>
 
 <script>
 const ROWS = @@rows_js@@;
-const PAD = {l:0, r:0, t:26, b:30}, W = 760;
+const PAD = {l:0, r:7, t:26, b:30}, W = 760;
 
 const tb = document.getElementById('tb');
 const frag = document.createDocumentFragment();

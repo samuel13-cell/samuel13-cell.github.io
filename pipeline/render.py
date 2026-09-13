@@ -9,6 +9,7 @@ from datetime import date
 from pathlib import Path
 
 import lib
+import notes
 
 HERE = Path(__file__).parent
 DATA = HERE / 'data'
@@ -58,6 +59,7 @@ def main() -> None:
         'first': lib.pretty_month(d['first_month']), 'last': lib.pretty_month(last_m),
         'months': str(d['months']),
         'src_url': src['url'], 'sha': src['sha256'][:12], 'built': built,
+        'build_notes': notes.RETAIL,
         'input_l': INPUT_L, 'output_l': OUTPUT_L,
         'input_d': INPUT_D, 'output_d': OUTPUT_D,
     }

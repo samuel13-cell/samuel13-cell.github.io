@@ -4,6 +4,7 @@ from datetime import date
 from pathlib import Path
 
 import lib
+import notes
 
 HERE = Path(__file__).parent
 OUT = HERE.parent / 'grid-india'
@@ -49,6 +50,7 @@ def main() -> None:
         'y2019': '2019', 'y2020': '2020', 'd2019': '0.1',
         'src_url': man['url'], 'sha': man['sha256'][:12],
         'built': date.today().strftime('%d %B %Y'),
+        'build_notes': notes.GRID,
     }
     page = (HERE / 'grid_template.html').read_text()
     for k, v in fields.items():

@@ -12,7 +12,7 @@
 figure{margin:0 0 .4rem}
 figcaption{font:400 .83rem/1.5 var(--sans); color:var(--muted); margin:.7rem 0 0; max-width:var(--measure)}
 .chartwrap{position:relative; overflow-x:auto}
-svg{display:block; width:100%; height:auto; min-width:34rem; touch-action:pan-y; overflow:visible}
+svg{display:block; width:100%; height:auto; min-width:34rem; touch-action:pan-y}
 .grid{stroke:var(--grid); stroke-width:1}
 .ax{fill:var(--axis-ink); font:400 10.5px var(--mono); font-variant-numeric:tabular-nums}
 .ln{fill:none; stroke-width:2; stroke-linejoin:round; stroke-linecap:round}
@@ -32,7 +32,7 @@ svg{display:block; width:100%; height:auto; min-width:34rem; touch-action:pan-y;
   font:400 .8rem var(--sans); color:var(--ink-soft); list-style:none; padding:0}
 .legend li{display:flex; align-items:center; gap:.45rem}
 .swatch{width:14px; height:2px; border-radius:1px; flex:none}
-.tip{position:absolute; pointer-events:none; opacity:0; transform:translate(-50%,-50%);
+.tip{position:absolute; left:50%; top:58px; pointer-events:none; opacity:0; transform:translate(-50%,-50%);
   background:var(--sheet); border:1px solid var(--line); border-radius:3px;
   padding:.5rem .6rem; font:400 .78rem/1.45 var(--sans); white-space:nowrap;
   box-shadow:0 4px 16px -6px rgba(40,34,22,.28); z-index:2}
@@ -130,23 +130,23 @@ reporting a 2025 figure.</p>
     <line class="grid" x1="0" y1="26.0" x2="760" y2="26.0"/>
     <text class="ax" x="0" y="21.0" text-anchor="start">60</text>
     <text class="ax" x="0.0" y="290" text-anchor="start">2010</text>
-    <text class="ax" x="152.0" y="290" text-anchor="middle">2013</text>
-    <text class="ax" x="304.0" y="290" text-anchor="middle">2016</text>
-    <text class="ax" x="456.0" y="290" text-anchor="middle">2019</text>
-    <text class="ax" x="608.0" y="290" text-anchor="middle">2022</text>
-    <text class="ax" x="760.0" y="290" text-anchor="end">2025</text>
-    <path class="ln" stroke="var(--c-ctx)" d="M0.0,270.0 L50.7,269.7 L101.3,269.3 L152.0,268.8 L202.7,268.2 L253.3,267.2 L304.0,266.1 L354.7,264.3 L405.3,260.2 L456.0,259.0 L506.7,252.1 L557.3,232.2 L608.0,209.0 L658.7,196.8 L709.3,184.6 L760.0,168.3"/>
-    <circle class="dot" cx="760.0" cy="168.3" r="4.5" fill="var(--c-ctx)"/>
-    <text class="dl" x="752.0" y="157.3" text-anchor="end" fill="var(--c-ctx)">World</text>
-    <path class="ln" stroke="var(--c-ctx)" d="M0.0,270.0 L50.7,269.9 L101.3,269.7 L152.0,269.6 L202.7,268.3 L253.3,265.5 L304.0,263.9 L354.7,260.2 L405.3,250.9 L456.0,249.7 L506.7,246.8 L557.3,204.9 L608.0,152.1 L658.7,115.5 L709.3,74.8 L760.0,54.5"/>
-    <circle class="dot" cx="760.0" cy="54.5" r="4.5" fill="var(--c-ctx)"/>
-    <text class="dl" x="752.0" y="43.5" text-anchor="end" fill="var(--c-ctx)">China</text>
-    <path class="ln" stroke="var(--c-ctx)" d="M0.0,270.0 L50.7,269.4 L101.3,268.3 L152.0,267.1 L202.7,266.9 L253.3,267.2 L304.0,266.0 L354.7,264.7 L405.3,260.6 L456.0,261.5 L506.7,260.6 L557.3,250.9 L608.0,238.7 L658.7,230.6 L709.3,229.3 L760.0,229.3"/>
-    <circle class="dot" cx="760.0" cy="229.3" r="4.5" fill="var(--c-ctx)"/>
-    <text class="dl" x="752.0" y="218.3" text-anchor="end" fill="var(--c-ctx)">US</text>
-    <path class="ln" stroke="var(--c-output)" d="M0.0,269.9 L50.7,269.8 L101.3,270.0 L152.0,269.9 L202.7,269.8 L253.3,269.9 L304.0,269.9 L354.7,269.9 L405.3,269.9 L456.0,269.9 L506.7,269.5 L557.3,268.3 L608.0,264.3 L658.7,261.5 L709.3,261.5 L760.0,253.7"/>
-    <circle class="dot" cx="760.0" cy="253.7" r="4.5" fill="var(--c-output)"/>
-    <text class="dl" x="752.0" y="242.7" text-anchor="end" fill="var(--c-output)">India</text>
+    <text class="ax" x="150.6" y="290" text-anchor="middle">2013</text>
+    <text class="ax" x="301.2" y="290" text-anchor="middle">2016</text>
+    <text class="ax" x="451.8" y="290" text-anchor="middle">2019</text>
+    <text class="ax" x="602.4" y="290" text-anchor="middle">2022</text>
+    <text class="ax" x="753.0" y="290" text-anchor="end">2025</text>
+    <path class="ln" stroke="var(--c-ctx)" d="M0.0,270.0 L50.2,269.7 L100.4,269.3 L150.6,268.8 L200.8,268.2 L251.0,267.2 L301.2,266.1 L351.4,264.3 L401.6,260.2 L451.8,259.0 L502.0,252.1 L552.2,232.2 L602.4,209.0 L652.6,196.8 L702.8,184.6 L753.0,168.3"/>
+    <circle class="dot" cx="753.0" cy="168.3" r="4.5" fill="var(--c-ctx)"/>
+    <text class="dl" x="745.0" y="157.3" text-anchor="end" fill="var(--c-ctx)">World</text>
+    <path class="ln" stroke="var(--c-ctx)" d="M0.0,270.0 L50.2,269.9 L100.4,269.7 L150.6,269.6 L200.8,268.3 L251.0,265.5 L301.2,263.9 L351.4,260.2 L401.6,250.9 L451.8,249.7 L502.0,246.8 L552.2,204.9 L602.4,152.1 L652.6,115.5 L702.8,74.8 L753.0,54.5"/>
+    <circle class="dot" cx="753.0" cy="54.5" r="4.5" fill="var(--c-ctx)"/>
+    <text class="dl" x="745.0" y="43.5" text-anchor="end" fill="var(--c-ctx)">China</text>
+    <path class="ln" stroke="var(--c-ctx)" d="M0.0,270.0 L50.2,269.4 L100.4,268.3 L150.6,267.1 L200.8,266.9 L251.0,267.2 L301.2,266.0 L351.4,264.7 L401.6,260.6 L451.8,261.5 L502.0,260.6 L552.2,250.9 L602.4,238.7 L652.6,230.6 L702.8,229.3 L753.0,229.3"/>
+    <circle class="dot" cx="753.0" cy="229.3" r="4.5" fill="var(--c-ctx)"/>
+    <text class="dl" x="745.0" y="218.3" text-anchor="end" fill="var(--c-ctx)">US</text>
+    <path class="ln" stroke="var(--c-output)" d="M0.0,269.9 L50.2,269.8 L100.4,270.0 L150.6,269.9 L200.8,269.8 L251.0,269.9 L301.2,269.9 L351.4,269.9 L401.6,269.9 L451.8,269.9 L502.0,269.5 L552.2,268.3 L602.4,264.3 L652.6,261.5 L702.8,261.5 L753.0,253.7"/>
+    <circle class="dot" cx="753.0" cy="253.7" r="4.5" fill="var(--c-output)"/>
+    <text class="dl" x="745.0" y="242.7" text-anchor="end" fill="var(--c-output)">India</text>
     <line class="cross" x1="0" y1="26" x2="0" y2="270" style="opacity:0"/>
     </svg>
     <div class="tip" id="t1"></div>
@@ -207,6 +207,52 @@ example of exactly that.</p>
 is a substantial number of vehicles, and a high share of a small market can be fewer cars than a
 low share of a big one.</p>
 
+<h2>Build notes</h2>
+<p>What this page is made of, and how to rebuild it. The source lives in
+<a href="https://github.com/samuel13-cell/samuel13-cell.github.io/tree/main/pipeline/">pipeline/</a>.</p>
+
+<dl class="stack">
+    <dt>Source</dt><dd>Our World in Data, compiled from the IEA Global EV Outlook. One CSV, no key, no crawl restriction.</dd>
+    <dt>Fetch</dt><dd>owid_fetch.py pulls this alongside the generation series, sharing one manifest.</dd>
+    <dt>Transform</dt><dd>ev_transform.py, DuckDB. The ranking counts only entities carrying a country code, which is what excludes aggregates like the world average from a list of countries.</dd>
+    <dt>Render</dt><dd>Static HTML with inline SVG. No chart library, no build step and no JavaScript beyond the hover layer, so the page has nothing to rot.</dd>
+    <dt>Colour</dt><dd>An emphasis chart rather than a categorical one: India carries the accent and the comparison markets recede to a neutral. When one series is the point, colouring all four equally buries it.</dd>
+</dl>
+
+<h3 class="sub">Pipeline</h3>
+<ol class="steps">
+    <li>Download the EV share CSV and record its sha256.</li>
+    <li>Build a year axis from the focus country’s own first year, so the chart does not open on a decade of flat lines.</li>
+    <li>Read each comparison market into the same axis, leaving gaps where a country has no figure rather than filling them with zero.</li>
+    <li>Rank the latest year across countries only, then locate India within it.</li>
+    <li>Render the trend as an emphasis chart and the ranking as horizontal bars.</li>
+</ol>
+
+<h3 class="sub">Excluding aggregates from a ranking of countries</h3>
+<pre><code><b>SELECT</b> Entity, <b>ROUND</b>(share, 1) <b>AS</b> share
+<b>FROM</b> e
+<b>WHERE</b> Year = 2025
+  <b>AND</b> Code <b>IS NOT NULL</b>      -- aggregates carry no country code
+  <b>AND</b> Code &lt;&gt; 'OWID_WRL'   -- and the world total carries a synthetic one
+<b>ORDER BY</b> share <b>DESC</b>;</code></pre>
+
+<h3 class="sub">What was checked</h3>
+<ul class="checks">
+    <li>Aggregates are absent from the ranking. Leaving the world average in would have placed a non-country above most countries.</li>
+    <li>Countries with no figure for the latest year are absent rather than counted as zero, which would have flattered India’s rank.</li>
+    <li>Gaps in a series break the line instead of being drawn through, so a country that starts reporting late does not appear to have been at zero.</li>
+    <li>The claim is about share of new car sales, and the page says so plainly: two and three wheelers are where India’s electrification actually is.</li>
+</ul>
+
+<h3 class="sub">Reproducing it</h3>
+<pre><code>git clone https://github.com/samuel13-cell/samuel13-cell.github.io
+cd samuel13-cell.github.io/pipeline
+pip install -r requirements.txt
+python owid_fetch.py    # download + manifest
+python ev_transform.py  # DuckDB -&gt; data/ev_india.json
+python ev_render.py     # -&gt; ../ev-india/index.html
+python ../build_site.py</code></pre>
+
 <div class="prov">
   Source: Our World in Data, from the IEA Global EV Outlook,
   <a href="https://ourworldindata.org/grapher/electric-car-sales-share.csv">https://ourworldindata.org/grapher/electric-car-sales-share.csv</a><br>
@@ -222,7 +268,7 @@ low share of a big one.</p>
 
 <script>
 const ROWS = [["2010", "0.02", "0.01", "0.01"], ["2011", "0.06", "0.07", "0.03"], ["2012", "0.01", "0.17", "0.07"], ["2013", "0.02", "0.29", "0.10"], ["2014", "0.04", "0.44", "0.41"], ["2015", "0.02", "0.68", "1.10"], ["2016", "0.03", "0.95", "1.50"], ["2017", "0.03", "1.40", "2.40"], ["2018", "0.03", "2.40", "4.70"], ["2019", "0.02", "2.70", "5.00"], ["2020", "0.12", "4.40", "5.70"], ["2021", "0.41", "9.30", "16.00"], ["2022", "1.40", "15.00", "29.00"], ["2023", "2.10", "18.00", "38.00"], ["2024", "2.10", "21.00", "48.00"], ["2025", "4.00", "25.00", "53.00"]];
-const PAD = {l:0, r:0, t:26, b:30}, W = 760;
+const PAD = {l:0, r:7, t:26, b:30}, W = 760;
 
 const tb = document.getElementById('tb');
 const frag = document.createDocumentFragment();

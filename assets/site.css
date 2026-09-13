@@ -25,6 +25,7 @@
   --c-input:#2a78d6;
   --c-output:#eb6834;
   --c-ctx:#a8a49c;      /* context series in an emphasis chart */
+  --code-bg:#f4f2ee;
   --grid:#e6e4de;
   --axis-ink:#8b8880;
 
@@ -102,7 +103,7 @@ h2{
 /* ===== entries (shared spine: metadata left, content right) ======= */
 .sect{margin-top:2.7rem}
 .sect:first-of-type{margin-top:0}
-.lede{margin:0 0 0 calc(var(--gutter) + var(--col-gap)); font-size:1.01rem; max-width:var(--measure)}
+.lede{margin:0; font-size:1.01rem; max-width:var(--measure)}
 .entry{
   display:grid; grid-template-columns:var(--gutter) 1fr; gap:0 var(--col-gap);
   margin-bottom:1.85rem; break-inside:avoid;
@@ -129,6 +130,36 @@ h2{
   letter-spacing:.13em; color:var(--muted); padding-top:.16rem}
 .skill dd{margin:0; font-size:.95rem; max-width:var(--measure)}
 
+/* ===== build notes ================================================
+   The technical appendix each project page carries: how it was built,
+   what was checked, and how to reproduce it.                          */
+h3.sub{font:600 .88rem/1.4 var(--sans); color:var(--ink);
+  margin:1.7rem 0 .7rem; letter-spacing:-.005em}
+.stack{display:grid; grid-template-columns:var(--gutter) 1fr;
+  gap:.85rem var(--col-gap); margin:0 0 1.6rem}
+.stack dt{grid-column:1; font:500 .69rem/1.6 var(--mono); text-transform:uppercase;
+  letter-spacing:.13em; color:var(--muted); padding-top:.1rem}
+.stack dd{grid-column:2; margin:0; font-size:.93rem; max-width:var(--measure)}
+@media screen and (max-width:46rem){
+  .stack{grid-template-columns:1fr; gap:.2rem}
+  .stack dt{grid-column:1} .stack dd{grid-column:1; margin-bottom:.6rem}
+}
+.steps{counter-reset:step; list-style:none; margin:0 0 1.4rem; padding:0}
+.steps li{position:relative; padding-left:2.2rem; margin-bottom:.7rem;
+  max-width:var(--measure)}
+.steps li::before{counter-increment:step; content:counter(step,decimal-leading-zero);
+  position:absolute; left:0; top:.08rem;
+  font:500 .7rem/1.5 var(--mono); color:var(--accent); letter-spacing:.06em}
+pre{margin:0 0 1.4rem; padding:1rem 1.1rem; background:var(--code-bg);
+  border:1px solid var(--hair); border-radius:3px; overflow-x:auto;
+  font:400 .78rem/1.6 var(--mono); color:var(--ink-soft)}
+pre b{font-weight:500; color:var(--accent)}
+.checks{list-style:none; margin:0 0 1.4rem; padding:0}
+.checks li{position:relative; padding-left:1.4rem; margin-bottom:.5rem;
+  max-width:var(--measure)}
+.checks li::before{content:"\2713"; position:absolute; left:0; top:0;
+  color:var(--accent); font-size:.9rem}
+
 /* ===== footer ===================================================== */
 .colophon{
   margin-top:3rem; padding-top:1.3rem; border-top:1px solid var(--hair);
@@ -140,7 +171,6 @@ h2{
 @media screen and (max-width:46rem){
   :root{--gutter:1fr}
   .entry,.skill{grid-template-columns:1fr; gap:.15rem}
-  .lede{margin-left:0}
   .when{padding-top:0; margin-bottom:.18rem}
   .skill dt{padding-top:.5rem}
 }
