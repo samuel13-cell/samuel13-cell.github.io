@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The year India's coal turned</title>
+<meta name="description" content="In 2025 India's coal generation fell while total demand grew, for the first time. Solar and wind added more than the whole increase in demand.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231f3864'/><text x='50' y='73' font-size='58' font-family='Georgia,serif' fill='%23fff' text-anchor='middle'>S</text></svg>">
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+:root{--sheet-w:60rem}
+figure{margin:0 0 .4rem}
+figcaption{font:400 .83rem/1.5 var(--sans); color:var(--muted); margin:.7rem 0 0; max-width:44em}
+.chartwrap{position:relative; overflow-x:auto}
+svg{display:block; width:100%; height:auto; min-width:34rem; touch-action:pan-y}
+.grid{stroke:var(--grid); stroke-width:1}
+.ax{fill:var(--axis-ink); font:400 10.5px var(--mono); font-variant-numeric:tabular-nums}
+.ln{fill:none; stroke-width:2; stroke-linejoin:round; stroke-linecap:round}
+.dot{stroke:var(--sheet); stroke-width:2}
+.dl{font:500 11.5px var(--sans)}
+.cross{stroke:var(--axis-ink); stroke-width:1}
+.kpis{display:grid; grid-template-columns:repeat(auto-fit,minmax(12rem,1fr));
+  gap:1.6rem 2.4rem; margin:0 0 .5rem; padding:0; border:0}
+.kpi dt{font:500 .68rem/1.4 var(--mono); text-transform:uppercase; letter-spacing:.13em;
+  color:var(--muted); margin-bottom:.3rem}
+.kpi dd{margin:0}
+.kpi .fig{font:600 2.1rem/1 var(--sans); color:var(--ink);
+  font-variant-numeric:tabular-nums; letter-spacing:-.02em}
+.kpi .note{display:block; font-size:.83rem; color:var(--muted); margin-top:.3rem; max-width:22em}
+.fig.up{color:var(--c-output)} .fig.flat{color:var(--c-input)}
+.legend{display:flex; flex-wrap:wrap; gap:.4rem 1.4rem; margin:0 0 .8rem;
+  font:400 .8rem var(--sans); color:var(--ink-soft); list-style:none; padding:0}
+.legend li{display:flex; align-items:center; gap:.45rem}
+.swatch{width:14px; height:2px; border-radius:1px; flex:none}
+.tip{position:absolute; pointer-events:none; opacity:0; transform:translate(-50%,-50%);
+  background:var(--sheet); border:1px solid var(--line); border-radius:3px;
+  padding:.5rem .6rem; font:400 .78rem/1.45 var(--sans); white-space:nowrap;
+  box-shadow:0 4px 16px -6px rgba(40,34,22,.28); z-index:2}
+.tip b{font:600 .88rem var(--sans); color:var(--ink); font-variant-numeric:tabular-nums}
+.tip .row{display:flex; align-items:center; gap:.4rem; margin-top:.25rem}
+.tip .k{width:11px; height:2px; border-radius:1px; flex:none}
+.tip .m{font:500 .7rem var(--mono); color:var(--muted); letter-spacing:.05em}
+details{margin-top:1.2rem; border-top:1px solid var(--hair); padding-top:.9rem}
+summary{font:500 .69rem/1 var(--mono); text-transform:uppercase; letter-spacing:.13em;
+  color:var(--muted); cursor:pointer}
+summary:hover{color:var(--accent)}
+.tablewrap{overflow-x:auto; margin-top:1rem; max-height:22rem; overflow-y:auto}
+table{border-collapse:collapse; font:400 .82rem var(--sans);
+  font-variant-numeric:tabular-nums; width:100%}
+th,td{text-align:right; padding:.32rem .8rem; border-bottom:1px solid var(--hair)}
+th:first-child,td:first-child{text-align:left}
+thead th{position:sticky; top:0; background:var(--sheet); font:500 .68rem var(--mono);
+  text-transform:uppercase; letter-spacing:.09em; color:var(--muted)}
+.prov{margin-top:1rem; font:400 .78rem/1.6 var(--mono); color:var(--muted); word-break:break-all}
+@media (max-width:34rem){ .kpi .fig{font-size:1.8rem} }
+.rule{stroke:var(--muted); stroke-width:1; opacity:.5}
+.anno{fill:var(--muted); font:500 10px var(--mono); letter-spacing:.05em}
+.bar{stroke:var(--sheet); stroke-width:1}
+.fig.up{color:var(--c-output)} .fig.flat{color:var(--c-input)}
+.fig.mid{color:var(--c-middle)}
+.hbar{display:grid; grid-template-columns:9.5rem 1fr auto; gap:.45rem .9rem;
+  align-items:center; font-size:.86rem; margin-bottom:.42rem}
+.hbar .nm{color:var(--ink-soft); white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+.hbar .track{display:block; height:9px; background:var(--hair); border-radius:2px; overflow:hidden}
+.hbar .fill{display:block; height:100%; border-radius:2px; background:var(--c-input)}
+.hbar.me .nm{font-weight:600; color:var(--ink)}
+.hbar.me .fill{background:var(--c-output)}
+.hbar .v{font:500 .8rem var(--mono); color:var(--muted); font-variant-numeric:tabular-nums}
+.hbar.me .v{color:var(--ink)}
+@media (max-width:34rem){ .hbar{grid-template-columns:7rem 1fr auto} }
+</style></head>
+<body>
+<main class="sheet">
+
+<!--NAV--><!--/NAV-->
+
+<h1>The year India's coal turned</h1>
+<p class="standfirst">India's coal generation fell in @@last@@. It has fallen before, but never
+like this: every previous fall came in a year when the country used less electricity overall.
+This time demand grew and coal fell anyway.</p>
+
+<h2>The finding</h2>
+<dl class="kpis">
+  <div class="kpi"><dt>Coal generation</dt><dd>
+    <span class="fig up">@@coal_change@@</span>
+    <span class="note">TWh against @@prev@@, from @@coal_prev@@ to @@coal_now@@</span></dd></div>
+  <div class="kpi"><dt>Solar and wind</dt><dd>
+    <span class="fig flat">+@@sw_change@@</span>
+    <span class="note">TWh added, more than the @@total_change@@ TWh rise in total
+    generation</span></dd></div>
+  <div class="kpi"><dt>Coal's share</dt><dd>
+    <span class="fig">@@coal_share_now@@%</span>
+    <span class="note">Of all generation, down from a peak of @@coal_share_peak@@% in
+    @@coal_share_peak_year@@</span></dd></div>
+</dl>
+
+<p>That arithmetic is the whole story. Solar and wind added @@sw_change@@ TWh while total
+generation rose @@total_change@@ TWh. Renewables covered all of the growth in demand and
+displaced @@coal_drop@@ TWh of coal on top of it.</p>
+
+<p>Coal generation has fallen in only three years since @@first@@. In @@y2020@@ it fell because
+the country used less electricity overall. In @@y2019@@ the fall was @@d2019@@ TWh, a rounding
+margin on a base above a thousand. @@last@@ is the first year the fall is both large and
+unaccompanied by a drop in demand.</p>
+
+<h2>Coal against solar and wind</h2>
+<figure>
+  <ul class="legend">
+    <li><span class="swatch" style="background:var(--c-output)"></span>Coal</li>
+    <li><span class="swatch" style="background:var(--c-input)"></span>Solar and wind</li>
+  </ul>
+  <div class="chartwrap" id="w1">
+    <svg viewBox="0 0 760 300" role="img" aria-label="Indian electricity generation from 2000 to 2025. Coal rises steeply throughout and turns down at the end. Solar and wind stay near zero until about 2015 and then climb sharply.">
+    @@mix_chart@@
+    </svg>
+    <div class="tip" id="t1"></div>
+  </div>
+  <figcaption>Terawatt hours generated per year. Coal still produces roughly five times what
+  solar and wind produce together, which is the scale the turn has to be read against.</figcaption>
+</figure>
+
+<h2>Coal's share of generation</h2>
+<figure>
+  <div class="chartwrap" id="w2">
+    <svg viewBox="0 0 760 300" role="img" aria-label="Coal as a percentage of Indian electricity generation, 2000 to 2025. It rises to a peak around 2016 and declines gradually to about 71 percent.">
+    @@share_chart@@
+    </svg>
+  </div>
+  <figcaption>Coal as a percentage of all generation. The share has been falling since
+  @@coal_share_peak_year@@ even while coal output kept rising, because everything else grew
+  faster.</figcaption>
+</figure>
+
+<p>The share falling and the output falling are different claims, and only the second is new.
+Coal's share has declined since @@coal_share_peak_year@@ simply because renewables grew faster
+from a small base. Output falling means coal plants ran less in absolute terms, which is what
+has to happen for emissions to fall.</p>
+
+<details>
+  <summary>Generation by source</summary>
+  <div class="tablewrap">
+    <table>
+      <thead><tr><th scope="col">Year</th><th scope="col">Coal</th><th scope="col">Solar</th>
+        <th scope="col">Wind</th><th scope="col">Hydro</th><th scope="col">Nuclear</th>
+        <th scope="col">Total</th></tr></thead>
+      <tbody id="tb"></tbody>
+    </table>
+  </div>
+</details>
+
+<h2>Method</h2>
+<p>Our World in Data publishes annual electricity generation by source, compiled from Ember and
+the Energy Institute, as one CSV. This uses India from @@first@@ to @@last@@, in terawatt hours.
+Total is the sum of the eight sources published, so shares are of generation, not of capacity.</p>
+<p>Generation rather than capacity is the deliberate choice. Capacity measures what has been
+built; generation measures what actually ran. For a grid where coal plants run most of the time
+and solar runs a quarter of it, the two tell different stories and only one of them is about
+electricity delivered.</p>
+
+<h2>What this does not show</h2>
+<p>One year is not a trend. A mild monsoon, a soft demand year or a good hydro season can move
+these numbers, and coal output could rise again in @@next@@ without anything structural having
+changed. The claim here is narrow: this particular year broke a pattern that had held since
+@@first@@.</p>
+<p>Annual national totals also hide the things that decide whether the turn holds: what happens
+after dark, how much storage exists, and how much coal capacity sits idle but available. None of
+that is visible at this resolution.</p>
+
+<div class="prov">
+  Source: Our World in Data, from Ember and the Energy Institute,
+  <a href="@@src_url@@">@@src_url@@</a><br>
+  @@first@@ to @@last@@ &middot; sha256 @@sha@@&hellip; &middot; page built @@built@@
+</div>
+
+<footer class="colophon">
+  <span>Samuel Rajesh Vanambattina</span>
+  <span><a href="mailto:samuelrajesh13@gmail.com">samuelrajesh13@gmail.com</a></span>
+</footer>
+
+</main>
+
+<script>
+const ROWS = @@rows_js@@;
+const PAD = {l:0, r:104, t:24, b:30}, W = 760;
+
+const tb = document.getElementById('tb');
+const frag = document.createDocumentFragment();
+for (let i = ROWS.length - 1; i >= 0; i--) {
+  const tr = document.createElement('tr');
+  ROWS[i].forEach(v => { const td=document.createElement('td'); td.textContent=v; tr.appendChild(td); });
+  frag.appendChild(tr);
+}
+tb.appendChild(frag);
+
+(function wire() {
+  const svg = document.querySelector('#w1 svg');
+  const tip = document.getElementById('t1');
+  const cross = svg.querySelector('.cross');
+  const iw = W - PAD.l - PAD.r;
+
+  function at(ev) {
+    const r = svg.getBoundingClientRect();
+    const px = ((ev.clientX - r.left) / r.width) * W;
+    let i = Math.round(((px - PAD.l) / iw) * (ROWS.length - 1));
+    i = Math.max(0, Math.min(ROWS.length - 1, i));
+    const x = PAD.l + iw * i / (ROWS.length - 1);
+    cross.setAttribute('x1', x); cross.setAttribute('x2', x);
+    cross.style.opacity = '.45';
+
+    tip.textContent = '';
+    const m = document.createElement('div');
+    m.className='m'; m.textContent = ROWS[i][0];
+    tip.appendChild(m);
+    [{i:1,label:'Coal',v:'--c-output'},{i:7,label:'Solar and wind',v:'--c-input'}].forEach(c => {
+      const row = document.createElement('div'); row.className='row';
+      const k = document.createElement('span');
+      k.className='k'; k.style.background = `var(${c.v})`;
+      const b = document.createElement('b'); b.textContent = ROWS[i][c.i];
+      row.append(k, b, document.createTextNode(' ' + c.label + ' TWh'));
+      tip.appendChild(row);
+    });
+    const left = (x / W) * r.width;
+    tip.style.left = Math.max(96, Math.min(r.width - 96, left)) + 'px';
+    tip.style.top = '58px';
+    tip.style.opacity = '1';
+  }
+  svg.addEventListener('pointermove', at);
+  svg.addEventListener('pointerdown', at);
+  svg.addEventListener('pointerleave', () => { tip.style.opacity='0'; cross.style.opacity='0'; });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,143 @@
+{
+  "first_year": 2010,
+  "last_year": 2025,
+  "years": [
+    2010,
+    2011,
+    2012,
+    2013,
+    2014,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "focus": "India",
+  "focus_series": [
+    0.02,
+    0.06,
+    0.01,
+    0.02,
+    0.04,
+    0.02,
+    0.03,
+    0.03,
+    0.03,
+    0.02,
+    0.12,
+    0.41,
+    1.4,
+    2.1,
+    2.1,
+    4.0
+  ],
+  "context": {
+    "World": [
+      0.01,
+      0.07,
+      0.17,
+      0.29,
+      0.44,
+      0.68,
+      0.95,
+      1.4,
+      2.4,
+      2.7,
+      4.4,
+      9.3,
+      15.0,
+      18.0,
+      21.0,
+      25.0
+    ],
+    "China": [
+      0.01,
+      0.03,
+      0.07,
+      0.1,
+      0.41,
+      1.1,
+      1.5,
+      2.4,
+      4.7,
+      5.0,
+      5.7,
+      16.0,
+      29.0,
+      38.0,
+      48.0,
+      53.0
+    ],
+    "United States": [
+      0.01,
+      0.15,
+      0.42,
+      0.71,
+      0.77,
+      0.7,
+      0.99,
+      1.3,
+      2.3,
+      2.1,
+      2.3,
+      4.7,
+      7.7,
+      9.7,
+      10.0,
+      10.0
+    ]
+  },
+  "rank": 57,
+  "of_countries": 61,
+  "india_now": 4.0,
+  "india_prev": 2.1,
+  "world_now": 25.0,
+  "top": {
+    "countries": [
+      "Norway",
+      "Denmark",
+      "Nepal",
+      "Iceland",
+      "Sweden",
+      "Netherlands",
+      "Finland",
+      "China",
+      "Belgium",
+      "Vietnam"
+    ],
+    "share": [
+      97.0,
+      71.0,
+      68.0,
+      62.0,
+      61.0,
+      58.0,
+      57.0,
+      53.0,
+      44.0,
+      40.0
+    ]
+  },
+  "manifest": {
+    "retrieved_utc": "2026-09-13T09:14:25+00:00",
+    "files": {
+      "ev_share": {
+        "url": "https://ourworldindata.org/grapher/electric-car-sales-share.csv",
+        "bytes": 18622,
+        "sha256": "45969bb5f9a809c45792d8986f53023754d0fa141e74c7e24ad9af6ad041059b"
+      },
+      "power_mix": {
+        "url": "https://ourworldindata.org/grapher/electricity-prod-source-stacked.csv",
+        "bytes": 542720,
+        "sha256": "1c89aea469ab8d9f0b12823b8c89752caf46472a72bcea600ff83245e1f55dad"
+      }
+    }
+  }
+}

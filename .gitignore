@@ -2,6 +2,7 @@ pipeline/raw/*.xls
 pipeline/raw/*.xlsx
 pipeline/raw/*.zip
 pipeline/raw/*.tsv
+pipeline/raw/*.csv
 pipeline/raw/ipl/
 pipeline/_*.html
 pipeline/_*.css

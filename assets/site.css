@@ -24,6 +24,7 @@
   /* chart ink -- validated against --sheet #faf8f3 (all six checks pass) */
   --c-input:#2a78d6;
   --c-output:#eb6834;
+  --c-ctx:#a8a49c;      /* context series in an emphasis chart */
   --grid:#e6e4de;
   --axis-ink:#8b8880;
 
@@ -171,6 +172,8 @@ h2{
   .title a[href="retail-margins/"]::after{content:" samuel13-cell.github.io/retail-margins"}
   .title a[href="ipl-impact/"]::after{content:" samuel13-cell.github.io/ipl-impact"}
   .title a[href="ott-india/"]::after{content:" samuel13-cell.github.io/ott-india"}
+  .title a[href="ev-india/"]::after{content:" samuel13-cell.github.io/ev-india"}
+  .title a[href="grid-india/"]::after{content:" samuel13-cell.github.io/grid-india"}
   .title a::after{font:400 8.4pt var(--mono); color:var(--muted)}
 }
 @media (prefers-reduced-motion:reduce){ *{animation:none!important; transition:none!important} }

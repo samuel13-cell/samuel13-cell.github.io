@@ -1,0 +1,15 @@
+{
+  "retrieved_utc": "2026-09-13T09:14:25+00:00",
+  "files": {
+    "ev_share": {
+      "url": "https://ourworldindata.org/grapher/electric-car-sales-share.csv",
+      "bytes": 18622,
+      "sha256": "45969bb5f9a809c45792d8986f53023754d0fa141e74c7e24ad9af6ad041059b"
+    },
+    "power_mix": {
+      "url": "https://ourworldindata.org/grapher/electricity-prod-source-stacked.csv",
+      "bytes": 542720,
+      "sha256": "1c89aea469ab8d9f0b12823b8c89752caf46472a72bcea600ff83245e1f55dad"
+    }
+  }
+}

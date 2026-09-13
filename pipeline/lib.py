@@ -26,7 +26,15 @@ def scales(n, lo, hi, pad=PAD):
 
 
 def _path(xs, ys, values):
-    return 'M' + ' L'.join(f'{xs(i):.1f},{ys(v):.1f}' for i, v in enumerate(values))
+    """Break the line across gaps rather than drawing through them."""
+    out, pen_down = [], False
+    for i, v in enumerate(values):
+        if v is None:
+            pen_down = False
+            continue
+        out.append(f'{"L" if pen_down else "M"}{xs(i):.1f},{ys(v):.1f}')
+        pen_down = True
+    return ' '.join(out)
 
 
 def _grid(ys, lo, hi, step, pad=PAD):
@@ -70,7 +78,7 @@ def line_chart(labels, series, lo, hi, step=10, every=2, annotate=None):
 
     for label, var, values in series:
         parts.append(f'<path class="ln" stroke="var({var})" d="{_path(xs, ys, values)}"/>')
-        last = len(values) - 1
+        last = max(i for i, v in enumerate(values) if v is not None)
         parts.append(f'<circle class="dot" cx="{xs(last):.1f}" cy="{ys(values[last]):.1f}" '
                      f'r="4.5" fill="var({var})"/>')
         parts.append(f'<text class="dl" x="{xs(last) + 11:.1f}" '
