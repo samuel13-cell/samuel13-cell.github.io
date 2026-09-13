@@ -1,0 +1,178 @@
+/* ===== fonts (self-hosted, latin subset, OFL) ===================== */
+@font-face{font-family:'IBM Plex Sans';font-style:normal;font-weight:100 700;font-stretch:100%;font-display:swap;
+  src:url(../fonts/ibm-plex-sans-var.woff2) format('woff2')}
+@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:400;font-display:swap;
+  src:url(../fonts/ibm-plex-mono-400-normal.woff2) format('woff2')}
+@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:500;font-display:swap;
+  src:url(../fonts/ibm-plex-mono-500-normal.woff2) format('woff2')}
+@font-face{font-family:'Newsreader';font-style:normal;font-weight:500 700;font-display:swap;
+  src:url(../fonts/newsreader-600-normal.woff2) format('woff2')}
+@font-face{font-family:'Newsreader';font-style:italic;font-weight:300 500;font-display:swap;
+  src:url(../fonts/newsreader-400-italic.woff2) format('woff2')}
+
+/* ===== tokens =====================================================
+   One committed palette: warm paper, not a light/dark pair. The page
+   paints its own ground so it holds on any host background.          */
+:root{
+  --plane:#e9e4d8;      /* the desk the sheet sits on */
+  --sheet:#faf8f3;      /* the paper itself -- also the chart surface */
+  --ink:#1c1a17;
+  --ink-soft:#403c36;
+  --muted:#736d63;
+  --line:#dcd6c8;
+  --hair:#e7e2d5;
+  --accent:#1f3864;
+  --accent-line:#aab3c6;
+  --shadow:0 1px 2px rgba(40,34,22,.05), 0 16px 44px -20px rgba(40,34,22,.28);
+
+  /* chart ink -- validated against --sheet #faf8f3 (all six checks pass) */
+  --c-input:#2a78d6;
+  --c-output:#eb6834;
+  --grid:#e4dfd2;
+  --axis-ink:#8a8378;
+
+  --serif:"Newsreader",Iowan Old Style,Georgia,"Times New Roman",serif;
+  --sans:"IBM Plex Sans",-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+
+  --gutter:8.25rem;
+  --col-gap:1.85rem;
+}
+
+/* ===== base ======================================================= */
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--plane); color:var(--ink-soft);
+  font:400 15.5px/1.62 var(--sans);
+  font-feature-settings:"kern","liga";
+  -webkit-font-smoothing:antialiased;
+  padding:clamp(0rem,4vw,3rem) clamp(1rem,4vw,2rem);
+}
+.sheet{
+  max-width:var(--sheet-w,53rem); margin:0 auto;
+  background:var(--sheet); border:1px solid var(--line); box-shadow:var(--shadow);
+  padding:clamp(1.25rem,3vw,2rem) clamp(1.25rem,5vw,3.5rem) clamp(2.5rem,5vw,3.5rem);
+}
+a{color:var(--accent); text-decoration:none; border-bottom:1px solid var(--accent-line)}
+a:hover{border-bottom-color:currentColor}
+a:focus-visible{outline:2px solid var(--accent); outline-offset:3px; border-radius:2px}
+strong{font-weight:600; color:var(--ink)}
+p{max-width:40em}
+
+/* ===== site nav =================================================== */
+.nav{
+  display:flex; flex-wrap:wrap; align-items:baseline; gap:.6rem 1.6rem;
+  justify-content:space-between;
+  padding-bottom:.85rem; margin-bottom:2.1rem;
+  border-bottom:1px solid var(--line);
+}
+.nav-mark{
+  font:600 1.02rem/1 var(--serif); letter-spacing:.06em; color:var(--ink);
+  border:0; flex:none;
+}
+.nav-mark:hover{color:var(--accent); border:0}
+.nav-tabs{display:flex; flex-wrap:wrap; gap:.35rem 1.35rem; list-style:none; margin:0; padding:0}
+.nav-tabs a{
+  font:400 .7rem/1.5 var(--mono); letter-spacing:.1em; text-transform:uppercase;
+  color:var(--muted); border:0; padding-bottom:.15rem;
+  border-bottom:1.5px solid transparent;
+}
+.nav-tabs a:hover{color:var(--ink)}
+.nav-tabs a[aria-current=page]{color:var(--ink); border-bottom-color:var(--accent)}
+
+/* ===== headings =================================================== */
+h1{
+  font:600 clamp(1.85rem,6vw,2.6rem)/1.08 var(--serif); color:var(--ink);
+  letter-spacing:-.012em; margin:0 0 .35rem; text-wrap:balance;
+}
+.tagline,.standfirst{
+  font:400 italic clamp(1rem,2.5vw,1.2rem)/1.45 var(--serif);
+  color:var(--muted); margin:0 0 1.5rem; max-width:38em;
+}
+h2{
+  font:500 .69rem/1 var(--mono); text-transform:uppercase; letter-spacing:.19em;
+  color:var(--muted); margin:2.8rem 0 1.4rem;
+  padding-bottom:.7rem; border-bottom:1px solid var(--hair);
+}
+.sect > h2{margin-top:0}   /* .sect supplies the gap; don't stack both */
+.masthead{border-bottom:1px solid var(--line); padding-bottom:1.6rem; margin-bottom:2.4rem}
+.contact{
+  display:flex; flex-wrap:wrap; gap:.5rem 1.6rem;
+  font:400 .755rem/1.5 var(--mono); letter-spacing:.015em; color:var(--muted);
+}
+
+/* ===== entries (shared spine: metadata left, content right) ======= */
+.sect{margin-top:2.7rem}
+.sect:first-of-type{margin-top:0}
+.lede{margin:0 0 0 calc(var(--gutter) + var(--col-gap)); font-size:1.01rem; max-width:44em}
+.entry{
+  display:grid; grid-template-columns:var(--gutter) 1fr; gap:0 var(--col-gap);
+  margin-bottom:1.85rem; break-inside:avoid;
+}
+.sect .entry:last-child{margin-bottom:0}
+.when{
+  font:400 .735rem/1.5 var(--mono); font-variant-numeric:tabular-nums;
+  letter-spacing:.01em; color:var(--muted); padding-top:.33rem; white-space:nowrap;
+}
+.title{font:600 1.015rem/1.4 var(--sans); color:var(--ink); margin:0}
+.title a{color:var(--ink); border-bottom:1px solid var(--accent-line)}
+.title a:hover{color:var(--accent); border-bottom-color:currentColor}
+.org{font:400 .875rem/1.5 var(--sans); color:var(--muted); margin:.05rem 0 .6rem}
+.entry ul{margin:0; padding:0; list-style:none}
+.entry li{position:relative; padding-left:1.05rem; margin-bottom:.42rem; max-width:44em}
+.entry li:last-child{margin-bottom:0}
+.entry li::before{content:"–"; position:absolute; left:0; top:0;
+  color:var(--accent-line); font-family:var(--mono)}
+
+/* ===== skills ===================================================== */
+.skills{margin:0; display:grid; gap:.9rem}
+.skill{display:grid; grid-template-columns:var(--gutter) 1fr; gap:0 var(--col-gap)}
+.skill dt{font:500 .69rem/1.6 var(--mono); text-transform:uppercase;
+  letter-spacing:.13em; color:var(--muted); padding-top:.16rem}
+.skill dd{margin:0; font-size:.95rem; max-width:44em}
+
+/* ===== footer ===================================================== */
+.colophon{
+  margin-top:3rem; padding-top:1.3rem; border-top:1px solid var(--hair);
+  display:flex; flex-wrap:wrap; gap:.5rem 1.5rem; justify-content:space-between;
+  font:400 .725rem/1.5 var(--mono); letter-spacing:.015em; color:var(--muted);
+}
+
+/* ===== narrow ===================================================== */
+@media (max-width:46rem){
+  :root{--gutter:1fr}
+  .entry,.skill{grid-template-columns:1fr; gap:.15rem}
+  .lede{margin-left:0}
+  .when{padding-top:0; margin-bottom:.18rem}
+  .skill dt{padding-top:.5rem}
+}
+
+/* ===== print / PDF ================================================ */
+@media print{
+  :root{
+    --plane:#fff; --sheet:#fff; --ink:#111316; --ink-soft:#33373d;
+    --muted:#5c626a; --line:#c9c9c4; --hair:#dedeD9;
+    --accent:#1f3864; --accent-line:#9aa7bd; --shadow:none;
+    --gutter:6.6rem; --col-gap:1.3rem;
+  }
+  body{font-size:8.9pt; line-height:1.32; padding:0; background:#fff}
+  .sheet{max-width:none; border:0; box-shadow:none; padding:0}
+  .no-print,.nav{display:none}
+  .masthead{padding-bottom:.7rem; margin-bottom:.95rem}
+  h1{font-size:17pt; margin-bottom:.15rem}
+  .tagline{font-size:11pt; margin-bottom:.6rem}
+  .sect{margin-top:.72rem; break-inside:auto}
+  h2{margin:1rem 0 .6rem; padding-bottom:.3rem; break-after:avoid}
+  .sect > h2{margin-top:0}
+  .entry{margin-bottom:.48rem}
+  .org{margin:.02rem 0 .28rem}
+  .entry li{margin-bottom:.09rem}
+  .skills{gap:.34rem}
+  .colophon{margin-top:.5rem; padding-top:.4rem; break-before:avoid}
+  a{color:var(--ink); border-bottom:0}
+  .title a[href^="http"]::after,.title a.work::after{
+    content:" \2014 samuel13-cell.github.io/retail-margins";
+    font:400 8.6pt var(--mono); color:var(--muted)}
+}
+@media (prefers-reduced-motion:reduce){ *{animation:none!important; transition:none!important} }
