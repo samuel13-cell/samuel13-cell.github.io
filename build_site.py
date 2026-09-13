@@ -16,11 +16,11 @@ SLOT = re.compile(r'<!--NAV-->.*?<!--/NAV-->', re.S)
 # file -> (slug, label, href-from-root, prefix-back-to-root)
 PAGES = [
     ('index.html',                  'home',           'Resume',            '',                  ''),
-    ('retail-margins/index.html',   'retail-margins', 'Leather margins',   'retail-margins/',   '../'),
-    ('ipl-impact/index.html',       'ipl-impact',     'IPL impact player', 'ipl-impact/',       '../'),
-    ('ott-india/index.html',        'ott-india',      'Netflix India',     'ott-india/',        '../'),
-    ('ev-india/index.html',         'ev-india',       'Electric cars',     'ev-india/',         '../'),
-    ('grid-india/index.html',       'grid-india',     'Coal turn',         'grid-india/',       '../'),
+    ('retail-margins/index.html',   'retail-margins', 'Margins',   'retail-margins/',   '../'),
+    ('ipl-impact/index.html',       'ipl-impact',     'IPL', 'ipl-impact/',       '../'),
+    ('ott-india/index.html',        'ott-india',      'Netflix',     'ott-india/',        '../'),
+    ('ev-india/index.html',         'ev-india',       'EV cars',     'ev-india/',         '../'),
+    ('grid-india/index.html',       'grid-india',     'Coal',         'grid-india/',       '../'),
 ]
 
 

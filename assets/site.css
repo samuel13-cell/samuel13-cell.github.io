@@ -32,7 +32,7 @@
   --sans:"IBM Plex Sans",-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;
   --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
 
-  --measure:38rem;   /* one reading width for every prose block */
+  --measure:38rem;   /* the content column itself; nothing is capped below it */
   --gutter:8.25rem;
   --col-gap:1.85rem;
 }
@@ -48,7 +48,7 @@ body{
   padding:clamp(0rem,4vw,3rem) clamp(1rem,4vw,2rem);
 }
 .sheet{
-  max-width:var(--sheet-w,53rem); margin:0 auto;
+  max-width:var(--sheet-w,calc(var(--measure) + 7rem)); margin:0 auto;
   background:var(--sheet); border:1px solid var(--line); box-shadow:var(--shadow);
   padding:clamp(1.25rem,3vw,2rem) clamp(1.25rem,5vw,3.5rem) clamp(2.5rem,5vw,3.5rem);
 }
@@ -56,7 +56,7 @@ a{color:var(--accent); text-decoration:none; border-bottom:1px solid var(--accen
 a:hover{border-bottom-color:currentColor}
 a:focus-visible{outline:2px solid var(--accent); outline-offset:3px; border-radius:2px}
 strong{font-weight:600; color:var(--ink)}
-p{max-width:var(--measure)}
+p{max-width:none}
 
 /* ===== site nav =================================================== */
 .nav{
@@ -86,7 +86,7 @@ h1{
 }
 .tagline,.standfirst{
   font:400 clamp(.98rem,2.2vw,1.08rem)/1.55 var(--sans);
-  color:var(--muted); margin:0 0 1.5rem; max-width:var(--measure);
+  color:var(--muted); margin:0 0 1.5rem;
 }
 h2{
   font:500 .69rem/1 var(--mono); text-transform:uppercase; letter-spacing:.19em;
@@ -103,22 +103,21 @@ h2{
 /* ===== entries (shared spine: metadata left, content right) ======= */
 .sect{margin-top:2.7rem}
 .sect:first-of-type{margin-top:0}
-.lede{margin:0; font-size:1.01rem; max-width:var(--measure)}
-.entry{
-  display:grid; grid-template-columns:var(--gutter) 1fr; gap:0 var(--col-gap);
-  margin-bottom:1.85rem; break-inside:avoid;
-}
+.lede{margin:0; font-size:1.01rem}
+.entry{margin-bottom:1.6rem; break-inside:avoid}
+.entry-head{display:flex; flex-wrap:wrap; align-items:baseline;
+  justify-content:space-between; gap:.1rem .9rem}
 .sect .entry:last-child{margin-bottom:0}
 .when{
   font:400 .735rem/1.5 var(--mono); font-variant-numeric:tabular-nums;
-  letter-spacing:.01em; color:var(--muted); padding-top:.33rem; white-space:nowrap;
+  letter-spacing:.01em; color:var(--muted); white-space:nowrap;
 }
 .title{font:600 1.015rem/1.4 var(--sans); color:var(--ink); margin:0}
 .title a{color:var(--ink); border-bottom:1px solid var(--accent-line)}
 .title a:hover{color:var(--accent); border-bottom-color:currentColor}
 .org{font:400 .875rem/1.5 var(--sans); color:var(--muted); margin:.05rem 0 .6rem}
 .entry ul{margin:0; padding:0; list-style:none}
-.entry li{position:relative; padding-left:1.05rem; margin-bottom:.42rem; max-width:var(--measure)}
+.entry li{position:relative; padding-left:1.05rem; margin-bottom:.42rem}
 .entry li:last-child{margin-bottom:0}
 .entry li::before{content:"–"; position:absolute; left:0; top:0;
   color:var(--accent-line); font-family:var(--mono)}
@@ -126,9 +125,10 @@ h2{
 /* ===== skills ===================================================== */
 .skills{margin:0; display:grid; gap:.9rem}
 .skill{display:grid; grid-template-columns:var(--gutter) 1fr; gap:0 var(--col-gap)}
+.skill dd{min-width:0}
 .skill dt{font:500 .69rem/1.6 var(--mono); text-transform:uppercase;
   letter-spacing:.13em; color:var(--muted); padding-top:.16rem}
-.skill dd{margin:0; font-size:.95rem; max-width:var(--measure)}
+.skill dd{margin:0; font-size:.95rem}
 
 /* ===== build notes ================================================
    The technical appendix each project page carries: how it was built,
@@ -139,14 +139,14 @@ h3.sub{font:600 .88rem/1.4 var(--sans); color:var(--ink);
   gap:.85rem var(--col-gap); margin:0 0 1.6rem}
 .stack dt{grid-column:1; font:500 .69rem/1.6 var(--mono); text-transform:uppercase;
   letter-spacing:.13em; color:var(--muted); padding-top:.1rem}
-.stack dd{grid-column:2; margin:0; font-size:.93rem; max-width:var(--measure)}
+.stack dd{grid-column:2; margin:0; font-size:.93rem}
 @media screen and (max-width:46rem){
   .stack{grid-template-columns:1fr; gap:.2rem}
   .stack dt{grid-column:1} .stack dd{grid-column:1; margin-bottom:.6rem}
 }
 .steps{counter-reset:step; list-style:none; margin:0 0 1.4rem; padding:0}
 .steps li{position:relative; padding-left:2.2rem; margin-bottom:.7rem;
-  max-width:var(--measure)}
+ }
 .steps li::before{counter-increment:step; content:counter(step,decimal-leading-zero);
   position:absolute; left:0; top:.08rem;
   font:500 .7rem/1.5 var(--mono); color:var(--accent); letter-spacing:.06em}
@@ -156,7 +156,7 @@ pre{margin:0 0 1.4rem; padding:1rem 1.1rem; background:var(--code-bg);
 pre b{font-weight:500; color:var(--accent)}
 .checks{list-style:none; margin:0 0 1.4rem; padding:0}
 .checks li{position:relative; padding-left:1.4rem; margin-bottom:.5rem;
-  max-width:var(--measure)}
+ }
 .checks li::before{content:"\2713"; position:absolute; left:0; top:0;
   color:var(--accent); font-size:.9rem}
 
@@ -169,10 +169,9 @@ pre b{font-weight:500; color:var(--accent)}
 
 /* ===== narrow ===================================================== */
 @media screen and (max-width:46rem){
-  :root{--gutter:1fr}
-  .entry,.skill{grid-template-columns:1fr; gap:.15rem}
-  .when{padding-top:0; margin-bottom:.18rem}
+  .skill{grid-template-columns:1fr; gap:.1rem}
   .skill dt{padding-top:.5rem}
+  .entry-head{gap:.05rem}
 }
 
 /* ===== print / PDF ================================================ */
