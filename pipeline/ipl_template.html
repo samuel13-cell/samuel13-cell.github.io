@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Impact Player effect — IPL, 2008–2026</title>
+<meta name="description" content="Every ball of 1,243 IPL matches. The Impact Player rule arrived in 2023; scoring jumped. This looks at which phase of the innings actually changed, and what that implies.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231f3864'/><text x='50' y='73' font-size='58' font-family='Georgia,serif' fill='%23fff' text-anchor='middle'>S</text></svg>">
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+:root{--sheet-w:60rem}
+figure{margin:0 0 .4rem}
+figcaption{font:400 .83rem/1.5 var(--sans); color:var(--muted); margin:.7rem 0 0; max-width:44em}
+.chartwrap{position:relative; overflow-x:auto}
+svg{display:block; width:100%; height:auto; min-width:34rem; touch-action:pan-y}
+.grid{stroke:var(--grid); stroke-width:1}
+.ax{fill:var(--axis-ink); font:400 10.5px var(--mono); font-variant-numeric:tabular-nums}
+.ln{fill:none; stroke-width:2; stroke-linejoin:round; stroke-linecap:round}
+.dot{stroke:var(--sheet); stroke-width:2}
+.dl{font:500 11.5px var(--sans)}
+.cross{stroke:var(--axis-ink); stroke-width:1}
+.kpis{display:grid; grid-template-columns:repeat(auto-fit,minmax(12rem,1fr));
+  gap:1.6rem 2.4rem; margin:0 0 .5rem; padding:0; border:0}
+.kpi dt{font:500 .68rem/1.4 var(--mono); text-transform:uppercase; letter-spacing:.13em;
+  color:var(--muted); margin-bottom:.3rem}
+.kpi dd{margin:0}
+.kpi .fig{font:600 2.1rem/1 var(--sans); color:var(--ink);
+  font-variant-numeric:tabular-nums; letter-spacing:-.02em}
+.kpi .note{display:block; font-size:.83rem; color:var(--muted); margin-top:.3rem; max-width:22em}
+.fig.up{color:var(--c-output)} .fig.flat{color:var(--c-input)}
+.legend{display:flex; flex-wrap:wrap; gap:.4rem 1.4rem; margin:0 0 .8rem;
+  font:400 .8rem var(--sans); color:var(--ink-soft); list-style:none; padding:0}
+.legend li{display:flex; align-items:center; gap:.45rem}
+.swatch{width:14px; height:2px; border-radius:1px; flex:none}
+.tip{position:absolute; pointer-events:none; opacity:0; transform:translate(-50%,-50%);
+  background:var(--sheet); border:1px solid var(--line); border-radius:3px;
+  padding:.5rem .6rem; font:400 .78rem/1.45 var(--sans); white-space:nowrap;
+  box-shadow:0 4px 16px -6px rgba(40,34,22,.28); z-index:2}
+.tip b{font:600 .88rem var(--sans); color:var(--ink); font-variant-numeric:tabular-nums}
+.tip .row{display:flex; align-items:center; gap:.4rem; margin-top:.25rem}
+.tip .k{width:11px; height:2px; border-radius:1px; flex:none}
+.tip .m{font:500 .7rem var(--mono); color:var(--muted); letter-spacing:.05em}
+details{margin-top:1.2rem; border-top:1px solid var(--hair); padding-top:.9rem}
+summary{font:500 .69rem/1 var(--mono); text-transform:uppercase; letter-spacing:.13em;
+  color:var(--muted); cursor:pointer}
+summary:hover{color:var(--accent)}
+.tablewrap{overflow-x:auto; margin-top:1rem; max-height:22rem; overflow-y:auto}
+table{border-collapse:collapse; font:400 .82rem var(--sans);
+  font-variant-numeric:tabular-nums; width:100%}
+th,td{text-align:right; padding:.32rem .8rem; border-bottom:1px solid var(--hair)}
+th:first-child,td:first-child{text-align:left}
+thead th{position:sticky; top:0; background:var(--sheet); font:500 .68rem var(--mono);
+  text-transform:uppercase; letter-spacing:.09em; color:var(--muted)}
+.prov{margin-top:1rem; font:400 .78rem/1.6 var(--mono); color:var(--muted); word-break:break-all}
+@media (max-width:34rem){ .kpi .fig{font-size:1.8rem} }
+.rule{stroke:var(--muted); stroke-width:1; opacity:.5}
+.anno{fill:var(--muted); font:500 10px var(--mono); letter-spacing:.05em}
+.bar{stroke:var(--sheet); stroke-width:1}
+.fig.up{color:var(--c-output)} .fig.flat{color:var(--c-input)}
+.fig.mid{color:var(--c-middle)}
+</style><style>:root{--c-middle:#4a3aa7}</style>
+</head>
+<body>
+<main class="sheet">
+
+<!--NAV--><!--/NAV-->
+
+<h1>The Impact Player effect</h1>
+<p class="standfirst">In 2023 the IPL let each side swap in a substitute mid-match. Scoring
+jumped immediately. The interesting question is not whether it rose &mdash; it is which part of
+the innings moved, because that points at why.</p>
+
+<h2>The finding</h2>
+<dl class="kpis">
+  <div class="kpi"><dt>Powerplay scoring</dt><dd>
+    <span class="fig flat">@@pp_delta@@</span>
+    <span class="note">Runs per over, overs 1&ndash;6, before the rule against after</span></dd></div>
+  <div class="kpi"><dt>Death overs</dt><dd>
+    <span class="fig up">@@death_delta@@</span>
+    <span class="note">Overs 16&ndash;20 &mdash; already the fastest phase, and it moved least</span></dd></div>
+  <div class="kpi"><dt>Totals over 200</dt><dd>
+    <span class="fig">@@pct200_last@@%</span>
+    <span class="note">Share of first innings passing 200 in @@last@@, against @@pct200_2022@@% in 2022</span></dd></div>
+</dl>
+
+<p>If batters had simply got stronger &mdash; better bats, shorter boundaries, the general drift
+of T20 &mdash; the death overs should have risen most. That is where sides already swing hardest,
+so extra power shows up there first. Instead the <strong>powerplay</strong> rose most, by
+@@pp_delta@@ runs an over against @@death_delta@@ at the death.</p>
+
+<p>The powerplay went from the slowest phase of an IPL innings to nearly the fastest. That is not
+a change in how hard players hit. It is a change in how much risk they are willing to take early,
+which is exactly what having an extra batter in reserve buys you.</p>
+
+<h2>Scoring rate by phase</h2>
+<figure>
+  <ul class="legend">
+    <li><span class="swatch" style="background:var(--c-input)"></span>Powerplay &mdash; overs 1&ndash;6</li>
+    <li><span class="swatch" style="background:var(--c-middle)"></span>Middle &mdash; overs 7&ndash;15</li>
+    <li><span class="swatch" style="background:var(--c-output)"></span>Death &mdash; overs 16&ndash;20</li>
+  </ul>
+  <div class="chartwrap" id="w1">
+    <svg viewBox="0 0 760 300" role="img" aria-label="Runs per over by phase, 2008 to 2026. The death overs are the fastest phase throughout. The powerplay is the slowest until 2023, then rises sharply to nearly meet the death overs by 2026.">
+    @@phase_chart@@
+    </svg>
+    <div class="tip" id="t1"></div>
+  </div>
+  <figcaption>Runs per over in each phase of the innings, by season. The vertical rule marks
+  @@rule_season@@, the first season with the Impact Player.</figcaption>
+</figure>
+
+<h2>How often a side passes 200</h2>
+<figure>
+  <div class="chartwrap" id="w2">
+    <svg viewBox="0 0 760 300" role="img" aria-label="Share of first innings reaching 200 or more, by season. Between 2 and 18 percent for every season up to 2022, then 32, 37, 45 and 51 percent from 2023.">
+    @@big_chart@@
+    </svg>
+  </div>
+  <figcaption>Share of first innings reaching 200. Seasons from @@rule_season@@ are shown in the
+  death-over hue. A total that occurred a handful of times a season now happens in half of all
+  matches.</figcaption>
+</figure>
+
+<details>
+  <summary>The numbers</summary>
+  <div class="tablewrap">
+    <table>
+      <thead><tr><th scope="col">Season</th><th scope="col">Matches</th>
+        <th scope="col">Powerplay</th><th scope="col">Middle</th><th scope="col">Death</th>
+        <th scope="col">Six %</th><th scope="col">Wkts/match</th><th scope="col">200+ %</th></tr></thead>
+      <tbody id="tb"></tbody>
+    </table>
+  </div>
+</details>
+
+<h2>Method</h2>
+<p>Cricsheet publishes every delivery of every IPL match as open data. This uses all
+@@balls@@ of them across @@matches@@ matches, @@first@@ to @@last@@, aggregated in DuckDB. Phases
+follow the competition's own structure: the six-over powerplay, the middle overs, and the last
+five. Runs per over counts every run conceded, byes and wides included, since those are runs the
+fielding side gave away.</p>
+<p>&ldquo;Before&rdquo; is every season up to 2022 and &ldquo;after&rdquo; is
+@@rule_season@@ onward &mdash; the rule applied from the first match of @@rule_season@@, so the
+split needs no judgement call.</p>
+
+<h2>What this does not show</h2>
+<p>This is an association in observational data, not a controlled experiment. The rule was not
+assigned at random and 2023 changed more than one thing at once: squads turn over, new players
+arrive, grounds and conditions vary by season. A general rise in T20 batting standards is real
+and is part of this.</p>
+<p>What the phase breakdown does is narrow the field. A pure power story predicts the death overs
+move most; they moved least. That is evidence for a change in risk-taking rather than in hitting
+ability &mdash; but it remains evidence, not proof, and one competition over four seasons is a
+small sample to hang a causal claim on.</p>
+
+<div class="prov">
+  Source: Cricsheet ball-by-ball data &mdash; <a href="@@src_url@@">@@src_url@@</a><br>
+  @@balls@@ deliveries across @@matches@@ matches, @@first@@&ndash;@@last@@ &middot;
+  sha256 @@sha@@&hellip; &middot; page built @@built@@
+</div>
+
+<footer class="colophon">
+  <span>Samuel Rajesh Vanambattina</span>
+  <span><a href="mailto:samuelrajesh13@gmail.com">samuelrajesh13@gmail.com</a></span>
+</footer>
+
+</main>
+
+<script>
+const ROWS = @@rows_js@@;
+const PAD = {l:44, r:108, t:18, b:30}, W = 760;
+
+const tb = document.getElementById('tb');
+const frag = document.createDocumentFragment();
+for (let i = ROWS.length - 1; i >= 0; i--) {
+  const tr = document.createElement('tr');
+  ROWS[i].forEach(v => {
+    const td = document.createElement('td');
+    td.textContent = v;
+    tr.appendChild(td);
+  });
+  frag.appendChild(tr);
+}
+tb.appendChild(frag);
+
+const YEARS = ROWS.map(r => r[0]);
+const PHASE = [
+  {idx:2, label:'Powerplay', var:'--c-input'},
+  {idx:3, label:'Middle',    var:'--c-middle'},
+  {idx:4, label:'Death',     var:'--c-output'},
+];
+
+(function wire() {
+  const wrap = document.getElementById('w1');
+  const svg = wrap.querySelector('svg');
+  const tip = document.getElementById('t1');
+  const cross = svg.querySelector('.cross');
+  const iw = W - PAD.l - PAD.r;
+
+  function at(ev) {
+    const r = svg.getBoundingClientRect();
+    const px = ((ev.clientX - r.left) / r.width) * W;
+    let i = Math.round(((px - PAD.l) / iw) * (YEARS.length - 1));
+    i = Math.max(0, Math.min(YEARS.length - 1, i));
+    const x = PAD.l + iw * i / (YEARS.length - 1);
+
+    cross.setAttribute('x1', x); cross.setAttribute('x2', x);
+    cross.style.opacity = '.45';
+
+    tip.textContent = '';
+    const m = document.createElement('div');
+    m.className = 'm'; m.textContent = 'IPL ' + YEARS[i];
+    tip.appendChild(m);
+    PHASE.forEach(c => {
+      const row = document.createElement('div'); row.className = 'row';
+      const k = document.createElement('span');
+      k.className = 'k'; k.style.background = `var(${c.var})`;
+      const b = document.createElement('b'); b.textContent = ROWS[i][c.idx];
+      row.append(k, b, document.createTextNode(' ' + c.label));
+      tip.appendChild(row);
+    });
+
+    const left = (x / W) * r.width;
+    tip.style.left = Math.max(78, Math.min(r.width - 78, left)) + 'px';
+    tip.style.top = '58px';
+    tip.style.opacity = '1';
+  }
+
+  svg.addEventListener('pointermove', at);
+  svg.addEventListener('pointerdown', at);
+  svg.addEventListener('pointerleave', () => {
+    tip.style.opacity = '0'; cross.style.opacity = '0';
+  });
+})();
+</script>
+</body>
+</html>

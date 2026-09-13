@@ -16,6 +16,7 @@
   <ul class="nav-tabs">
     <li><a href="./" aria-current="page">Resume</a></li>
     <li><a href="retail-margins/">Leather margins</a></li>
+    <li><a href="ipl-impact/">IPL impact player</a></li>
   </ul>
 </nav><!--/NAV-->
 
@@ -32,7 +33,7 @@
 
   <section class="sect">
     <h2>Profile</h2>
-    <p class="lede">Data and analytics professional with 8+ years across PricewaterhouseCoopers (New York) and Amazon Web Services (Seattle), delivering analytics, ETL automation and management reporting for financial services and technology clients. Carnegie Mellon MISM. Experienced managing teams of up to four and shipping automation that removed 500+ hours of annual manual effort. Currently running operations for a family-owned retail and supply-chain business; returning to a full-time analytics leadership role.</p>
+    <p class="lede">Data and analytics professional with 8+ years across PricewaterhouseCoopers (New York) and Amazon Web Services (Seattle), building analytics, ETL automation and management reporting for financial services and technology clients. Carnegie Mellon MISM. Now running operations for a family-owned retail business and returning to a full-time analytics leadership role.</p>
   </section>
 
   <section class="sect">
@@ -117,11 +118,21 @@
     <article class="entry">
       <div class="when">2026</div>
       <div>
+        <h3 class="title"><a href="ipl-impact/">The Impact Player effect</a></h3>
+        <p class="org">Analysis &middot; 295,732 IPL deliveries, 2008&ndash;2026</p>
+        <ul>
+          <li>Asks which phase of the innings moved after a 2023 rule change: powerplay scoring rose +1.70 runs an over against +0.74 at the death &mdash; risk appetite, not hitting power. DuckDB over 295,732 deliveries.</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="entry">
+      <div class="when">2026</div>
+      <div>
         <h3 class="title"><a class="work" href="retail-margins/">Where the margin went</a></h3>
         <p class="org">Analysis &middot; India&rsquo;s Wholesale Price Index, 2012&ndash;2026</p>
         <ul>
-          <li>Tracks one value chain &mdash; raw hides to tanned leather to finished footwear &mdash; to show that input prices ended the period near where they started while finished-goods prices rose about 30%.</li>
-          <li>Python and DuckDB over the monthly WPI release, rendered to a static page with no chart library; the fetch step discovers the current release rather than hard-coding it.</li>
+          <li>Tracks one value chain &mdash; raw hides to tanned leather to finished footwear &mdash; showing input prices flat over 14 years while finished-goods prices rose 30%. Monthly refresh; the fetch step discovers the current release rather than hard-coding it.</li>
         </ul>
       </div>
     </article>

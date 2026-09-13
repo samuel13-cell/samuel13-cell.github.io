@@ -140,7 +140,7 @@ h2{
 }
 
 /* ===== narrow ===================================================== */
-@media (max-width:46rem){
+@media screen and (max-width:46rem){
   :root{--gutter:1fr}
   .entry,.skill{grid-template-columns:1fr; gap:.15rem}
   .lede{margin-left:0}
@@ -154,25 +154,27 @@ h2{
     --plane:#fff; --sheet:#fff; --ink:#111316; --ink-soft:#33373d;
     --muted:#5c626a; --line:#c9c9c4; --hair:#dedeD9;
     --accent:#1f3864; --accent-line:#9aa7bd; --shadow:none;
-    --gutter:6.6rem; --col-gap:1.3rem;
+    --gutter:8rem; --col-gap:1.2rem;   /* must clear 'May 2013 \2014 Jun 2015' */
   }
-  body{font-size:8.9pt; line-height:1.32; padding:0; background:#fff}
+  body{font-size:8.9pt; line-height:1.29; padding:0; background:#fff}
   .sheet{max-width:none; border:0; box-shadow:none; padding:0}
   .no-print,.nav{display:none}
   .masthead{padding-bottom:.7rem; margin-bottom:.95rem}
   h1{font-size:17pt; margin-bottom:.15rem}
   .tagline{font-size:11pt; margin-bottom:.6rem}
-  .sect{margin-top:.72rem; break-inside:auto}
-  h2{margin:1rem 0 .6rem; padding-bottom:.3rem; break-after:avoid}
+  .sect{margin-top:.8rem; break-inside:auto}
+  h2{margin:1rem 0 .55rem; padding-bottom:.3rem; break-after:avoid}
   .sect > h2{margin-top:0}
-  .entry{margin-bottom:.48rem}
+  .entry{margin-bottom:.52rem}
   .org{margin:.02rem 0 .28rem}
   .entry li{margin-bottom:.09rem}
   .skills{gap:.34rem}
-  .colophon{margin-top:.5rem; padding-top:.4rem; break-before:avoid}
+  /* the footer only repeats the header's email on paper */
+  .colophon{display:none}
   a{color:var(--ink); border-bottom:0}
-  .title a[href^="http"]::after,.title a.work::after{
-    content:" \2014 samuel13-cell.github.io/retail-margins";
-    font:400 8.6pt var(--mono); color:var(--muted)}
+  /* links are dead on paper -- spell each project's URL out */
+  .title a[href="retail-margins/"]::after{content:" \2014 samuel13-cell.github.io/retail-margins"}
+  .title a[href="ipl-impact/"]::after{content:" \2014 samuel13-cell.github.io/ipl-impact"}
+  .title a::after{font:400 8.4pt var(--mono); color:var(--muted)}
 }
 @media (prefers-reduced-motion:reduce){ *{animation:none!important; transition:none!important} }

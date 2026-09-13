@@ -1,4 +1,9 @@
 pipeline/raw/*.xls
 pipeline/raw/*.xlsx
+pipeline/raw/*.zip
+pipeline/raw/ipl/
 retail-margins/rm-*.png
-pipeline/_inherited.css
+pipeline/_*.html
+pipeline/_*.css
+__pycache__/
+*.pyc
