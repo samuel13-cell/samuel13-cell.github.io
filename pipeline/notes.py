@@ -102,12 +102,16 @@ EV = buildnotes.section(
     code='''<b>SELECT</b> Entity, <b>ROUND</b>(share, 1) <b>AS</b> share
 <b>FROM</b> e
 <b>WHERE</b> Year = 2025
-  <b>AND</b> Code <b>IS NOT NULL</b>      -- aggregates carry no country code
-  <b>AND</b> Code &lt;&gt; 'OWID_WRL'   -- and the world total carries a synthetic one
+  <b>AND</b> Code <b>IS NOT NULL</b>
+  -- OWID gives every aggregate a synthetic OWID_ code: World, Europe,
+  -- EU27, the income groups. Kosovo is the one real place with one.
+  <b>AND</b> (Code <b>NOT LIKE</b> 'OWID_%' <b>OR</b> Code = 'OWID_KOS')
 <b>ORDER BY</b> share <b>DESC</b>;''',
     checks=[
-        'Aggregates are absent from the ranking. Leaving the world average in would '
-        'have placed a non-country above most countries.',
+        'Aggregates are absent from the ranking. An earlier version excluded only '
+        'the world total, which let Europe and the EU27 rank as countries above '
+        'India; the published rank was 57th of 61 until that was caught. It is '
+        '55th of 59.',
         'Countries with no figure for the latest year are absent rather than counted '
         'as zero, which would have flattered India’s rank.',
         'Gaps in a series break the line instead of being drawn through, so a country '
