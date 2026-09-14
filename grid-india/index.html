@@ -7,73 +7,12 @@
 <meta name="description" content="In 2025 India's coal generation fell while total demand grew, for the first time. Solar and wind added more than the whole increase in demand.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231f3864'/><text x='50' y='73' font-size='58' font-family='Georgia,serif' fill='%23fff' text-anchor='middle'>S</text></svg>">
 <link rel="stylesheet" href="../assets/site.css">
-<style>
-:root{}
-figure{margin:0 0 .4rem}
-figcaption{font:400 .83rem/1.5 var(--sans); color:var(--muted); margin:.7rem 0 0; max-width:var(--measure)}
-.chartwrap{position:relative; overflow-x:auto}
-svg{display:block; width:100%; height:auto; min-width:34rem; touch-action:pan-y}
-.grid{stroke:var(--grid); stroke-width:1}
-.ax{fill:var(--axis-ink); font:400 10.5px var(--mono); font-variant-numeric:tabular-nums}
-.ln{fill:none; stroke-width:2; stroke-linejoin:round; stroke-linecap:round}
-.dot{stroke:var(--sheet); stroke-width:2}
-.dl{font:500 11.5px var(--sans)}
-.cross{stroke:var(--axis-ink); stroke-width:1}
-.kpis{display:grid; grid-template-columns:repeat(auto-fit,minmax(12rem,1fr));
-  gap:1.6rem 2.4rem; margin:0 0 .5rem; padding:0; border:0}
-.kpi dt{font:500 .68rem/1.4 var(--mono); text-transform:uppercase; letter-spacing:.13em;
-  color:var(--muted); margin-bottom:.3rem}
-.kpi dd{margin:0}
-.kpi .fig{font:600 2.1rem/1 var(--sans); color:var(--ink);
-  font-variant-numeric:tabular-nums; letter-spacing:-.02em}
-.kpi .note{display:block; font-size:.83rem; color:var(--muted); margin-top:.3rem; max-width:24ch}
-.fig.up{color:var(--c-output)} .fig.flat{color:var(--c-input)}
-.legend{display:flex; flex-wrap:wrap; gap:.4rem 1.4rem; margin:0 0 .8rem;
-  font:400 .8rem var(--sans); color:var(--ink-soft); list-style:none; padding:0}
-.legend li{display:flex; align-items:center; gap:.45rem}
-.swatch{width:14px; height:2px; border-radius:1px; flex:none}
-.tip{position:absolute; left:50%; top:58px; pointer-events:none; opacity:0; transform:translate(-50%,-50%);
-  background:var(--sheet); border:1px solid var(--line); border-radius:3px;
-  padding:.5rem .6rem; font:400 .78rem/1.45 var(--sans); white-space:nowrap;
-  box-shadow:0 4px 16px -6px rgba(40,34,22,.28); z-index:2}
-.tip b{font:600 .88rem var(--sans); color:var(--ink); font-variant-numeric:tabular-nums}
-.tip .row{display:flex; align-items:center; gap:.4rem; margin-top:.25rem}
-.tip .k{width:11px; height:2px; border-radius:1px; flex:none}
-.tip .m{font:500 .7rem var(--mono); color:var(--muted); letter-spacing:.05em}
-details{margin-top:1.2rem; border-top:1px solid var(--hair); padding-top:.9rem}
-summary{font:500 .69rem/1 var(--mono); text-transform:uppercase; letter-spacing:.13em;
-  color:var(--muted); cursor:pointer}
-summary:hover{color:var(--accent)}
-.tablewrap{overflow-x:auto; margin-top:1rem; max-height:22rem; overflow-y:auto}
-table{border-collapse:collapse; font:400 .82rem var(--sans);
-  font-variant-numeric:tabular-nums; width:100%}
-th,td{text-align:right; padding:.32rem .8rem; border-bottom:1px solid var(--hair)}
-th:first-child,td:first-child{text-align:left}
-thead th{position:sticky; top:0; background:var(--sheet); font:500 .68rem var(--mono);
-  text-transform:uppercase; letter-spacing:.09em; color:var(--muted)}
-.prov{margin-top:1rem; font:400 .78rem/1.6 var(--mono); color:var(--muted); word-break:break-all}
-@media (max-width:34rem){ .kpi .fig{font-size:1.8rem} }
-.rule{stroke:var(--muted); stroke-width:1; opacity:.5}
-.anno{fill:var(--muted); font:500 10px var(--mono); letter-spacing:.05em}
-.bar{stroke:var(--sheet); stroke-width:1}
-.fig.up{color:var(--c-output)} .fig.flat{color:var(--c-input)}
-.fig.mid{color:var(--c-middle)}
-.hbar{display:grid; grid-template-columns:9.5rem 1fr auto; gap:.45rem .9rem;
-  align-items:center; font-size:.86rem; margin-bottom:.42rem}
-.hbar .nm{color:var(--ink-soft); white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
-.hbar .track{display:block; height:9px; background:var(--hair); border-radius:2px; overflow:hidden}
-.hbar .fill{display:block; height:100%; border-radius:2px; background:var(--c-input)}
-.hbar.me .nm{font-weight:600; color:var(--ink)}
-.hbar.me .fill{background:var(--c-output)}
-.hbar .v{font:500 .8rem var(--mono); color:var(--muted); font-variant-numeric:tabular-nums}
-.hbar.me .v{color:var(--ink)}
-@media (max-width:34rem){ .hbar{grid-template-columns:7rem 1fr auto} }
-</style></head>
+</head>
 <body>
 <main class="sheet">
 
 <!--NAV--><nav class="nav" aria-label="Site">
-  <a class="nav-mark" href="../" aria-label="Home">SV</a>
+  <a class="nav-mark" href="../">Samuel Vanambattina</a>
   <ul class="nav-tabs">
     <li><a href="../">Resume</a></li>
     <li><a href="../retail-margins/">Margins</a></li>
@@ -270,7 +209,7 @@ python ../build_site.py   # inject the shared nav</code></pre>
 <div class="prov">
   Source: Our World in Data, from Ember and the Energy Institute,
   <a href="https://ourworldindata.org/grapher/electricity-prod-source-stacked.csv">https://ourworldindata.org/grapher/electricity-prod-source-stacked.csv</a><br>
-  2000 to 2025 &middot; sha256 1c89aea469ab&hellip; &middot; page built 13 September 2026
+  2000 to 2025 &middot; sha256 1c89aea469ab&hellip; &middot; page built 14 September 2026
 </div>
 
 <footer class="colophon">

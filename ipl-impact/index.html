@@ -7,64 +7,12 @@
 <meta name="description" content="Every ball of 1,243 IPL matches. The Impact Player rule arrived in 2023; scoring jumped. This looks at which phase of the innings actually changed, and what that implies.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231f3864'/><text x='50' y='73' font-size='58' font-family='Georgia,serif' fill='%23fff' text-anchor='middle'>S</text></svg>">
 <link rel="stylesheet" href="../assets/site.css">
-<style>
-:root{}
-figure{margin:0 0 .4rem}
-figcaption{font:400 .83rem/1.5 var(--sans); color:var(--muted); margin:.7rem 0 0; max-width:var(--measure)}
-.chartwrap{position:relative; overflow-x:auto}
-svg{display:block; width:100%; height:auto; min-width:34rem; touch-action:pan-y}
-.grid{stroke:var(--grid); stroke-width:1}
-.ax{fill:var(--axis-ink); font:400 10.5px var(--mono); font-variant-numeric:tabular-nums}
-.ln{fill:none; stroke-width:2; stroke-linejoin:round; stroke-linecap:round}
-.dot{stroke:var(--sheet); stroke-width:2}
-.dl{font:500 11.5px var(--sans)}
-.cross{stroke:var(--axis-ink); stroke-width:1}
-.kpis{display:grid; grid-template-columns:repeat(auto-fit,minmax(12rem,1fr));
-  gap:1.6rem 2.4rem; margin:0 0 .5rem; padding:0; border:0}
-.kpi dt{font:500 .68rem/1.4 var(--mono); text-transform:uppercase; letter-spacing:.13em;
-  color:var(--muted); margin-bottom:.3rem}
-.kpi dd{margin:0}
-.kpi .fig{font:600 2.1rem/1 var(--sans); color:var(--ink);
-  font-variant-numeric:tabular-nums; letter-spacing:-.02em}
-.kpi .note{display:block; font-size:.83rem; color:var(--muted); margin-top:.3rem; max-width:24ch}
-.fig.up{color:var(--c-output)} .fig.flat{color:var(--c-input)}
-.legend{display:flex; flex-wrap:wrap; gap:.4rem 1.4rem; margin:0 0 .8rem;
-  font:400 .8rem var(--sans); color:var(--ink-soft); list-style:none; padding:0}
-.legend li{display:flex; align-items:center; gap:.45rem}
-.swatch{width:14px; height:2px; border-radius:1px; flex:none}
-.tip{position:absolute; left:50%; top:58px; pointer-events:none; opacity:0; transform:translate(-50%,-50%);
-  background:var(--sheet); border:1px solid var(--line); border-radius:3px;
-  padding:.5rem .6rem; font:400 .78rem/1.45 var(--sans); white-space:nowrap;
-  box-shadow:0 4px 16px -6px rgba(40,34,22,.28); z-index:2}
-.tip b{font:600 .88rem var(--sans); color:var(--ink); font-variant-numeric:tabular-nums}
-.tip .row{display:flex; align-items:center; gap:.4rem; margin-top:.25rem}
-.tip .k{width:11px; height:2px; border-radius:1px; flex:none}
-.tip .m{font:500 .7rem var(--mono); color:var(--muted); letter-spacing:.05em}
-details{margin-top:1.2rem; border-top:1px solid var(--hair); padding-top:.9rem}
-summary{font:500 .69rem/1 var(--mono); text-transform:uppercase; letter-spacing:.13em;
-  color:var(--muted); cursor:pointer}
-summary:hover{color:var(--accent)}
-.tablewrap{overflow-x:auto; margin-top:1rem; max-height:22rem; overflow-y:auto}
-table{border-collapse:collapse; font:400 .82rem var(--sans);
-  font-variant-numeric:tabular-nums; width:100%}
-th,td{text-align:right; padding:.32rem .8rem; border-bottom:1px solid var(--hair)}
-th:first-child,td:first-child{text-align:left}
-thead th{position:sticky; top:0; background:var(--sheet); font:500 .68rem var(--mono);
-  text-transform:uppercase; letter-spacing:.09em; color:var(--muted)}
-.prov{margin-top:1rem; font:400 .78rem/1.6 var(--mono); color:var(--muted); word-break:break-all}
-@media (max-width:34rem){ .kpi .fig{font-size:1.8rem} }
-.rule{stroke:var(--muted); stroke-width:1; opacity:.5}
-.anno{fill:var(--muted); font:500 10px var(--mono); letter-spacing:.05em}
-.bar{stroke:var(--sheet); stroke-width:1}
-.fig.up{color:var(--c-output)} .fig.flat{color:var(--c-input)}
-.fig.mid{color:var(--c-middle)}
-</style><style>:root{--c-middle:#4a3aa7}</style>
 </head>
 <body>
 <main class="sheet">
 
 <!--NAV--><nav class="nav" aria-label="Site">
-  <a class="nav-mark" href="../" aria-label="Home">SV</a>
+  <a class="nav-mark" href="../">Samuel Vanambattina</a>
   <ul class="nav-tabs">
     <li><a href="../">Resume</a></li>
     <li><a href="../retail-margins/">Margins</a></li>
@@ -135,7 +83,7 @@ which is exactly what having an extra batter in reserve buys you.</p>
     <text class="ax" x="753.0" y="290" text-anchor="end">2026</text>
     <line class="rule" x1="627.5" y1="26" x2="627.5" y2="270"/>
     <text class="anno" x="621.5" y="37" text-anchor="end">2023 · Impact Player</text>
-    <path class="ln" stroke="var(--c-input)" d="M0.0,205.1 L41.8,227.1 L83.7,196.3 L125.5,225.6 L167.3,222.7 L209.2,234.4 L251.0,208.5 L292.8,199.2 L334.7,200.2 L376.5,170.4 L418.3,164.1 L460.2,175.3 L502.0,199.7 L543.8,197.3 L585.7,194.8 L627.5,153.4 L669.3,119.2 L711.2,112.9 L753.0,92.4"/>
+    <path class="ln" stroke="var(--c-input)" d="M0.0,205.1 L41.8,228.5 L83.7,196.8 L125.5,225.6 L167.3,222.7 L209.2,236.3 L251.0,209.0 L292.8,199.7 L334.7,200.2 L376.5,170.4 L418.3,164.1 L460.2,175.8 L502.0,200.2 L543.8,197.3 L585.7,194.8 L627.5,153.4 L669.3,119.2 L711.2,113.4 L753.0,92.4"/>
     <circle class="dot" cx="753.0" cy="92.4" r="4.5" fill="var(--c-input)"/>
     <text class="dl" x="745.0" y="81.4" text-anchor="end" fill="var(--c-input)">Powerplay</text>
     <path class="ln" stroke="var(--c-middle)" d="M0.0,186.1 L41.8,237.3 L83.7,205.1 L125.5,209.5 L167.3,211.4 L209.2,217.8 L251.0,192.9 L292.8,191.4 L334.7,189.5 L376.5,188.5 L418.3,180.2 L460.2,196.3 L502.0,197.8 L543.8,203.6 L585.7,182.6 L627.5,163.6 L669.3,148.5 L711.2,138.2 L753.0,128.0"/>
@@ -220,7 +168,7 @@ which is exactly what having an extra batter in reserve buys you.</p>
 
 <h2>Method</h2>
 <p>Cricsheet publishes every delivery of every IPL match as open data. This uses all
-295,732 of them across 1,243 matches, 2008 to 2026, aggregated in DuckDB. Phases
+295,557 of them across 1,243 matches, 2008 to 2026, aggregated in DuckDB. Phases
 follow the competition's own structure: the six-over powerplay, the middle overs, and the last
 five. Runs per over counts every run conceded, byes and wides included, since those are runs the
 fielding side gave away.</p>
@@ -243,7 +191,7 @@ small sample to hang a causal claim on.</p>
 <a href="https://github.com/samuel13-cell/samuel13-cell.github.io/tree/main/pipeline/">pipeline/</a>.</p>
 
 <dl class="stack">
-    <dt>Source</dt><dd>Cricsheet, which publishes every delivery of every IPL match as open data. 295,732 rows across 1,243 matches.</dd>
+    <dt>Source</dt><dd>Cricsheet, which publishes every delivery of every IPL match as open data. 295,557 rows across 1,243 matches.</dd>
     <dt>Fetch</dt><dd>ipl_fetch.py downloads the archive and extracts only the consolidated file; the per-match CSVs hold the same rows.</dd>
     <dt>Transform</dt><dd>ipl_transform.py, DuckDB. Phases are derived from the over number rather than hard-coded per season, so the split holds if the format changes.</dd>
     <dt>Render</dt><dd>Static HTML with inline SVG. No chart library, no build step and no JavaScript beyond the hover layer, so the page has nothing to rot.</dd>
@@ -291,8 +239,8 @@ python ../build_site.py</code></pre>
 
 <div class="prov">
   Source: Cricsheet ball-by-ball data, <a href="https://cricsheet.org/downloads/ipl_csv2.zip">https://cricsheet.org/downloads/ipl_csv2.zip</a><br>
-  295,732 deliveries across 1,243 matches, 2008&ndash;2026 &middot;
-  sha256 01d78e061edc&hellip; &middot; page built 13 September 2026
+  295,557 deliveries across 1,243 matches, 2008&ndash;2026 &middot;
+  sha256 01d78e061edc&hellip; &middot; page built 14 September 2026
 </div>
 
 <footer class="colophon">
@@ -303,7 +251,7 @@ python ../build_site.py</code></pre>
 </main>
 
 <script>
-const ROWS = [["2008", 58, "7.33", "7.72", "9.56", "4.62", "11.9", "12.1"], ["2009", 57, "6.88", "6.67", "8.76", "3.73", "12.2", "1.8"], ["2010", 60, "7.51", "7.33", "9.21", "4.05", "12.1", "8.3"], ["2011", 73, "6.91", "7.24", "8.74", "3.76", "11.1", "5.5"], ["2012", 74, "6.97", "7.20", "9.17", "4.13", "11.6", "5.4"], ["2013", 76, "6.73", "7.07", "9.22", "3.75", "12.0", "5.3"], ["2014", 60, "7.26", "7.58", "9.62", "5.00", "11.2", "8.3"], ["2015", 59, "7.45", "7.61", "9.86", "5.07", "11.7", "11.9"], ["2016", 60, "7.43", "7.65", "9.69", "4.53", "11.1", "8.3"], ["2017", 59, "8.04", "7.67", "9.22", "5.09", "12.1", "13.6"], ["2018", 60, "8.17", "7.84", "9.62", "6.10", "12.0", "18.3"], ["2019", 60, "7.94", "7.51", "9.66", "5.49", "11.4", "13.3"], ["2020", 60, "7.44", "7.48", "9.78", "5.06", "11.3", "15.0"], ["2021", 60, "7.49", "7.36", "8.87", "4.76", "12.0", "10.0"], ["2022", 74, "7.54", "7.79", "9.76", "5.93", "12.3", "17.6"], ["2023", 74, "8.39", "8.18", "9.81", "6.29", "12.4", "32.4"], ["2024", 71, "9.09", "8.49", "10.37", "7.37", "12.4", "36.6"], ["2025", 74, "9.22", "8.70", "10.26", "7.53", "11.8", "44.6"], ["2026", 74, "9.64", "8.91", "10.08", "8.14", "11.9", "51.4"]];
+const ROWS = [["2008", 58, "7.33", "7.72", "9.56", "4.62", "11.9", "12.1"], ["2009", 57, "6.85", "6.67", "8.76", "3.72", "12.2", "1.8"], ["2010", 60, "7.50", "7.33", "9.21", "4.04", "12.0", "8.3"], ["2011", 73, "6.91", "7.24", "8.74", "3.76", "11.1", "5.5"], ["2012", 74, "6.97", "7.20", "9.17", "4.13", "11.6", "5.4"], ["2013", 76, "6.69", "7.07", "9.22", "3.72", "12.0", "5.3"], ["2014", 60, "7.25", "7.58", "9.62", "5.00", "11.2", "8.3"], ["2015", 59, "7.44", "7.61", "9.86", "5.07", "11.6", "11.9"], ["2016", 60, "7.43", "7.65", "9.69", "4.53", "11.1", "8.3"], ["2017", 59, "8.04", "7.67", "9.22", "5.09", "12.0", "13.6"], ["2018", 60, "8.17", "7.84", "9.62", "6.10", "12.0", "18.3"], ["2019", 60, "7.93", "7.51", "9.66", "5.49", "11.4", "13.3"], ["2020", 60, "7.43", "7.48", "9.78", "5.07", "11.1", "15.0"], ["2021", 60, "7.49", "7.36", "8.87", "4.77", "12.0", "10.0"], ["2022", 74, "7.54", "7.79", "9.76", "5.93", "12.3", "17.6"], ["2023", 74, "8.39", "8.18", "9.81", "6.29", "12.4", "32.4"], ["2024", 71, "9.09", "8.49", "10.37", "7.37", "12.4", "36.6"], ["2025", 74, "9.21", "8.70", "10.26", "7.53", "11.8", "44.6"], ["2026", 74, "9.64", "8.91", "10.08", "8.14", "11.9", "51.4"]];
 const PAD = {l:0, r:7, t:26, b:30}, W = 760;
 
 const tb = document.getElementById('tb');

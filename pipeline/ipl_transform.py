@@ -20,6 +20,9 @@ BALLS = """
                 ELSE 'death' END              AS phase,
            runs_off_bat + extras              AS runs
     FROM read_csv_auto('{src}', sample_size=-1)
+    -- innings 3 and up are super overs: every one is "over 0", so left in
+    -- they would all be counted as powerplay, at super-over scoring rates
+    WHERE innings IN (1, 2)
 """
 
 

@@ -23,7 +23,7 @@ the query the headline rests on and the commands to reproduce it.
 index.html          resume
 <slug>/index.html   generated project pages
 assets/             site.css, nav.html
-fonts/              self-hosted IBM Plex subset
+fonts/              self-hosted Source Sans 3 and IBM Plex Mono, latin subset
 pipeline/           fetch, transform and render for every project
 build_site.py       injects the shared nav into every page
 ```

@@ -73,7 +73,7 @@ passing 200 went from 18% in 2022 to 51% in 2026.
 93 markets on local share at 6.9%, against Japan 41.8% and South Korea 39.3%.
 Films 11.5% local, TV 2.3%.
 
-**EV.** India 4.0% of new car sales in 2025, up from 2.1%. Ranks 57th of 61.
+**EV.** India 4.0% of new car sales in 2025, up from 2.1%. Ranks 55th of 59.
 World average 25%.
 
 **Grid.** Coal fell 43.75 TWh in 2025 while demand rose 45.08. Coal has fallen
@@ -96,9 +96,13 @@ automatically; the transforms read the latest year rather than hard-coding it.
 
 ## Design system
 
-One committed light palette, no dark mode. IBM Plex Sans and IBM Plex Mono,
+One committed light palette on a plain white page, no dark mode and no card.
+Source Sans 3 for all text, IBM Plex Mono only inside code blocks, both
 self-hosted in `fonts/` as a latin subset, so the page makes no third-party
-request. Chart colours are blue `#2a78d6`, orange `#eb6834` and violet
+request. Headings are normal case and bold; there are no uppercase
+letterspaced labels anywhere, which was the strongest generated-looking tell
+in earlier versions. Templates carry no CSS: `assets/site.css` is the whole
+design system, and every page loads only that. Chart colours are blue `#2a78d6`, orange `#eb6834` and violet
 `#4a3aa7`, each validated against the page surface for lightness, chroma,
 colour-blind separation and contrast. Every green candidate for a third series
 failed: all of them collided with the orange under protanopia.

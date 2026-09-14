@@ -41,6 +41,8 @@ def main() -> None:
         nav = (template
                .replace('@@root@@', back or './')
                .replace('@@tabs@@', '\n    ' + '\n    '.join(tabs) + '\n  '))
+        if slug == 'home':
+            nav = nav.replace('<nav class="nav"', '<nav class="nav is-home"', 1)
 
         path = ROOT / rel
         page = path.read_text()

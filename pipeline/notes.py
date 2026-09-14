@@ -126,7 +126,7 @@ IPL = buildnotes.section(
     repo_path='pipeline/',
     stack=[
         ('Source', 'Cricsheet, which publishes every delivery of every IPL match as '
-                   'open data. 295,732 rows across 1,243 matches.'),
+                   'open data. 295,557 rows across 1,243 matches.'),
         ('Fetch', 'ipl_fetch.py downloads the archive and extracts only the '
                   'consolidated file; the per-match CSVs hold the same rows.'),
         ('Transform', 'ipl_transform.py, DuckDB. Phases are derived from the over '

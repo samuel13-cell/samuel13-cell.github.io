@@ -34,11 +34,13 @@ def main() -> None:
             f"SELECT Year, share FROM e WHERE Entity = '{entity}'").fetchall())
         return [None if rows.get(y) is None else round(float(rows[y]), 2) for y in years]
 
-    # Countries are ranked on the latest year; only sovereign entities carry a
-    # three-letter code, which drops aggregates like 'World' and 'Europe'.
+    # Countries are ranked on the latest year. OWID gives its aggregates a
+    # synthetic OWID_ code (World, Europe, EU27, income groups), so those are
+    # excluded; Kosovo is the one real place that also carries one.
     ranking = con.execute(f"""
         SELECT Entity, ROUND(share, 1) AS share FROM e
-        WHERE Year = {last} AND Code IS NOT NULL AND Code <> 'OWID_WRL'
+        WHERE Year = {last} AND Code IS NOT NULL
+          AND (Code NOT LIKE 'OWID_%' OR Code = 'OWID_KOS')
         ORDER BY share DESC""").df()
 
     india_rank = int(ranking.index[ranking.Entity == FOCUS][0]) + 1
