@@ -24,8 +24,20 @@ PAGES = [
 ]
 
 
+def css_version() -> str:
+    """Short hash of the stylesheet, appended to its URL in every page.
+
+    Pages are cached separately from the stylesheet, so a changed
+    stylesheet at an unchanged URL leaves returning visitors with new
+    HTML styled by old CSS. Versioning the URL makes that impossible.
+    """
+    import hashlib
+    return hashlib.sha256((ROOT / 'assets' / 'site.css').read_bytes()).hexdigest()[:8]
+
+
 def main() -> None:
     template = (ROOT / 'assets' / 'nav.html').read_text().strip()
+    ver = css_version()
     live = [p for p in PAGES if (ROOT / p[0]).exists()]
     missing = [p[0] for p in PAGES if p not in live]
     for m in missing:
@@ -49,8 +61,11 @@ def main() -> None:
         if not SLOT.search(page):
             print(f'skip {rel} (no NAV slot)')
             continue
-        path.write_text(SLOT.sub('<!--NAV-->' + nav + '<!--/NAV-->', page))
-        print(f'nav -> {rel}  ({len(live)} tabs, current: {slug})')
+        page = SLOT.sub('<!--NAV-->' + nav + '<!--/NAV-->', page)
+        page = re.sub(r'(href="(?:\.\./)?assets/site\.css)(?:\?v=[0-9a-f]+)?"',
+                      rf'\1?v={ver}"', page)
+        path.write_text(page)
+        print(f'nav -> {rel}  ({len(live)} tabs, current: {slug}, css v{ver})')
 
 
 if __name__ == '__main__':

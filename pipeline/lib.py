@@ -97,7 +97,10 @@ def line_chart(labels, series, lo, hi, step=10, every=2, annotate=None, ticks=No
                          f'text-anchor="end">{text}</text>')
 
     for label, var, values in series:
-        parts.append(f'<path class="ln" stroke="var({var})" d="{_path(xs, ys, values)}"/>')
+        # fill="none" is inline as well as in the stylesheet: a line must never
+        # render as a filled black shape, whatever CSS the browser has cached
+        parts.append(f'<path class="ln" fill="none" stroke="var({var})" '
+                     f'd="{_path(xs, ys, values)}"/>')
         last = max(i for i, v in enumerate(values) if v is not None)
         ex, ey = xs(last), ys(values[last])
         parts.append(f'<circle class="dot" cx="{ex:.1f}" cy="{ey:.1f}" '
